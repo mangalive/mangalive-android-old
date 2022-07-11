@@ -1,45 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="0dp">
+    android:background="@color/background">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <SearchView
-            style="@android:style/Widget.Material.Light.SearchView"
-            android:layout_width="wrap_content"
+        <com.acg.mangalive.SearchView
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            app:icon="@drawable/search_icon"
+            app:iconTint="@color/primary"
+            app:placeholder="@string/search_placeholder_text"
+            app:placeholderColor="@color/gray_400"
+            app:placeholderDimension="18sp"
+            app:surfaceColor="@color/panel"
+            app:surfaceCornerRadius="50" />
 
-        <Button
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="0dp"
-            app:icon="@drawable/notifications_icon"
-            app:iconPadding="0dp"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/icon_ripple_primary"
+            android:contentDescription="@string/notifications"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/notifications_icon"
+            app:tint="@color/primary" />
 
-        <Button
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="0dp"
-            app:icon="@drawable/user_avatar"
-            app:iconPadding="0dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
+            android:background="@drawable/icon_ripple_primary"
+            android:contentDescription="@string/account"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:src="@drawable/account_icon"
+            app:tint="@color/primary" />
     </LinearLayout>
 
     <fragment
@@ -47,6 +58,8 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintHorizontal_bias="0.0"
@@ -57,9 +70,12 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:background="@color/panel"
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

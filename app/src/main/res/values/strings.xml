@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">mangalive</string>
-    <string name="catalog_title">catalog</string>
-    <string name="favourites_title">favourites</string>
-    <string name="news_title">news</string>
+    <string name="app_name">Mangalive</string>
+    <string name="catalog_title">Catalog</string>
+    <string name="favourites_title">Favourites</string>
+    <string name="news_title">News</string>
+    <string name="search_placeholder_text">Search manga, sempai!</string>
+    <string name="notifications">notifications</string>
+    <string name="account">account</string>
 </resources>

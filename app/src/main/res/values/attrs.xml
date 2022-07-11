@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="icon" format="reference"/>
+    <attr name="iconColor" format="color"/>
+
+    <declare-styleable name="SearchView">
+        <attr name="placeholder" format="string"/>
+        <attr name="placeholderColor" format="color"/>
+        <attr name="placeholderDimension" format="dimension"/>
+        <attr name="surfaceColor" format="color"/>
+        <attr name="surfaceCornerRadius" format="float"/>
+        <attr name="icon"/>
+        <attr name="iconColor"/>
+    </declare-styleable>
+</resources>
