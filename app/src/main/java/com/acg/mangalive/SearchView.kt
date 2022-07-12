@@ -179,7 +179,6 @@ class SearchView : View {
             surfacePaint
         )
 
-
         drawable?.let {
             it.setBounds(
                 drawableLeft, paddingTop + (contentHeight - it.intrinsicHeight) / 2, drawableLeft
