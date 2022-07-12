@@ -143,12 +143,12 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         val measureNum = placeholderPaint?.breakText(
             placeholderText,
             true,
-            (paddingLeft + contentWidth).toFloat() - surfaceCornerRadius - iconDrawableLeft.toFloat() + (iconDrawable?.intrinsicWidth
-                ?: 0).toFloat() + placeholderTextSize / 2,
+            (paddingLeft + contentWidth).toFloat() - surfaceCornerRadius - (iconDrawableLeft.toFloat() + (iconDrawable?.intrinsicWidth
+                ?: 0).toFloat() + placeholderTextSize / 2),
             null
         ) ?: 0
 
-        val placeholderTextCutted =  if (measureNum < (placeholderText?.length ?: 0)) {
+        val placeholderTextGutted =  if (measureNum < (placeholderText?.length ?: 0)) {
             placeholderText?.substring(0, measureNum - 1) + "..."
         } else {
             placeholderText?.substring(0, measureNum) + ""
@@ -177,7 +177,7 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
 
         placeholderPaint?.let {
             canvas.drawText(
-                placeholderTextCutted,
+                placeholderTextGutted,
                 iconDrawableLeft.toFloat() + (iconDrawable?.intrinsicWidth
                     ?: 0).toFloat() + placeholderTextSize / 2,
                 paddingTop + (contentHeight + placeholderHeight * 2) / 2,
