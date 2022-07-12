@@ -4,9 +4,9 @@
     <attr name="iconColor" format="color"/>
 
     <declare-styleable name="SearchView">
-        <attr name="placeholder" format="string"/>
+        <attr name="placeholderText" format="string"/>
         <attr name="placeholderColor" format="color"/>
-        <attr name="placeholderDimension" format="dimension"/>
+        <attr name="placeholderTextSize" format="dimension"/>
         <attr name="surfaceColor" format="color"/>
         <attr name="surfaceCornerRadius" format="float"/>
         <attr name="icon"/>

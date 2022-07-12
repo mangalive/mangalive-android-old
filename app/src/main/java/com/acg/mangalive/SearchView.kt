@@ -10,74 +10,66 @@ import android.view.View
 /**
  * TODO: document your custom view class.
  */
-class SearchView : View {
-
-    private var _surfaceColor = R.color.panel
-    private var _placeholderColor = R.color.white
-    private var _placeholder: String? = null
-    private var _placeholderDimension = 0f
+class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
+    View(context, attrs, defStyle) {
+    private var _surfaceColor = 0
+    private var _placeholderColor = 0
+    private var _placeholderText: String? = null
+    private var _placeholderTextSize = 0f
 
     private var placeholderWidth = 0f
     private var placeholderHeight = 0f
 
-    private lateinit var placeholderPaint: TextPaint
-    private lateinit var surfacePaint: Paint
-    private var drawable: Drawable? = null
+    private var placeholderPaint: TextPaint? = null
+    private var surfacePaint: Paint? = null
+    private var iconDrawable: Drawable? = null
 
     var surfaceCornerRadius = 0f
-    var iconColor = R.color.primary
+    var iconColor = 0
 
-    var color: Int
+    var surfaceColor: Int
         get() = _surfaceColor
         set(value) {
             _surfaceColor = value
-            invalidateSurfacePaint()
+            updateSurfacePaint()
         }
 
     var placeholderColor: Int
         get() = _placeholderColor
         set(value) {
             _placeholderColor = value
-            invalidatePlaceholderTextPaintAndMeasurements()
+            updatePlaceholderPaintAndMeasurements()
         }
 
-    var placeholder: String?
-        get() = _placeholder
+    var placeholderText: String?
+        get() = _placeholderText
         set(value) {
-            _placeholder = value
-            invalidatePlaceholderTextPaintAndMeasurements()
+            _placeholderText = value
+            updateSurfacePaint()
         }
 
-    var placeholderDimension: Float
-        get() = _placeholderDimension
+    var placeholderTextSize: Float
+        get() = _placeholderTextSize
         set(value) {
-            _placeholderDimension = value
-            invalidatePlaceholderTextPaintAndMeasurements()
+            _placeholderTextSize = value
+            updateSurfacePaint()
         }
 
-    constructor(context: Context) : super(context) {
-        init(null, 0)
-    }
+    constructor(context: Context) : this(context, null)
 
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        init(attrs, 0)
-    }
-
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
+    constructor(context: Context, attrs: AttributeSet?) : this(
         context,
         attrs,
-        defStyle
-    ) {
-        init(attrs, defStyle)
-    }
+        R.style.Widget_Theme_Mangalive_SearchView
+    )
 
-    private fun init(attrs: AttributeSet?, defStyle: Int) {
+    init {
         val a = context.obtainStyledAttributes(
             attrs, R.styleable.SearchView, defStyle, 0
         )
 
-        _placeholder = a.getString(
-            R.styleable.SearchView_placeholder,
+        _placeholderText = a.getString(
+            R.styleable.SearchView_placeholderText
         )
 
         _placeholderColor = a.getColor(
@@ -85,14 +77,14 @@ class SearchView : View {
             placeholderColor
         )
 
-        _placeholderDimension = a.getDimension(
-            R.styleable.SearchView_placeholderDimension,
-            placeholderDimension
+        _placeholderTextSize = a.getDimension(
+            R.styleable.SearchView_placeholderTextSize,
+            _placeholderTextSize
         )
 
         _surfaceColor = a.getColor(
             R.styleable.SearchView_surfaceColor,
-            color
+            surfaceColor
         )
 
         surfaceCornerRadius = a.getFloat(
@@ -102,10 +94,7 @@ class SearchView : View {
 
         iconColor = a.getColor(R.styleable.SearchView_iconColor, iconColor)
 
-        if (a.hasValue(R.styleable.SearchView_icon)) {
-            drawable = a.getDrawable(R.styleable.SearchView_icon)
-            drawable?.callback = this
-        }
+        iconDrawable = a.getDrawable(R.styleable.SearchView_icon)
 
         a.recycle()
 
@@ -119,30 +108,25 @@ class SearchView : View {
             style = Paint.Style.FILL
         }
 
-        invalidatePlaceholderTextPaintAndMeasurements()
-        invalidateSurfacePaint()
+        updatePlaceholderPaintAndMeasurements()
+        updateSurfacePaint()
     }
 
-    private fun invalidatePlaceholderTextPaintAndMeasurements() {
-        placeholderPaint.let {
-            it.textSize = placeholderDimension
+    private fun updatePlaceholderPaintAndMeasurements() {
+        placeholderPaint?.let {
+            it.textSize = placeholderTextSize
             it.color = placeholderColor
-            placeholderWidth = it.measureText(placeholder)
+            placeholderWidth = it.measureText(placeholderText)
             placeholderHeight = it.fontMetrics.bottom
         }
     }
 
-    private fun invalidateSurfacePaint() {
-        surfacePaint.color = color
+    private fun updateSurfacePaint() {
+        surfacePaint?.color = surfaceColor
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        val paddingLeft = paddingLeft
-        val paddingTop = paddingTop
-        val paddingRight = paddingRight
-        val paddingBottom = paddingBottom
 
         val contentWidth = width - paddingLeft - paddingRight
         val contentHeight = height - paddingTop - paddingBottom
@@ -154,49 +138,51 @@ class SearchView : View {
             bottom = (paddingTop + contentHeight).toFloat()
         }
 
-        val drawableLeft = paddingLeft + (surfaceCornerRadius / 2).toInt()
-        val measureNum = placeholderPaint.breakText(
-            placeholder,
+        val iconDrawableLeft = paddingLeft + (surfaceCornerRadius / 2).toInt()
+
+        val measureNum = placeholderPaint?.breakText(
+            placeholderText,
             true,
-            (paddingLeft + contentWidth).toFloat() - surfaceCornerRadius - (drawableLeft.toFloat() + placeholderDimension / 2 + (drawable?.intrinsicWidth?.toFloat()
-                ?: 0f)),
+            (paddingLeft + contentWidth).toFloat() - surfaceCornerRadius - iconDrawableLeft.toFloat() + (iconDrawable?.intrinsicWidth
+                ?: 0).toFloat() + placeholderTextSize / 2,
             null
-        )
+        ) ?: 0
 
-        var pl = (placeholder?.substring(0, measureNum - 1) ?: "")
-
-        if (measureNum < (placeholder?.length ?: 0)) {
-            if (pl.last() == ',' || pl.last() == '.') {
-                pl = pl.substring(0, pl.length - 1)
-            }
-            pl += "..."
+        val placeholderTextCutted =  if (measureNum < (placeholderText?.length ?: 0)) {
+            placeholderText?.substring(0, measureNum - 1) + "..."
+        } else {
+            placeholderText?.substring(0, measureNum) + ""
         }
 
-        canvas.drawRoundRect(
-            surfaceRect,
-            surfaceCornerRadius,
-            surfaceCornerRadius,
-            surfacePaint
-        )
+        surfacePaint?.let {
+            canvas.drawRoundRect(
+                surfaceRect,
+                surfaceCornerRadius,
+                surfaceCornerRadius,
+                it
+            )
+        }
 
-        drawable?.let {
+        iconDrawable?.let {
             it.setBounds(
-                drawableLeft, paddingTop + (contentHeight - it.intrinsicHeight) / 2, drawableLeft
-                        + it.intrinsicWidth, paddingTop + (contentHeight + it.intrinsicHeight) / 2
+                iconDrawableLeft,
+                paddingTop + (contentHeight - it.intrinsicHeight) / 2,
+                iconDrawableLeft
+                        + it.intrinsicWidth,
+                paddingTop + (contentHeight + it.intrinsicHeight) / 2
             )
             it.setTint(iconColor)
             it.draw(canvas)
         }
 
-        placeholder?.let {
+        placeholderPaint?.let {
             canvas.drawText(
-                pl,
-                drawableLeft.toFloat() + placeholderDimension / 2 + (drawable?.intrinsicWidth?.toFloat()
-                    ?: 0f),
+                placeholderTextCutted,
+                iconDrawableLeft.toFloat() + (iconDrawable?.intrinsicWidth
+                    ?: 0).toFloat() + placeholderTextSize / 2,
                 paddingTop + (contentHeight + placeholderHeight * 2) / 2,
-                placeholderPaint
+                it
             )
         }
-
     }
 }

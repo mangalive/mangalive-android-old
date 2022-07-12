@@ -24,10 +24,10 @@
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
             app:icon="@drawable/search_icon"
-            app:iconTint="@color/primary"
-            app:placeholder="@string/search_placeholder_text"
+            app:iconColor="@color/primary"
+            app:placeholderText="@string/search_placeholder_text"
             app:placeholderColor="@color/gray_400"
-            app:placeholderDimension="18sp"
+            app:placeholderTextSize="18sp"
             app:surfaceColor="@color/panel"
             app:surfaceCornerRadius="50" />
 

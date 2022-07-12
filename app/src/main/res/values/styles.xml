@@ -1,9 +1,9 @@
 <resources>
 
     <style name="Widget.Theme.Mangalive.SearchView" parent="">
-        <item name="placeholder">@string/search_placeholder_text</item>
+        <item name="placeholderText">@string/search_placeholder_text</item>
         <item name="placeholderColor">@color/white</item>
-        <item name="placeholderDimension">24sp</item>
+        <item name="placeholderTextSize">24sp</item>
         <item name="surfaceColor">@color/panel</item>
         <item name="surfaceCornerRadius">25</item>
         <item name="icon">@drawable/search_icon</item>

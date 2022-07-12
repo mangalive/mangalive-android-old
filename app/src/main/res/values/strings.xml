@@ -3,7 +3,7 @@
     <string name="catalog_title">Catalog</string>
     <string name="favourites_title">Favourites</string>
     <string name="news_title">News</string>
-    <string name="search_placeholder_text">Search manga, senpai!!</string>
+    <string name="search_placeholder_text">Search manga, senpai!</string>
     <string name="notifications">notifications</string>
     <string name="account">account</string>
 </resources>
