@@ -2,7 +2,7 @@
 
     <style name="Widget.Theme.Mangalive.SearchView" parent="">
         <item name="placeholderText">@string/search_placeholder_text</item>
-        <item name="placeholderColor">@color/white</item>
+        <item name="placeholderColor">@color/gray_600</item>
         <item name="placeholderDimension">18sp</item>
 
         <item name="surfaceColor">@color/panel</item>
