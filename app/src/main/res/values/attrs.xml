@@ -3,13 +3,23 @@
     <attr name="icon" format="reference"/>
     <attr name="iconColor" format="color"/>
 
+    <attr name="rippleColor" format="color"/>
+    <attr name="rippleAlpha" format="integer"/>
+
+    <attr name="searchViewStyle" format="reference"/>
+
     <declare-styleable name="SearchView">
         <attr name="placeholderText" format="string"/>
+        <attr name="placeholderDimension" format="dimension"/>
         <attr name="placeholderColor" format="color"/>
-        <attr name="placeholderTextSize" format="dimension"/>
+
         <attr name="surfaceColor" format="color"/>
-        <attr name="surfaceCornerRadius" format="float"/>
+        <attr name="surfaceCornerRadius" format="integer"/>
+
         <attr name="icon"/>
         <attr name="iconColor"/>
+
+        <attr name="rippleColor"/>
+        <attr name="rippleAlpha"/>
     </declare-styleable>
 </resources>

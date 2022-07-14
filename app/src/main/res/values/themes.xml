@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
 <!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>-->
         <item name="android:statusBarColor" tools:targetApi="l">@color/primaryDark</item>
+
+        <item name="searchViewStyle">@style/Widget.Theme.Mangalive.SearchView</item>
     </style>
 </resources>
