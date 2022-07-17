@@ -32,6 +32,7 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
 
     var surfaceCornerRadius = 0f
     var iconColor = 0
+    var iconSize = 0
 
     private var _rippleColor: Int = 0
     var rippleColor: Int
@@ -137,7 +138,7 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
             _surfaceColor
         )
 
-        surfaceCornerRadius = a.getFloat(
+        surfaceCornerRadius = a.getDimension(
             R.styleable.SearchView_surfaceCornerRadius,
             surfaceCornerRadius
         )
@@ -145,6 +146,8 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         iconColor = a.getColor(R.styleable.SearchView_iconColor, iconColor)
 
         iconDrawable = a.getDrawable(R.styleable.SearchView_icon)
+
+        iconSize = a.getDimensionPixelSize(R.styleable.SearchView_iconSize, iconSize)
 
         a.recycle()
     }
@@ -217,14 +220,19 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
 
     }
 
-    private fun drawIcon(canvas: Canvas, contentHeight: Int) {
-        val iconDrawableHeight = iconDrawable?.intrinsicHeight ?: 0
-        val iconDrawableWidth = iconDrawable?.intrinsicWidth ?: 0
+    private fun getIconHeight(): Int {
+        return if (iconSize != 0) iconSize else (iconDrawable?.intrinsicHeight ?: 0)
+    }
 
+    private fun getIconWidth(): Int {
+        return if (iconSize != 0) iconSize else (iconDrawable?.intrinsicWidth ?: 0)
+    }
+
+    private fun drawIcon(canvas: Canvas, contentHeight: Int) {
         val iconDrawableLeft = paddingLeft + (surfaceCornerRadius / 2).toInt()
-        val iconDrawableRight = iconDrawableLeft + iconDrawableWidth
-        val iconDrawableTop = paddingTop + (contentHeight - iconDrawableHeight) / 2
-        val iconDrawableBottom = iconDrawableTop + iconDrawableHeight
+        val iconDrawableRight = iconDrawableLeft + getIconWidth()
+        val iconDrawableTop = paddingTop + (contentHeight - getIconHeight()) / 2
+        val iconDrawableBottom = iconDrawableTop + getIconHeight()
 
         iconDrawable?.let {
             it.setBounds(
@@ -239,13 +247,11 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     }
 
     private fun drawPlaceholder(canvas: Canvas, contentWidth: Int, contentHeight: Int) {
-        val iconDrawableWidth = iconDrawable?.intrinsicWidth ?: 0
-
         val surfaceRightX = (paddingLeft + contentWidth).toFloat()
 
         val placeholderTop = paddingTop + (contentHeight + placeholderHeight * 2) / 2
         val placeholderLeft =
-            paddingLeft + (surfaceCornerRadius / 2) + iconDrawableWidth + placeholderDimension / 2
+            paddingLeft + (surfaceCornerRadius / 2) + getIconWidth() + placeholderDimension / 2
 
         val maxWidth = surfaceRightX - surfaceCornerRadius - placeholderLeft
 

@@ -2,17 +2,53 @@
     <!-- Base application theme. -->
     <style name="Theme.Mangalive" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryVariant">@color/primaryLight</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondary</item>
-        <item name="colorSecondaryVariant">@color/secondaryLight</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <!-- Status bar color. -->
-<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>-->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/primaryDark</item>
+        <item name="colorPrimary">@color/yellow_700</item>
+        <item name="colorPrimaryVariant">@color/yellow_900</item>
+        <item name="colorOnPrimary">@color/gray_300</item>
 
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_300</item>
+        <item name="colorSecondaryVariant">@color/teal_100</item>
+        <item name="colorOnSecondary">@color/gray_300</item>
+
+        <!-- Surface color. -->
+        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="colorOnSurface">@color/gray_300</item>
+
+        <!-- Surface variant color. -->
+        <item name="colorSurfaceVariant">@color/surfaceVariantColor</item>
+        <item name="colorOnSurfaceVariant">@color/gray_300</item>
+
+        <!-- Background color. -->
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="colorOnBackground">@color/gray_300</item>
+
+        <!-- Status/Navigation bar color. -->
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:navigationBarColor">?attr/colorSurfaceVariant</item>
+
+
+        <!-- Shape appearance. -->
+        <item name="smallComponentCornerRadius">20dp</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Theme.Mangalive.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Theme.Mangalive.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Theme.Mangalive.LargeComponent</item>
+
+
+        <!-- Widgets themes. -->
         <item name="searchViewStyle">@style/Widget.Theme.Mangalive.SearchView</item>
+        <item name="iconButtonStyle">@style/Widget.Theme.Mangalive.IconButton</item>
+    </style>
+
+
+    <style name="Theme.Mangalive.PrimarySecondary" parent="">
+        <item name="colorPrimary">?attr/colorSecondary</item>
+        <item name="colorOnPrimary">?attr/colorOnSecondary</item>
+    </style>
+
+    <style name="Theme.Mangalive.PrimaryWhite" parent="">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
     </style>
 </resources>

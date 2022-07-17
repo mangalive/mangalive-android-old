@@ -1,18 +1,22 @@
 <resources>
-
     <style name="Widget.Theme.Mangalive.SearchView" parent="">
-        <item name="placeholderText">@string/search_placeholder_text</item>
-        <item name="placeholderColor">@color/gray_600</item>
+        <item name="placeholderColor">?attr/colorOnSurfaceVariant</item>
         <item name="placeholderDimension">18sp</item>
 
-        <item name="surfaceColor">@color/panel</item>
-        <item name="surfaceCornerRadius">50</item>
+        <item name="surfaceColor">?attr/colorSurfaceVariant</item>
+        <item name="surfaceCornerRadius">?attr/smallComponentCornerRadius</item>
 
-        <item name="icon">@drawable/search_icon</item>
-        <item name="iconColor">@color/primary</item>
+        <item name="iconColor">?attr/colorPrimary</item>
+        <item name="iconSize">32dp</item>
 
-        <item name="rippleColor">@color/gray_400</item>
+        <item name="rippleColor">?attr/colorOnSurface</item>
         <item name="rippleAlpha">30</item>
     </style>
 
+    <style name="Widget.Theme.Mangalive.IconButton" parent="">
+        <item name="iconColor">?attr/colorPrimary</item>
+        <item name="iconSize">32dp</item>
+        <item name="rippleColor">?attr/colorPrimary</item>
+        <item name="rippleAlpha">30</item>
+    </style>
 </resources>

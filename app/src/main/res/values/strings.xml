@@ -6,4 +6,6 @@
     <string name="search_placeholder_text">Search manga, senpai!</string>
     <string name="notifications">notifications</string>
     <string name="account">account</string>
+    <string name="filter_button_text">filter</string>
+    <string name="reset_button_text">reset</string>
 </resources>

@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#fffbc02d</color>
-    <color name="primaryLight">#fffff263</color>
-    <color name="primaryDark">#FFc49000</color>
-    <color name="primaryRipple">#59FBC02D</color>
+<!--    <color name="primary">#fffbc02d</color>-->
+<!--    <color name="primaryLight">#fffff263</color>-->
+<!--    <color name="primaryDark">#ffc49000</color>-->
 
-    <color name="secondary">#ff00796b</color>
-    <color name="secondaryLight">#ff48a999</color>
-    <color name="secondaryDark">#ff004c40</color>
+<!--    <color name="secondary">#ff00bfa5</color>-->
+<!--    <color name="secondaryLight">#ff5df2d6</color>-->
+<!--    <color name="secondaryDark">#ff008e76</color>-->
 
-    <color name="background">#131313</color>
-    <color name="panel">#1D1D1D</color>
-    <color name="surface">#181818</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray_400">#FFBDBDBD</color>
-    <color name="gray_500">#9e9e9e</color>
-    <color name="gray_600">#FF757575</color>
-    <color name="gray_700">#616161</color>
+<!--    <color name="background">#ff131313</color>-->
+
+<!--    <color name="surface">#181818</color>-->
+<!--    <color name="surfaceLight">#1D1D1D</color>-->
+
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+
+<!--    <color name="gray_400">#FFBDBDBD</color>-->
+<!--    <color name="gray_500">#9e9e9e</color>-->
+<!--    <color name="gray_600">#FF757575</color>-->
+<!--    <color name="gray_700">#616161</color>-->
+
+    <color name="yellow_700">#f9ba26</color>
+    <color name="yellow_400">#fce750</color>
+    <color name="yellow_900">#f27813</color>
+
+    <color name="teal_300">#3bcdac</color>
+    <color name="teal_100">#b2e9db</color>
+    <color name="teal_600">#00a47c</color>
+
+
+    <color name="backgroundColor">#131313</color>
+    <color name="surfaceColor">#181818</color>
+    <color name="surfaceVariantColor">#1D1D1D</color>
+
+    <color name="black">#000000</color>
+
+    <color name="gray_700">#636363</color>
+    <color name="gray_600">#777777</color>
+    <color name="gray_500">#a0a0a0</color>
+    <color name="gray_400">#bfbfbf</color>
+    <color name="gray_300">#e2e2e2</color>
+    <color name="gray_200">#efefef</color>
+
+    <color name="white">#ffffff</color>
 </resources>
