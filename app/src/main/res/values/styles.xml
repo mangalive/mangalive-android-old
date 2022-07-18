@@ -1,7 +1,7 @@
 <resources>
     <style name="Widget.Theme.Mangalive.SearchView" parent="">
         <item name="placeholderColor">?attr/colorOnSurfaceVariant</item>
-        <item name="placeholderDimension">18sp</item>
+        <item name="placeholderDimension">?attr/item</item>
 
         <item name="surfaceColor">?attr/colorSurfaceVariant</item>
         <item name="surfaceCornerRadius">?attr/smallComponentCornerRadius</item>
@@ -18,5 +18,7 @@
         <item name="iconSize">32dp</item>
         <item name="rippleColor">?attr/colorPrimary</item>
         <item name="rippleAlpha">30</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
     </style>
 </resources>

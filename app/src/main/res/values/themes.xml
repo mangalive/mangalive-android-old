@@ -17,7 +17,7 @@
 
         <!-- Surface variant color. -->
         <item name="colorSurfaceVariant">@color/surfaceVariantColor</item>
-        <item name="colorOnSurfaceVariant">@color/gray_300</item>
+        <item name="colorOnSurfaceVariant">@color/gray_500</item>
 
         <!-- Background color. -->
         <item name="android:colorBackground">@color/backgroundColor</item>

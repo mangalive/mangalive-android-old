@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.favourites.FavouritesFragment">
@@ -10,10 +9,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_surface"
         android:orientation="horizontal"
-        android:background="@drawable/background_favourites_menu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
@@ -25,11 +26,9 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:textColor="@color/white"
+            android:theme="@style/Theme.Mangalive.PrimaryWhite"
             app:icon="@drawable/ic_drop_arrow"
-            app:iconGravity="end"
-            app:iconTint="@color/white"
-            app:rippleColor="@color/gray_700" />
+            app:iconGravity="end"/>
 
         <Space
             android:layout_width="0dp"
@@ -42,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:paddingRight="10dp"
-            android:text="All: 109" />
+            android:text="All: 109"
+            android:textColor="@color/yellow_700"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

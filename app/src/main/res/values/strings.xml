@@ -5,8 +5,8 @@
     <string name="search_placeholder_text">Search manga, senpai!</string>
     <string name="notifications">notifications</string>
     <string name="account">account</string>
-
-    //for favourites_title
+    <string name="filter_button_text">filter</string>
+    <!-- for favourites_title -->
     <string name="favourites_title">Favourites</string>
     <string name="categoryMenu_currently_reading">Currently Reading</string>
     <string name="categoryMenu_plan_to_read">Plan to Read</string>
