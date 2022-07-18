@@ -1,17 +1,10 @@
 package com.acg.mangalive
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.PopupMenu
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.acg.mangalive.databinding.ActivityMainBinding
-import com.acg.mangalive.ui.catalog.CatalogFragment
-import com.acg.mangalive.ui.favourites.FavouritesFragment
-import com.acg.mangalive.ui.news.NewsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

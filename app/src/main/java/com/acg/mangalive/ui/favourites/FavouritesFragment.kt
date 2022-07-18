@@ -1,29 +1,27 @@
 package com.acg.mangalive.ui.favourites
 
-import android.content.Context
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.*
-import android.widget.Button
-import com.acg.mangalive.R
-import android.widget.TextView
-import android.widget.Toast
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
+import com.acg.mangalive.R
 import com.acg.mangalive.databinding.FragmentFavouritesBinding
 
 class FavouritesFragment : Fragment() {
 
     private var _binding: FragmentFavouritesBinding? = null
-    private var _categoryMenuState : Int = 0
+    private var _categoryMenuState: Int = 0
     private var categoryMenuState
-    get() = _categoryMenuState
-    set(value) {
-        _categoryMenuState = value
-        binding.categoryMenuButton.setText(value)
-    }
+        get() = _categoryMenuState
+        set(value) {
+            _categoryMenuState = value
+            binding.categoryMenuButton.setText(value)
+        }
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -41,21 +39,30 @@ class FavouritesFragment : Fragment() {
 
         categoryMenuState = R.string.categoryMenu_currently_reading
 
-        binding.categoryMenuButton.setOnClickListener {
-            showPopUp(it)
+        val popupMenu = createPopUp()
+
+        binding.categoryMenuButton.setOnClickListener() {
+            popupMenu?.show()
         }
 
         return root
     }
 
-    fun showPopUp(view: View) {
-        val popupMenu = context?.let { PopupMenu(it, view) }
+    fun createPopUp(): PopupMenu? {
+        val popupMenu = context?.let {
+            PopupMenu(
+                it,
+                binding.categoryMenuButton,
+                Gravity.START,
+                androidx.appcompat.R.attr.popupMenuStyle,
+                androidx.appcompat.R.attr.popupMenuStyle
+            )
+        }
         val inflater = popupMenu?.menuInflater
         inflater?.inflate(R.menu.category_menu, popupMenu.menu)
-        popupMenu?.show()
 
         popupMenu?.setOnMenuItemClickListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.categoriesMenu_currentlyReading -> {
                     categoryMenuState = R.string.categoryMenu_currently_reading
                 }
@@ -74,6 +81,8 @@ class FavouritesFragment : Fragment() {
             }
             true
         }
+
+        return popupMenu
     }
 
     override fun onDestroy() {

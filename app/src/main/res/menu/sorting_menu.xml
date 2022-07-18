@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu android:id="@+id/sortingMenu"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/sortingMenu_popularity"
+        android:title="@string/sortingMenu_popularity" />
+
+    <item
+        android:id="@+id/sortingMenu_likes"
+        android:title="@string/sortingMenu_likes" />
+
+    <item
+        android:id="@+id/sortingMenu_recentUpdates"
+        android:title="@string/sortingMenu_recent_updates" />
+
+    <item
+        android:id="@+id/sortingMenu_novelty"
+        android:title="@string/sortingMenu_novelty" />
+
+    <item
+        android:id="@+id/sortingMenu_views"
+        android:title="@string/sortingMenu_views" />
+
+    <item
+        android:id="@+id/sortingMenu_chapterCount"
+        android:title="@string/sortingMenu_chapter_count" />
+
+    <item
+        android:id="@+id/sortingMenu_random"
+        android:title="@string/sortingMenu_random" />
+</menu>

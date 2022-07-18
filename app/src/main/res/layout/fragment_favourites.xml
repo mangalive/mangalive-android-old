@@ -22,13 +22,12 @@
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="showPopup"
+            android:onClick="showPopupCategory"
             android:textAlignment="center"
-            android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:theme="@style/Theme.Mangalive.PrimaryWhite"
             app:icon="@drawable/ic_drop_arrow"
-            app:iconGravity="end"/>
+            app:iconGravity="end" />
 
         <Space
             android:layout_width="0dp"
@@ -42,7 +41,7 @@
             android:layout_weight="0"
             android:paddingRight="10dp"
             android:text="All: 109"
-            android:textColor="@color/yellow_700"/>
+            android:textColor="@color/yellow_700" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

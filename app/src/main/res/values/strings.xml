@@ -13,5 +13,12 @@
     <string name="categoryMenu_completed">Completed</string>
     <string name="categoryMenu_on_hold">On Hold</string>
     <string name="categoryMenu_dropped">Dropped</string>
-
+    <!-- for catalog_title (sorting) -->
+    <string name="sortingMenu_popularity">By popularity</string>
+    <string name="sortingMenu_likes">By likes</string>
+    <string name="sortingMenu_recent_updates">By recent updates</string>
+    <string name="sortingMenu_novelty">By novelty</string>
+    <string name="sortingMenu_views">By views</string>
+    <string name="sortingMenu_chapter_count">By chapter count</string>
+    <string name="sortingMenu_random">Random sorting</string>
 </resources>

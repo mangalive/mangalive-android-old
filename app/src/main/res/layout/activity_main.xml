@@ -24,7 +24,7 @@
             android:layout_marginEnd="@dimen/default_margin"
             android:layout_weight="1"
             android:text="@string/search_placeholder_text"
-            app:icon="@drawable/ic_search"/>
+            app:icon="@drawable/ic_search" />
 
         <com.acg.mangalive.IconButton
             android:layout_width="wrap_content"

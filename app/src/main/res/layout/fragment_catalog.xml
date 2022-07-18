@@ -30,10 +30,11 @@
             android:layout_weight="1" />
 
         <Button
+            android:id="@+id/sortingMenuButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="popular"
+            android:onClick="showPopupSorting"
             android:theme="@style/Theme.Mangalive.PrimaryWhite"
             app:icon="@drawable/ic_drop_arrow"
             app:iconGravity="end" />

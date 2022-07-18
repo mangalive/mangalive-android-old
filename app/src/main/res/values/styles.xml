@@ -1,6 +1,8 @@
 <resources>
+
     <style name="Widget.Theme.Mangalive.SearchView" parent="">
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">?attr/placeholderColor</item>
 
         <item name="surfaceColor">?attr/colorSurfaceVariant</item>
         <item name="surfaceCornerRadius">?attr/smallComponentCornerRadius</item>
@@ -19,5 +21,14 @@
         <item name="rippleAlpha">30</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="Widget.Theme.Mangalife.PopupMenu" parent="@style/Widget.MaterialComponents.PopupMenu">
+        <!-- To change the popup menu and app text color  -->
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:popupBackground">@drawable/bg_surface</item>
+        <item name="android:dropDownVerticalOffset">@dimen/panel_horizontal_padding</item>
+        <!-- To change the background of options menu-->
+        <item name="android:itemBackground">?attr/colorSurfaceVariant</item>
     </style>
 </resources>

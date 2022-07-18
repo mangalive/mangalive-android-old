@@ -2,21 +2,18 @@ package com.acg.mangalive
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.RectF
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
-import android.graphics.drawable.PaintDrawable
 import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RoundRectShape
-import android.graphics.fonts.FontFamily
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.getStringOrThrow
-import com.google.android.material.resources.TextAppearance
 
 class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     View(context, attrs, defStyle, R.style.Widget_Theme_Mangalive_SearchView) {
@@ -150,7 +147,8 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
 
         _rippleAlpha = a.getInteger(R.styleable.SearchView_rippleAlpha, _rippleAlpha)
 
-        _textAppearanceId = a.getResourceId(R.styleable.SearchView_android_textAppearance, _textAppearanceId)
+        _textAppearanceId =
+            a.getResourceId(R.styleable.SearchView_android_textAppearance, _textAppearanceId)
 
         _text = a.getString(R.styleable.SearchView_android_text)
 
@@ -215,8 +213,8 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         placeholderPaint?.let {
             it.textSize = textView.textSize
             it.typeface = textView.typeface
-            it.color = textView.currentTextColor
             it.letterSpacing = textView.letterSpacing
+            it.color = textView.currentTextColor
 
             placeholderWidth = it.measureText(text)
             placeholderHeight = it.fontMetrics.bottom
@@ -233,7 +231,6 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         placeholderPaint?.let {
             it.textSize = textSize
             it.typeface = fontFamily
-            it.color = textColor
             it.letterSpacing = letterSpacing
             placeholderWidth = it.measureText(text)
             placeholderHeight = it.fontMetrics.bottom
@@ -245,6 +242,10 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
             updatePlaceholderPaintByTextAppearance()
         } else {
             updatePlaceholderPaintByAttrs()
+        }
+
+        if (textColor != 0) {
+            placeholderPaint?.color = textColor
         }
     }
 

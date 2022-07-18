@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Mangalive" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
@@ -23,6 +23,9 @@
         <item name="android:colorBackground">@color/backgroundColor</item>
         <item name="colorOnBackground">@color/gray_300</item>
 
+        <!-- Placeholder color. -->
+        <item name="placeholderColor">@color/gray_500</item>
+
         <!-- Status/Navigation bar color. -->
         <item name="android:statusBarColor">?android:attr/colorBackground</item>
         <item name="android:navigationBarColor">?attr/colorSurfaceVariant</item>
@@ -31,16 +34,22 @@
         <!-- Shape appearance. -->
         <item name="smallComponentCornerRadius">20dp</item>
 
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Theme.Mangalive.SmallComponent</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Theme.Mangalive.MediumComponent</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Theme.Mangalive.LargeComponent</item>
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.Theme.Mangalive.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.Theme.Mangalive.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">
+            @style/ShapeAppearance.Theme.Mangalive.LargeComponent
+        </item>
 
 
         <!-- Widgets themes. -->
         <item name="searchViewStyle">@style/Widget.Theme.Mangalive.SearchView</item>
         <item name="iconButtonStyle">@style/Widget.Theme.Mangalive.IconButton</item>
+        <item name="popupMenuStyle">@style/Widget.Theme.Mangalife.PopupMenu</item>
     </style>
-
 
     <style name="Theme.Mangalive.PrimarySecondary" parent="">
         <item name="colorPrimary">?attr/colorSecondary</item>
