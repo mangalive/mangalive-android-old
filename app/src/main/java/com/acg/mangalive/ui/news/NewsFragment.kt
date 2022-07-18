@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.acg.mangalive.databinding.FragmentNewsBinding
 
-class NewsFragment : Fragment() {
+class NewsFragment : Fragment(){
 
     private var _binding: FragmentNewsBinding? = null
 
@@ -28,10 +29,6 @@ class NewsFragment : Fragment() {
         _binding = FragmentNewsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.news
-        newsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

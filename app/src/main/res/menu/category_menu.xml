@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    android:id="@+id/categoryMenu"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/categoriesMenu_currentlyReading"
+        android:title="@string/categoryMenu_currently_reading" />
+
+    <item
+        android:id="@+id/categoriesMenu_planToRead"
+        android:title="@string/categoryMenu_plan_to_read" />
+
+    <item
+        android:id="@+id/categoriesMenu_completed"
+        android:title="@string/categoryMenu_completed" />
+
+    <item
+        android:id="@+id/categoriesMenu_onHold"
+        android:title="@string/categoryMenu_on_hold" />
+
+    <item
+        android:id="@+id/categoriesMenu_dropped"
+        android:title="@string/categoryMenu_dropped" />
+</menu>

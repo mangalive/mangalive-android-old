@@ -4,39 +4,41 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.33" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/account_icon.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/background_favourites_menu.xml" value="0.298" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/catalog_icon.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/favourites_icon.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/ic_drop_arrow.xml" value="0.2175" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/ic_news_icon.xml" value="0.2185" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/ic_notifications_icon.xml" value="0.298" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/icon_ripple_primary.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/news_icon.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/notifications_icon.xml" value="0.2185" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/search_icon.xml" value="0.2185" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/user_avatar.xml" value="0.298" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/layout/fragment_catalog.xml" value="0.21145833333333333" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/layout/fragment_favourites.xml" value="0.5" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/layout/fragment_news.xml" value="0.33" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.34479166666666666" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/menu/category_menu.xml" value="0.34375" />
+        <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2185" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive/app/src/main/res/layout/activity_main.xml" value="0.3307291666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.192" />
         <entry key="app/src/main/res/drawable/account_icon.xml" value="0.217" />
-        <entry key="app/src/main/res/drawable/bg_subheader_surface.xml" value="0.2525" />
         <entry key="app/src/main/res/drawable/btr.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/catalog_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/favourites_icon.xml" value="0.3215" />
-        <entry key="app/src/main/res/drawable/filter_button_background.xml" value="0.188" />
-        <entry key="app/src/main/res/drawable/filter_panel_background.xml" value="0.188" />
-        <entry key="app/src/main/res/drawable/ic_account.xml" value="0.2525" />
-        <entry key="app/src/main/res/drawable/ic_catalog.xml" value="0.2525" />
-        <entry key="app/src/main/res/drawable/ic_drop_arrow.xml" value="0.2525" />
-        <entry key="app/src/main/res/drawable/ic_favourites.xml" value="0.2525" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.329" />
-        <entry key="app/src/main/res/drawable/ic_news.xml" value="0.2565" />
-        <entry key="app/src/main/res/drawable/ic_news_icon.xml" value="0.1695" />
-        <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.2525" />
-        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.2525" />
-        <entry key="app/src/main/res/drawable/ic_tune.xml" value="0.2565" />
         <entry key="app/src/main/res/drawable/icon_button.xml" value="0.205" />
-        <entry key="app/src/main/res/drawable/icon_ripple_primary.xml" value="0.188" />
         <entry key="app/src/main/res/drawable/news_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/notifications_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/search_icon.xml" value="0.217" />
-        <entry key="app/src/main/res/drawable/search_ripple.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/search_view_ripple.xml" value="0.188" />
-        <entry key="app/src/main/res/layout-v28/fragment_catalog.xml" value="0.15104166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.6055612770339855" />
+        <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2875905797101449" />
         <entry key="app/src/main/res/layout/menu.xml" value="0.18385416666666668" />
