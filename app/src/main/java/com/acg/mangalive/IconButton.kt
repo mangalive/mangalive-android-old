@@ -2,24 +2,14 @@ package com.acg.mangalive
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.VectorDrawable
 import android.util.AttributeSet
-import android.util.Log
-import android.view.WindowInsetsAnimation
-import android.widget.ImageButton
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.core.content.res.getDrawableOrThrow
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
-import androidx.core.graphics.scale
-import androidx.core.view.WindowInsetsAnimationCompat
-import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -118,7 +108,7 @@ class IconButton(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         }
     }
 
-    private fun getIconWidht(): Int {
+    private fun getIconWidth(): Int {
         return if (iconSize != 0) iconSize else (iconDrawable?.intrinsicWidth ?: 0)
     }
 
@@ -135,7 +125,7 @@ class IconButton(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
 
         rippleDrawable.radius = iconDrawable?.let {
             sqrt(
-                (getIconHeight() / 2.0).pow(2.0) + (getIconWidht() / 2.0)
+                (getIconHeight() / 2.0).pow(2.0) + (getIconWidth() / 2.0)
                     .pow(2.0)
             ).toInt()
         } ?: 0

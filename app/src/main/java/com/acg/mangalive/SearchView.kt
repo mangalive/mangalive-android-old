@@ -8,19 +8,18 @@ import android.graphics.drawable.PaintDrawable
 import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RoundRectShape
+import android.graphics.fonts.FontFamily
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.getStringOrThrow
+import com.google.android.material.resources.TextAppearance
 
-/**
- * TODO: document your custom view class.
- */
 class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     View(context, attrs, defStyle, R.style.Widget_Theme_Mangalive_SearchView) {
-
     private var placeholderWidth = 0f
     private var placeholderHeight = 0f
 
@@ -28,11 +27,65 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     private var surfacePaint: Paint? = null
     private var iconDrawable: Drawable? = null
 
-    private var _rippleMask: ShapeDrawable? = null
-
-    var surfaceCornerRadius = 0f
     var iconColor = 0
+
     var iconSize = 0
+
+    private var _textAppearanceId = 0
+    var textAppearanceId
+        get() = _textAppearanceId
+        set(value) {
+            _textAppearanceId = value
+            updatePlaceholderPaint()
+        }
+
+    private var _fontFamily: Typeface? = null
+    var fontFamily
+        get() = _fontFamily
+        set(value) {
+            _fontFamily = value
+            updatePlaceholderPaint()
+        }
+
+    private var _textSize = 0f
+    var textSize
+        get() = _textSize
+        set(value) {
+            _textSize = value
+            updatePlaceholderPaint()
+        }
+
+    private var _letterSpacing = 0f
+    var letterSpacing
+        get() = _letterSpacing
+        set(value) {
+            _letterSpacing = value
+            updatePlaceholderPaint()
+        }
+
+    private var _textAllCaps = false
+    var textAllCaps
+        get() = _textAllCaps
+        set(value) {
+            _textAllCaps = value
+            updatePlaceholderPaint()
+        }
+
+    private var _textColor = 0
+    var textColor
+        get() = _textColor
+        set(value) {
+            _textColor = value
+            updatePlaceholderPaint()
+        }
+
+    private var _text: String? = null
+    var text
+        get() = _text
+        set(value) {
+            _text = value
+            updatePlaceholderPaint()
+        }
 
     private var _rippleColor: Int = 0
     var rippleColor: Int
@@ -58,29 +111,7 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
             updateSurfacePaint()
         }
 
-    private var _placeholderColor = 0
-    var placeholderColor: Int
-        get() = _placeholderColor
-        set(value) {
-            _placeholderColor = value
-            updatePlaceholderPaint()
-        }
-
-    private var _placeholderText: String? = null
-    var placeholderText: String?
-        get() = _placeholderText
-        set(value) {
-            _placeholderText = value
-            updatePlaceholderPaint()
-        }
-
-    private var _placeholderDimension = 0f
-    var placeholderDimension: Float
-        get() = _placeholderDimension
-        set(value) {
-            _placeholderDimension = value
-            updatePlaceholderPaint()
-        }
+    var surfaceCornerRadius = 0f
 
     constructor(context: Context) : this(context, null)
 
@@ -112,26 +143,27 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
 
     private fun initAttributes(context: Context, attrs: AttributeSet?, defStyle: Int) {
         val a = context.obtainStyledAttributes(
-            attrs, R.styleable.SearchView, R.attr.searchViewStyle, R.attr.searchViewStyle
+            attrs, R.styleable.SearchView, defStyle, R.attr.searchViewStyle
         )
 
         _rippleColor = a.getColor(R.styleable.SearchView_rippleColor, _rippleColor)
 
         _rippleAlpha = a.getInteger(R.styleable.SearchView_rippleAlpha, _rippleAlpha)
 
-        _placeholderText = a.getString(
-            R.styleable.SearchView_placeholderText
-        )
+        _textAppearanceId = a.getResourceId(R.styleable.SearchView_android_textAppearance, _textAppearanceId)
 
-        _placeholderColor = a.getColor(
-            R.styleable.SearchView_placeholderColor,
-            _placeholderColor
-        )
+        _text = a.getString(R.styleable.SearchView_android_text)
 
-        _placeholderDimension = a.getDimension(
-            R.styleable.SearchView_placeholderDimension,
-            _placeholderDimension
-        )
+        _textColor = a.getColor(R.styleable.SearchView_android_textColor, _textColor)
+
+        _textSize = a.getDimension(R.styleable.SearchView_android_textSize, _textSize)
+
+        _textAllCaps = a.getBoolean(R.styleable.SearchView_android_textAllCaps, _textAllCaps)
+
+        _fontFamily = a.getFont(R.styleable.SearchView_android_fontFamily)
+
+        _letterSpacing =
+            a.getDimension(R.styleable.SearchView_android_letterSpacing, _letterSpacing)
 
         _surfaceColor = a.getColor(
             R.styleable.SearchView_surfaceColor,
@@ -153,19 +185,12 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     }
 
     private fun getRippleMask(): ShapeDrawable {
-        if (_rippleMask != null) {
-            return _rippleMask!!
-        }
-
         val outerRadii = FloatArray(8) {
             surfaceCornerRadius
         }
         val shape = RoundRectShape(outerRadii, null, null)
 
-        val mask = ShapeDrawable(shape)
-        _rippleMask = mask
-
-        return mask
+        return ShapeDrawable(shape)
     }
 
     private fun updateRippleEffect() {
@@ -177,12 +202,49 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         foreground = rippleDrawable
     }
 
-    private fun updatePlaceholderPaint() {
+    private fun updatePlaceholderPaintByTextAppearance() {
+        val textView = AppCompatTextView(context)
+        textView.setTextAppearance(textAppearanceId)
+
+        _text?.let {
+            if (textView.isAllCaps) {
+                _text = it.uppercase()
+            }
+        }
+
         placeholderPaint?.let {
-            it.textSize = placeholderDimension
-            it.color = placeholderColor
-            placeholderWidth = it.measureText(_placeholderText)
+            it.textSize = textView.textSize
+            it.typeface = textView.typeface
+            it.color = textView.currentTextColor
+            it.letterSpacing = textView.letterSpacing
+
+            placeholderWidth = it.measureText(text)
             placeholderHeight = it.fontMetrics.bottom
+        }
+    }
+
+    private fun updatePlaceholderPaintByAttrs() {
+        _text?.let {
+            if (textAllCaps) {
+                _text = it.uppercase()
+            }
+        }
+
+        placeholderPaint?.let {
+            it.textSize = textSize
+            it.typeface = fontFamily
+            it.color = textColor
+            it.letterSpacing = letterSpacing
+            placeholderWidth = it.measureText(text)
+            placeholderHeight = it.fontMetrics.bottom
+        }
+    }
+
+    private fun updatePlaceholderPaint() {
+        if (textAppearanceId != 0) {
+            updatePlaceholderPaintByTextAppearance()
+        } else {
+            updatePlaceholderPaintByAttrs()
         }
     }
 
@@ -251,21 +313,21 @@ class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
 
         val placeholderTop = paddingTop + (contentHeight + placeholderHeight * 2) / 2
         val placeholderLeft =
-            paddingLeft + (surfaceCornerRadius / 2) + getIconWidth() + placeholderDimension / 2
+            paddingLeft + (surfaceCornerRadius / 2) + getIconWidth() + textSize / 2
 
         val maxWidth = surfaceRightX - surfaceCornerRadius - placeholderLeft
 
         val measureNum = placeholderPaint?.breakText(
-            placeholderText,
+            text,
             true,
             maxWidth,
             null
         ) ?: 0
 
-        val placeholderTextSubstring = if (measureNum < (placeholderText?.length ?: 0)) {
-            placeholderText?.substring(0, measureNum - 1) + "..."
+        val placeholderTextSubstring = if (measureNum < (text?.length ?: 0)) {
+            text?.substring(0, measureNum - 1) + "..."
         } else {
-            placeholderText + ""
+            text + ""
         }
 
         placeholderPaint?.let {

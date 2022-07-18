@@ -13,12 +13,17 @@
     <attr name="iconButtonStyle" format="reference" />
 
     <declare-styleable name="SearchView">
-        <attr name="placeholderText" format="string" />
-        <attr name="placeholderDimension" format="dimension" />
-        <attr name="placeholderColor" format="color" />
+        <attr name="android:text" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:textAllCaps" />
+        <attr name="android:fontFamily" />
+        <attr name="android:letterSpacing" />
+        <attr name="android:textAppearance" />
 
         <attr name="surfaceColor" format="color" />
         <attr name="surfaceCornerRadius" format="dimension" />
+
         <attr name="icon" />
         <attr name="iconColor" />
         <attr name="iconSize" />

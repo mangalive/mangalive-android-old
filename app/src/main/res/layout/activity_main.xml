@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_marginEnd="@dimen/default_margin"
             android:layout_weight="1"
-            app:placeholderText="@string/search_placeholder_text"
+            android:text="@string/search_placeholder_text"
             app:icon="@drawable/ic_search"/>
 
         <com.acg.mangalive.IconButton

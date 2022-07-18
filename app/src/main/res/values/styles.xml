@@ -1,7 +1,6 @@
 <resources>
     <style name="Widget.Theme.Mangalive.SearchView" parent="">
-        <item name="placeholderColor">?attr/colorOnSurfaceVariant</item>
-        <item name="placeholderDimension">?attr/item</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
 
         <item name="surfaceColor">?attr/colorSurfaceVariant</item>
         <item name="surfaceCornerRadius">?attr/smallComponentCornerRadius</item>
