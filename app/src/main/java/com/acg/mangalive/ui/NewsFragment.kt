@@ -1,4 +1,4 @@
-package com.acg.mangalive.ui.news
+package com.acg.mangalive.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,8 +21,6 @@ class NewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val newsViewModel =
-            ViewModelProvider(this).get(NewsViewModel::class.java)
 
         _binding = FragmentNewsBinding.inflate(inflater, container, false)
         val root: View = binding.root

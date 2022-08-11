@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu android:id="@+id/sortingMenu"
+<menu android:id="@+id/catalogSortingMenu"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/sortingMenu_popularity"
+        android:id="@+id/catalogSortingMenu_popularity"
         android:title="@string/sortingMenu_popularity" />
 
     <item
-        android:id="@+id/sortingMenu_likes"
+        android:id="@+id/catalogSortingMenu_likes"
         android:title="@string/sortingMenu_likes" />
 
     <item
-        android:id="@+id/sortingMenu_recentUpdates"
+        android:id="@+id/catalogSortingMenu_recentUpdates"
         android:title="@string/sortingMenu_recent_updates" />
 
     <item
-        android:id="@+id/sortingMenu_novelty"
+        android:id="@+id/catalogSortingMenu_novelty"
         android:title="@string/sortingMenu_novelty" />
 
     <item
-        android:id="@+id/sortingMenu_views"
+        android:id="@+id/catalogSortingMenu_views"
         android:title="@string/sortingMenu_views" />
 
     <item

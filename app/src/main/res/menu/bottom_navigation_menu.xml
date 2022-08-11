@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/navigation_catalog"
+        android:id="@+id/bottomNavigation_catalog"
         android:icon="@drawable/ic_catalog"
         android:title="@string/catalog_title" />
 
     <item
-        android:id="@+id/navigation_favourites"
+        android:id="@+id/bottomNavigation_favourites"
         android:icon="@drawable/ic_favourites"
         android:title="@string/favourites_title" />
 
     <item
-        android:id="@+id/navigation_news"
+        android:id="@+id/bottomNavigation_news"
         android:icon="@drawable/ic_news"
         android:title="@string/news_title" />
-
 </menu>
