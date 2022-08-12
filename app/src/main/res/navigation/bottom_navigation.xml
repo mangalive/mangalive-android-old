@@ -22,4 +22,10 @@
         android:name="com.acg.mangalive.ui.news.NewsFragment"
         android:label="@string/news_title"
         tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/bottomNavigation_notifications"
+        android:name="com.acg.mangalive.ui.notifications.NotificationsFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

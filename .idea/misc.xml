@@ -43,13 +43,15 @@
         <entry key="app/src/main/res/drawable/news_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/notifications_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/search_icon.xml" value="0.217" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/catalog_list_item.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2875905797101449" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/menu.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/layout/notifications_fragment.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/sample_icon_button.xml" value="0.2572463768115942" />
         <entry key="app/src/main/res/layout/sample_icon_button_view.xml" value="0.27309782608695654" />
         <entry key="app/src/main/res/layout/sample_menu.xml" value="0.25" />

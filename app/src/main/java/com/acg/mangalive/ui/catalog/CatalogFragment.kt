@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 
 class CatalogFragment : Fragment() {
     private var _binding: FragmentCatalogBinding? = null
@@ -33,6 +34,10 @@ class CatalogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val sortingMenu = createSortingMenu()
+
+        binding.notificationsButton.setOnClickListener {
+            findNavController().navigate(R.id.bottomNavigation_notifications)
+        }
 
         sortingMenu.setOnMenuItemClickListener {
             viewModel.setSortingMenuState(convertSortingMenuItemIdToState(it.itemId))
