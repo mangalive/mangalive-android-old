@@ -1,4 +1,4 @@
-package com.acg.mangalive
+package com.acg.mangalive.views
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -14,6 +14,7 @@ import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
+import com.acg.mangalive.R
 
 class SearchView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     View(context, attrs, defStyle, R.style.Widget_Theme_Mangalive_SearchView) {

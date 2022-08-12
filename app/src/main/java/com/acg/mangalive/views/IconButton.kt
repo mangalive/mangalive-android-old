@@ -1,4 +1,4 @@
-package com.acg.mangalive
+package com.acg.mangalive.views
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatImageButton
 import androidx.core.content.res.getDrawableOrThrow
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
+import com.acg.mangalive.R
 import kotlin.math.pow
 import kotlin.math.sqrt
 

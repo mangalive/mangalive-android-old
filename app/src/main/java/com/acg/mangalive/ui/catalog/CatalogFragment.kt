@@ -1,4 +1,4 @@
-package com.acg.mangalive.ui
+package com.acg.mangalive.ui.catalog
 
 import android.os.Bundle
 import androidx.fragment.app.viewModels

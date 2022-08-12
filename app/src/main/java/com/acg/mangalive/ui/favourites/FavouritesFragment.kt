@@ -1,4 +1,4 @@
-package com.acg.mangalive.ui
+package com.acg.mangalive.ui.favourites
 
 import android.os.Bundle
 import android.view.Gravity

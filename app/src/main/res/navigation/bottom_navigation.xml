@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/bottomNavigation_catalog"
-        android:name="com.acg.mangalive.ui.CatalogFragment"
+        android:name="com.acg.mangalive.ui.catalog.CatalogFragment"
         android:label="@string/catalog_title"
         tools:layout="@layout/fragment_catalog" />
 
     <fragment
         android:id="@+id/bottomNavigation_favourites"
-        android:name="com.acg.mangalive.ui.FavouritesFragment"
+        android:name="com.acg.mangalive.ui.favourites.FavouritesFragment"
         android:label="@string/favourites_title"
         tools:layout="@layout/fragment_favourites" />
 
     <fragment
         android:id="@+id/bottomNavigation_news"
-        android:name="com.acg.mangalive.ui.NewsFragment"
+        android:name="com.acg.mangalive.ui.news.NewsFragment"
         android:label="@string/news_title"
         tools:layout="@layout/fragment_news" />
 </navigation>

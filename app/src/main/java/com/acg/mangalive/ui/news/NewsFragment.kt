@@ -1,4 +1,4 @@
-package com.acg.mangalive.ui
+package com.acg.mangalive.ui.news
 
 import android.os.Bundle
 import android.view.LayoutInflater

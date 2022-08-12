@@ -21,7 +21,6 @@ data class CatalogUiState(
 )
 
 class CatalogViewModel : ViewModel() {
-
     private var _uiState = MutableLiveData(CatalogUiState())
     val uiState: LiveData<CatalogUiState> = _uiState
 

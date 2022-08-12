@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.acg.mangalive.SearchView
+        <com.acg.mangalive.views.SearchView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="@dimen/default_margin"
@@ -26,14 +26,14 @@
             android:text="@string/search_placeholder_text"
             app:icon="@drawable/ic_search" />
 
-        <com.acg.mangalive.IconButton
+        <com.acg.mangalive.views.IconButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/notifications"
             android:layout_marginEnd="@dimen/default_margin"
             app:icon="@drawable/ic_notifications" />
 
-        <com.acg.mangalive.IconButton
+        <com.acg.mangalive.views.IconButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:contentDescription="@string/account"
