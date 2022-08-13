@@ -37,8 +37,13 @@
         <entry key="app/src/main/res/drawable/btr.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/catalog_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/favourites_icon.xml" value="0.3215" />
+        <entry key="app/src/main/res/drawable/ic_account.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_drop_arrow.xml" value="0.29" />
+        <entry key="app/src/main/res/drawable/ic_favourites.xml" value="0.323" />
+        <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.329" />
+        <entry key="app/src/main/res/drawable/ic_news.xml" value="0.323" />
+        <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/icon_button.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/news_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/notifications_icon.xml" value="0.217" />
@@ -59,8 +64,10 @@
         <entry key="app/src/main/res/layout/sample_search_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/view_icon_button.xml" value="0.3423913043478261" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3359375" />
         <entry key="app/src/main/res/menu/catalog_sorting_menu.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/menu/category_menu.xml" value="0.3359375" />
+        <entry key="app/src/main/res/menu/favourites_categories_menu.xml" value="0.3359375" />
       </map>
     </option>
   </component>

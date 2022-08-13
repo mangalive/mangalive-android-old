@@ -57,11 +57,11 @@ class FavouritesFragment : Fragment() {
     }
 
     private fun convertCategoriesMenuItemIdToState(itemId: Int): CategoriesMenuState = when (itemId) {
-        R.id.favouritesCategoriesMenu_completed -> CategoriesMenuState.Completed
-        R.id.favouritesCategoriesMenu_dropped -> CategoriesMenuState.Dropped
-        R.id.favouritesCategoriesMenu_currentlyReading -> CategoriesMenuState.CurrentlyReading
-        R.id.favouritesCategoriesMenu_onHold -> CategoriesMenuState.OnHold
-        R.id.favouritesCategoriesMenu_planToRead -> CategoriesMenuState.PlanToRead
+        R.id.FavouritesCategoriesMenu_Completed -> CategoriesMenuState.Completed
+        R.id.FavouritesCategoriesMenu_Dropped -> CategoriesMenuState.Dropped
+        R.id.FavouritesCategoriesMenu_CurrentlyReading -> CategoriesMenuState.CurrentlyReading
+        R.id.FavouritesCategoriesMenu_OnHold -> CategoriesMenuState.OnHold
+        R.id.FavouritesCategoriesMenu_PlanToRead -> CategoriesMenuState.PlanToRead
         else -> DEFAULT_CATEGORY_MENU_STATE
     }
 

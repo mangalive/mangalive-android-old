@@ -36,7 +36,7 @@ class CatalogFragment : Fragment() {
         val sortingMenu = createSortingMenu()
 
         binding.notificationsButton.setOnClickListener {
-            findNavController().navigate(R.id.bottomNavigation_notifications)
+            findNavController().navigate(R.id.NavGraph_Notifications)
         }
 
         sortingMenu.setOnMenuItemClickListener {
@@ -62,13 +62,13 @@ class CatalogFragment : Fragment() {
     }
 
     private fun convertSortingMenuItemIdToState(itemId: Int): SortingMenuState = when (itemId) {
-        R.id.catalogSortingMenu_popularity -> SortingMenuState.Popularity
-        R.id.catalogSortingMenu_views -> SortingMenuState.Views
-        R.id.catalogSortingMenu_novelty -> SortingMenuState.Novelty
-        R.id.catalogSortingMenu_likes -> SortingMenuState.Likes
-        R.id.catalogSortingMenu_recentUpdates -> SortingMenuState.RecentUpdate
-        R.id.sortingMenu_chapterCount -> SortingMenuState.ChapterCount
-        R.id.sortingMenu_random -> SortingMenuState.Random
+        R.id.CatalogSortingMenu_Popularity -> SortingMenuState.Popularity
+        R.id.CatalogSortingMenu_Views -> SortingMenuState.Views
+        R.id.CatalogSortingMenu_Novelty -> SortingMenuState.Novelty
+        R.id.CatalogSortingMenu_Likes -> SortingMenuState.Likes
+        R.id.CatalogSortingMenu_RecentUpdates -> SortingMenuState.RecentUpdate
+        R.id.SortingMenu_ChapterCount -> SortingMenuState.ChapterCount
+        R.id.SortingMenu_Random -> SortingMenuState.Random
         else -> DEFAULT_SORTING_MENU_STATE
     }
 

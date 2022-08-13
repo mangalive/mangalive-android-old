@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_surface"
+        android:background="@drawable/surface_bg"
         android:orientation="horizontal"
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
@@ -18,14 +18,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/categoriesMenuButton"
+            android:id="@+id/FavouritesFragment_CategoriesMenuBtn"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             android:theme="@style/Theme.Mangalive.PrimaryWhite"
-            app:icon="@drawable/ic_drop_arrow"
+            app:icon="@drawable/ic_panel_drop_arrow"
             app:iconGravity="end" />
 
         <Space
@@ -34,7 +34,6 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"

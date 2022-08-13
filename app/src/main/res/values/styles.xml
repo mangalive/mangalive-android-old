@@ -26,7 +26,7 @@
     <style name="Widget.Theme.Mangalife.PopupMenu" parent="@style/Widget.MaterialComponents.PopupMenu">
         <!-- To change the popup menu and app text color  -->
         <item name="android:textColor">@color/gray_500</item>
-        <item name="android:popupBackground">@drawable/bg_surface</item>
+        <item name="android:popupBackground">@drawable/surface_bg</item>
         <item name="android:dropDownVerticalOffset">@dimen/panel_horizontal_padding</item>
         <!-- To change the background of options menu-->
         <item name="android:itemBackground">?attr/colorSurfaceVariant</item>

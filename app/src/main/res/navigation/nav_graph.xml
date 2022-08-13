@@ -2,29 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottomNavigation"
-    app:startDestination="@+id/bottomNavigation_catalog">
+    android:id="@+id/NavGraph"
+    app:startDestination="@+id/NavGraph_Catalog">
 
     <fragment
-        android:id="@+id/bottomNavigation_catalog"
+        android:id="@+id/NavGraph_Catalog"
         android:name="com.acg.mangalive.ui.catalog.CatalogFragment"
         android:label="@string/catalog_title"
         tools:layout="@layout/fragment_catalog" />
 
     <fragment
-        android:id="@+id/bottomNavigation_favourites"
+        android:id="@+id/NavGraph_Favourites"
         android:name="com.acg.mangalive.ui.favourites.FavouritesFragment"
         android:label="@string/favourites_title"
         tools:layout="@layout/fragment_favourites" />
 
     <fragment
-        android:id="@+id/bottomNavigation_news"
+        android:id="@+id/NavGraph_News"
         android:name="com.acg.mangalive.ui.news.NewsFragment"
         android:label="@string/news_title"
         tools:layout="@layout/fragment_news" />
 
     <fragment
-        android:id="@+id/bottomNavigation_notifications"
+        android:id="@+id/NavGraph_Notifications"
         android:name="com.acg.mangalive.ui.notifications.NotificationsFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notifications" />
