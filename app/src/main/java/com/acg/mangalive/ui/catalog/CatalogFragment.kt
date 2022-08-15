@@ -35,7 +35,7 @@ class CatalogFragment : Fragment() {
 
         val sortingMenu = createSortingMenu()
 
-        binding.notificationsButton.setOnClickListener {
+        binding.NotificationsBtn.setOnClickListener {
             findNavController().navigate(R.id.NavGraph_Notifications)
         }
 
@@ -45,16 +45,16 @@ class CatalogFragment : Fragment() {
         }
 
         viewModel.uiState.observe(viewLifecycleOwner) {
-            binding.sortingMenuButton.setText(convertSortingMenuStateToValue(it.sortingMenuState))
+            binding.SortingMenuBtn.setText(convertSortingMenuStateToValue(it.sortingMenuState))
         }
 
-        binding.sortingMenuButton.setOnClickListener {
+        binding.SortingMenuBtn.setOnClickListener {
             sortingMenu.show()
         }
     }
 
     private fun createSortingMenu() = PopupMenu(
-        requireContext(), binding.sortingMenuButton, Gravity.END,
+        requireContext(), binding.SortingMenuBtn, Gravity.END,
         androidx.appcompat.R.attr.popupMenuStyle,
         androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
     ).also {

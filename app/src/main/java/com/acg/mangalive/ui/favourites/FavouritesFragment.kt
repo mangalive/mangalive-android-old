@@ -40,16 +40,16 @@ class FavouritesFragment : Fragment() {
         }
 
         viewModel.uiState.observe(viewLifecycleOwner) {
-            binding.categoriesMenuButton.setText(convertCategoriesMenuStateToValue(it.categoriesMenuState))
+            binding.CategoriesMenuBtn.setText(convertCategoriesMenuStateToValue(it.categoriesMenuState))
         }
 
-        binding.categoriesMenuButton.setOnClickListener {
+        binding.CategoriesMenuBtn.setOnClickListener {
             categoriesMenu.show()
         }
     }
 
     private fun createCategoriesMenu() = PopupMenu(
-        requireContext(), binding.categoriesMenuButton, Gravity.END,
+        requireContext(), binding.CategoriesMenuBtn, Gravity.END,
         androidx.appcompat.R.attr.popupMenuStyle,
         androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
     ).also {

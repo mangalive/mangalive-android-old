@@ -1,4 +1,8 @@
 package com.acg.mangalive.data.network
 
-class MangaService {
+import retrofit2.http.GET
+
+interface MangaService {
+    @GET("v2/everything")
+    fun mangaList()
 }
