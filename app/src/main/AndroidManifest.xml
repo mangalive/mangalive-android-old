@@ -4,7 +4,7 @@
     package="com.acg.mangalive">
 
     <application
-        android:name=".MangaliveApplication"
+        android:name=".MangaliveApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
