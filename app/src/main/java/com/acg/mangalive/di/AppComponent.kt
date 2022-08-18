@@ -10,6 +10,3 @@ import dagger.Module
 interface AppComponent {
     fun inject(mainActivity: MainActivity)
 }
-
-@Module
-class AppModule

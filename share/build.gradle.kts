@@ -40,8 +40,6 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
 
-    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
-
     implementation("com.google.dagger:dagger:2.40.5")
     implementation("com.google.dagger:dagger-android:2.40.5")
     implementation("com.google.dagger:dagger-android-support:2.40.5")

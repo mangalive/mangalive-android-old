@@ -5,12 +5,9 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class MangaDto(
+data class MangaCardDto (
     @SerialName("id") val id: Long = 0,
     @SerialName("title") val title: String = "",
     @SerialName("description") val description: String = "",
-    @SerialName("likes") val likes: Long = 0,
-    @SerialName("views") val views: Long = 0,
-    @SerialName("numberOfChapters") val numberOfChapters: Long = 0,
-    @SerialName("realiseDate") val realiseDate: LocalDateTime = LocalDateTime(0, 0, 0, 0, 0)
+    @SerialName("rating") val rating: Float = 0f
 )

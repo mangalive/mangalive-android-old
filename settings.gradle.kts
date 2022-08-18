@@ -17,3 +17,4 @@ rootProject.name = "mangalive"
 include("app")
 include(":data")
 include(":domain")
+include(":share")

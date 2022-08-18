@@ -62,6 +62,9 @@ dependencies {
     implementation("com.google.dagger:dagger:2.40.5")
     implementation("com.google.dagger:dagger-android:2.40.5")
     implementation("com.google.dagger:dagger-android-support:2.40.5")
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":share")))
 
     kapt("com.google.dagger:dagger-compiler:2.40.5")
     kapt("com.google.dagger:dagger-android-processor:2.40.5")
