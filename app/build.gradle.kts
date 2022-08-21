@@ -42,6 +42,10 @@ android {
 }
 
 dependencies {
+    implementation(project(mapOf("path" to ":data")))
+    implementation(project(mapOf("path" to ":domain")))
+    implementation(project(mapOf("path" to ":share")))
+
     //noinspection GradleDependency
     implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.appcompat:appcompat:1.5.0")
@@ -52,19 +56,17 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.5.1")
     implementation("com.google.android.material:material:1.6.1")
 
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.0")
+
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 
     implementation("androidx.paging:paging-runtime-ktx:3.1.1")
 
-
     implementation("com.google.dagger:dagger:2.40.5")
     implementation("com.google.dagger:dagger-android:2.40.5")
     implementation("com.google.dagger:dagger-android-support:2.40.5")
-    implementation(project(mapOf("path" to ":data")))
-    implementation(project(mapOf("path" to ":domain")))
-    implementation(project(mapOf("path" to ":share")))
 
     kapt("com.google.dagger:dagger-compiler:2.40.5")
     kapt("com.google.dagger:dagger-android-processor:2.40.5")

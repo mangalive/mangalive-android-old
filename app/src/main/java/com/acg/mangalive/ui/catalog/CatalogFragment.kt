@@ -1,25 +1,41 @@
 package com.acg.mangalive.ui.catalog
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import com.acg.mangalive.R
 import com.acg.mangalive.databinding.FragmentCatalogBinding
 import com.acg.mangalive.viewModel.CatalogViewModel
-import com.acg.mangalive.viewModel.DEFAULT_SORTING_MENU_STATE
-import com.acg.mangalive.viewModel.SortingMenuState
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.acg.mangalive.domain.model.SortingCriterion
+import com.acg.mangalive.viewModel.DEFAULT_SORTING_CRITERION
+import dagger.android.AndroidInjection
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 class CatalogFragment : Fragment() {
     private var _binding: FragmentCatalogBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: CatalogViewModel by viewModels()
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    val viewModel: CatalogViewModel by viewModels {
+        viewModelFactory
+    }
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+
+        super.onAttach(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,12 +56,12 @@ class CatalogFragment : Fragment() {
         }
 
         sortingMenu.setOnMenuItemClickListener {
-            viewModel.setSortingMenuState(convertSortingMenuItemIdToState(it.itemId))
+            viewModel.setSortingCriterion(convertMenuItemIdToSortingCriterion(it.itemId))
             true
         }
 
-        viewModel.uiState.observe(viewLifecycleOwner) {
-            binding.SortingMenuBtn.setText(convertSortingMenuStateToValue(it.sortingMenuState))
+        viewModel.sortingParameters.observe(viewLifecycleOwner) {
+            binding.SortingMenuBtn.setText(convertSortingCriterionToValue(it.criterion))
         }
 
         binding.SortingMenuBtn.setOnClickListener {
@@ -61,25 +77,23 @@ class CatalogFragment : Fragment() {
         it.menuInflater.inflate(R.menu.catalog_sorting_menu, it.menu)
     }
 
-    private fun convertSortingMenuItemIdToState(itemId: Int): SortingMenuState = when (itemId) {
-        R.id.CatalogSortingMenu_Popularity -> SortingMenuState.Popularity
-        R.id.CatalogSortingMenu_Views -> SortingMenuState.Views
-        R.id.CatalogSortingMenu_Novelty -> SortingMenuState.Novelty
-        R.id.CatalogSortingMenu_Likes -> SortingMenuState.Likes
-        R.id.CatalogSortingMenu_RecentUpdates -> SortingMenuState.RecentUpdate
-        R.id.SortingMenu_ChapterCount -> SortingMenuState.ChapterCount
-        R.id.SortingMenu_Random -> SortingMenuState.Random
-        else -> DEFAULT_SORTING_MENU_STATE
+    private fun convertMenuItemIdToSortingCriterion(itemId: Int) = when (itemId) {
+        R.id.CatalogSortingMenu_Novelty -> SortingCriterion.novelty
+        R.id.CatalogSortingMenu_Views -> SortingCriterion.views
+        R.id.CatalogSortingMenu_Popularity -> SortingCriterion.popularity
+        R.id.CatalogSortingMenu_RecentUpdates -> SortingCriterion.recentUpdates
+        R.id.CatalogSortingMenu_ChapterCount -> SortingCriterion.chapterCount
+        else -> DEFAULT_SORTING_CRITERION
+//        R.id.CatalogSortingMenu_Likes
+//        R.id.SortingMenu_Random
     }
 
-    private fun convertSortingMenuStateToValue(state: SortingMenuState): Int = when (state) {
-        SortingMenuState.Popularity -> R.string.sortingMenu_popularity
-        SortingMenuState.Views -> R.string.sortingMenu_views
-        SortingMenuState.Novelty -> R.string.sortingMenu_novelty
-        SortingMenuState.Likes -> R.string.sortingMenu_likes
-        SortingMenuState.RecentUpdate -> R.string.sortingMenu_recent_updates
-        SortingMenuState.ChapterCount -> R.string.sortingMenu_chapter_count
-        SortingMenuState.Random -> R.string.sortingMenu_random
+    private fun convertSortingCriterionToValue(criterion: SortingCriterion) = when (criterion) {
+        SortingCriterion.popularity -> R.string.sortingMenu_popularity
+        SortingCriterion.views -> R.string.sortingMenu_views
+        SortingCriterion.novelty -> R.string.sortingMenu_novelty
+        SortingCriterion.recentUpdates -> R.string.sortingMenu_recent_updates
+        SortingCriterion.chapterCount -> R.string.sortingMenu_chapter_count
     }
 
     override fun onDestroy() {

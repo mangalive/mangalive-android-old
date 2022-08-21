@@ -14,8 +14,8 @@ import javax.inject.Singleton
 
 @Module
 class NetworkModule {
-    @Provides
     @Singleton
+    @Provides
     fun provideJson(): Json {
         return Json(Json.Default) {
             ignoreUnknownKeys = true
@@ -28,10 +28,9 @@ class NetworkModule {
 //        return buildMangaService(json)
         return FakeMangaService()
     }
-}
 
-@OptIn(ExperimentalSerializationApi::class)
-fun buildMangaService(json: Json): MangaService {
+    @OptIn(ExperimentalSerializationApi::class)
+    fun buildMangaService(json: Json): MangaService {
         val httpClient = OkHttpClient.Builder()
             .build()
 
@@ -42,4 +41,5 @@ fun buildMangaService(json: Json): MangaService {
             .build()
 
         return retrofit.create(MangaService::class.java)
+    }
 }

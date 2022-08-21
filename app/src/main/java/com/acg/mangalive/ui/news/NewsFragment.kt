@@ -1,5 +1,6 @@
 package com.acg.mangalive.ui.news
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.acg.mangalive.databinding.FragmentNewsBinding
+import dagger.android.support.AndroidSupportInjection
 
 class NewsFragment : Fragment() {
 
@@ -15,6 +17,12 @@ class NewsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+
+        super.onAttach(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

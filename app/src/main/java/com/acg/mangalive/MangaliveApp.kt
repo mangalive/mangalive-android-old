@@ -1,24 +1,23 @@
 package com.acg.mangalive
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import com.acg.mangalive.di.AppComponent
 import com.acg.mangalive.di.DaggerAppComponent
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import javax.inject.Inject
 
-class MangaliveApp : Application() {
-    private var _appComponent: AppComponent? = null
-
-    val appComponent: AppComponent get() = checkNotNull(_appComponent)
+class MangaliveApp : Application(), HasAndroidInjector {
+    @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
 
-        _appComponent = DaggerAppComponent.create()
+        DaggerAppComponent.builder().application(this).build().inject(this)
     }
-}
 
-val Context.appComponent: AppComponent
-    get() = when (this) {
-        is MangaliveApp -> appComponent
-        else -> applicationContext.appComponent
-    }
+    override fun androidInjector() = dispatchingAndroidInjector
+}

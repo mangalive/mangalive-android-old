@@ -31,13 +31,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = freeCompilerArgs + "-opt-in=kotlin.RequiresOptIn"
     }
 }
 
 dependencies {
     implementation(project(":domain"))
     implementation(project(":share"))
-
 
     implementation("androidx.core:core-ktx:1.8.0")
     implementation("androidx.appcompat:appcompat:1.5.0")
@@ -54,11 +54,7 @@ dependencies {
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
 
     implementation("com.google.dagger:dagger:2.40.5")
-    implementation("com.google.dagger:dagger-android:2.40.5")
-    implementation("com.google.dagger:dagger-android-support:2.40.5")
-
     kapt("com.google.dagger:dagger-compiler:2.40.5")
-    kapt("com.google.dagger:dagger-android-processor:2.40.5")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")

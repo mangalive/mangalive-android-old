@@ -1,18 +1,13 @@
 package com.acg.mangalive.domain.model
 
-enum class SortingDirection {
-    byAscending,
-    byDescending,
-}
-
 enum class SortingCriterion {
     popularity,
     views,
     chapterCount,
     novelty,
-    recentUpdate,
+    recentUpdates,
 //    likes,
 //    random,
 }
 
-data class SortingParameters(val direction: SortingDirection, val criterion: SortingCriterion)
+data class SortingParameters(val criterion: SortingCriterion)

@@ -4,7 +4,6 @@ import androidx.annotation.IntRange
 import com.acg.mangalive.data.network.model.MangaPageResponseDto
 import com.acg.mangalive.domain.model.MangaCard
 import com.acg.mangalive.domain.model.SortingCriterion
-import com.acg.mangalive.domain.model.SortingDirection
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -18,7 +17,6 @@ interface MangaService {
             from = 1,
             to = MAX_PAGE_SIZE
         ) pageSize: Long = DEFAULT_PAGE_SIZE,
-        @Query("sortingDirection") sortingDirection: SortingDirection = SortingDirection.byAscending,
         @Query("sortingCriterion") sortingCriterion: SortingCriterion = SortingCriterion.popularity,
     ): Response<MangaPageResponseDto>
 
@@ -33,7 +31,6 @@ class FakeMangaService : MangaService {
     override suspend fun getPage(
         pageNumber: Long,
         pageSize: Long,
-        sortingDirection: SortingDirection,
         sortingCriterion: SortingCriterion
     ): Response<MangaPageResponseDto> {
         return Response.success(

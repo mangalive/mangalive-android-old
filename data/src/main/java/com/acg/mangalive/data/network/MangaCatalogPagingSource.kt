@@ -39,7 +39,6 @@ class MangaCatalogPagingSource @AssistedInject constructor(
             mangaService.getPage(
                 pageNumber,
                 pageSize,
-                sortingParameters.direction,
                 sortingParameters.criterion
             )
         }

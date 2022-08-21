@@ -3,6 +3,7 @@ package com.acg.mangalive.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 
 enum class NotificationsMenuState{
     ForToday,
@@ -18,7 +19,7 @@ data class NotificationsUiState(
     val notificationsMenuState: NotificationsMenuState = DEFAULT_NOTIFICATIONS_MENU_STATE
 )
 
-class NotificationsViewModel : ViewModel() {
+class NotificationsViewModel @Inject constructor() : ViewModel() {
 
     private var _uiState = MutableLiveData(NotificationsUiState())
     val uiState: LiveData<NotificationsUiState> = _uiState

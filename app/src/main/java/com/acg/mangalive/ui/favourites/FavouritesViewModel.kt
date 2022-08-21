@@ -3,6 +3,7 @@ package com.acg.mangalive.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 
 enum class CategoriesMenuState {
     CurrentlyReading,
@@ -18,7 +19,7 @@ data class FavouritesUiState(
     val categoriesMenuState: CategoriesMenuState = DEFAULT_CATEGORY_MENU_STATE
 )
 
-class FavouritesViewModel : ViewModel() {
+class FavouritesViewModel @Inject constructor() : ViewModel() {
 
     private var _uiState = MutableLiveData(FavouritesUiState())
     val uiState: LiveData<FavouritesUiState> = _uiState
