@@ -9,6 +9,7 @@ import com.acg.mangalive.R
 import com.acg.mangalive.appComponent
 import com.acg.mangalive.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,10 +24,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.MainActivityBottomAppBar
+        val navBar = navView as NavigationBarView
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.MainActivity_NavHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
 
         navView.setupWithNavController(navController)
+
+
+
+        navBar.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.BottomAppBarMenu_Catalog -> navController.navigate(R.id.NavGraph_Catalog)
+                R.id.BottomAppBarMenu_Favourites -> navController.navigate(R.id.NavGraph_Favourites)
+                R.id.BottomAppBarMenu_News -> navController.navigate(R.id.NavGraph_News)
+            }
+            true
+        }
     }
 }

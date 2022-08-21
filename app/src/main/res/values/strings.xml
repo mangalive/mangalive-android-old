@@ -6,6 +6,7 @@
     <string name="notifications">notifications</string>
     <string name="account">account</string>
     <string name="filter_button_text">filter</string>
+    <string name="settings">Settings</string>
     <!-- for favourites_title -->
     <string name="favourites_title">Favourites</string>
     <string name="categoryMenu_currently_reading">Currently Reading</string>
@@ -24,4 +25,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_catalog_future">Catalog</string>
+    <!-- for notifications -->
+    <string name="notificationsFragment_title">Notifications</string>
+    <string name="notificationsMenu_for_today">For today</string>
+    <string name="notificationsMenu_this_week">This week</string>
+    <string name="notificationsMenu_all">All</string>
+    <string name="notificationsMenu_released">Released</string>
+    <string name="notificationsMenu_answers">Answers</string>
 </resources>

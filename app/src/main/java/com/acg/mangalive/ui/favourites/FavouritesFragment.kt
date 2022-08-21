@@ -49,7 +49,7 @@ class FavouritesFragment : Fragment() {
     }
 
     private fun createCategoriesMenu() = PopupMenu(
-        requireContext(), binding.CategoriesMenuBtn, Gravity.END,
+        requireContext(), binding.CategoriesMenuBtn, Gravity.LEFT,
         androidx.appcompat.R.attr.popupMenuStyle,
         androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
     ).also {
