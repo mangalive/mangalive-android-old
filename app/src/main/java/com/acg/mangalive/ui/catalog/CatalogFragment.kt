@@ -51,6 +51,10 @@ class CatalogFragment : Fragment() {
 
         val sortingMenu = createSortingMenu()
 
+        val adapter = CatalogMangaAdapter(requireContext())
+
+        binding.catalog.adapter = adapter
+
         binding.NotificationsBtn.setOnClickListener {
             findNavController().navigate(R.id.NavGraph_Notifications)
         }
@@ -62,6 +66,10 @@ class CatalogFragment : Fragment() {
 
         viewModel.sortingParameters.observe(viewLifecycleOwner) {
             binding.SortingMenuBtn.setText(convertSortingCriterionToValue(it.criterion))
+        }
+
+        viewModel.catalog.observe(viewLifecycleOwner) {
+            adapter.submitData(lifecycle, it)
         }
 
         binding.SortingMenuBtn.setOnClickListener {

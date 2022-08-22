@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:background="@drawable/surface_bg"
+        android:background="@drawable/surface_variant_bg"
         android:orientation="horizontal"
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"

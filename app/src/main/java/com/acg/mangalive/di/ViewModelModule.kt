@@ -13,23 +13,15 @@ import dagger.multibindings.IntoMap
 @Module
 interface ViewModelModule {
     @Binds
-    @IntoMap
-    @ViewModelKey(CatalogViewModel::class)
+    @[IntoMap ViewModelKey(CatalogViewModel::class)]
     fun bindCatalogViewModel(catalogViewModel: CatalogViewModel): ViewModel
 
     @Binds
-    @IntoMap
-    @ViewModelKey(FavouritesViewModel::class)
+    @[IntoMap ViewModelKey(FavouritesViewModel::class)]
     fun bindFavouritesViewModel(favouritesViewModel: FavouritesViewModel): ViewModel
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(NewsViewModel:class)
-//    fun bindNewsViewModel(newsViewModel: NewsViewModel): ViewModel
-
     @Binds
-    @IntoMap
-    @ViewModelKey(NotificationsViewModel::class)
+    @[IntoMap ViewModelKey(NotificationsViewModel::class)]
     fun bindNotificationsViewModel(notificationsViewModel: NotificationsViewModel): ViewModel
 
     @Binds

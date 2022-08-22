@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/surface_bg"
+        android:background="@drawable/surface_variant_bg"
         android:orientation="horizontal"
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
