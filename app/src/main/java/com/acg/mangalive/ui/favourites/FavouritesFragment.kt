@@ -48,29 +48,29 @@ class FavouritesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val categoriesMenu = createCategoriesMenu()
+//        val categoriesMenu = createCategoriesMenu()
 
-        categoriesMenu.setOnMenuItemClickListener {
-            viewModel.setCategoryMenuState(convertCategoriesMenuItemIdToState(it.itemId))
-            true
-        }
+//        categoriesMenu.setOnMenuItemClickListener {
+//            viewModel.setCategoryMenuState(convertCategoriesMenuItemIdToState(it.itemId))
+//            true
+//        }
 
-        viewModel.uiState.observe(viewLifecycleOwner) {
-            binding.CategoriesMenuBtn.setText(convertCategoriesMenuStateToValue(it.categoriesMenuState))
-        }
-
-        binding.CategoriesMenuBtn.setOnClickListener {
-            categoriesMenu.show()
-        }
+//        viewModel.uiState.observe(viewLifecycleOwner) {
+//            binding.CategoriesMenuBtn.setText(convertCategoriesMenuStateToValue(it.categoriesMenuState))
+//        }
+//
+//        binding.CategoriesMenuBtn.setOnClickListener {
+//            categoriesMenu.show()
+//        }
     }
 
-    private fun createCategoriesMenu() = PopupMenu(
-        requireContext(), binding.CategoriesMenuBtn, Gravity.LEFT,
-        androidx.appcompat.R.attr.popupMenuStyle,
-        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
-    ).also {
-        it.menuInflater.inflate(R.menu.favourites_categories_menu, it.menu)
-    }
+//    private fun createCategoriesMenu() = PopupMenu(
+//        requireContext(), binding.CategoriesMenuBtn, Gravity.LEFT,
+//        androidx.appcompat.R.attr.popupMenuStyle,
+//        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
+//    ).also {
+//        it.menuInflater.inflate(R.menu.favourites_categories_menu, it.menu)
+//    }
 
     private fun convertCategoriesMenuItemIdToState(itemId: Int): CategoriesMenuState =
         when (itemId) {

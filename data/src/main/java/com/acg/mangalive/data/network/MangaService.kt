@@ -9,15 +9,16 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import java.util.*
 
 interface MangaService {
     @GET("page/{pageNumber}")
     suspend fun getPage(
-        @Path("pageNumber") @IntRange(from = 1) pageNumber: Long = INITIAL_PAGE_NUMBER,
-        @Query("pageSize") @IntRange(
+        @[Path("pageNumber") IntRange(from = 1)] pageNumber: Long = INITIAL_PAGE_NUMBER,
+        @[Query("pageSize") IntRange(
             from = 1,
             to = MAX_PAGE_SIZE
-        ) pageSize: Long = DEFAULT_PAGE_SIZE,
+        )] pageSize: Long = DEFAULT_PAGE_SIZE,
         @Query("sortingCriterion") sortingCriterion: SortingCriterion = SortingCriterion.popularity,
     ): Response<MangaPageResponseDto>
 
@@ -34,16 +35,25 @@ class FakeMangaService : MangaService {
         pageSize: Long,
         sortingCriterion: SortingCriterion
     ): Response<MangaPageResponseDto> {
+        val cards = mutableListOf<MangaCardDto>()
+
+        for (i in 0..pageSize) {
+            cards.add(
+                i.toInt(),
+                MangaCardDto(
+                    id = i + 1,
+                    title = "Title $pageNumber:${i + 1}",
+                    description = "sadfsd fsdafasdf wegawgw",
+                    rating = Random().nextFloat() * 5
+                )
+            )
+        }
+
         return Response.success(
             MangaPageResponseDto(
-                "ok",
-                "Manga page successfully created",
-                listOf(
-                    MangaCardDto(id= 1, title = "Title 1", description = "sss sdfwegh agawpeghawpgw w", rating = 1f),
-                    MangaCardDto(id= 2, title = "SFowh wohgowhgw wg", description = "sss sdfwegh sw wa;ghw;ghw; awoow w", rating = 2.8f),
-                    MangaCardDto(id= 3, title = "as'f hOSIhfsdhflshfowhegowh ohweofwhfiewhwho owfowfowhfowhfowo wohfwofhwohfwohfow wfowofhwhwfohwo", description = "sss sdfwegh agawpeghawpgw w woefowefowowo owwowowowowowowohog haphwoaheg phawpehgowhgo haeopghwpehgpawhgep hapgawpeghawpehgpawghp awgphwaepghawphgpa wghawepg", rating = 3.4f),
-                    MangaCardDto(id= 4, title = "Title  owhweoweh whggowo", description = "sss  owoehgohawoa wwwwgoh hagaw agawpeghawpgw w", rating = 5f),
-                )
+                status = "ok",
+                message = "Manga page successfully created",
+                cards = cards
             )
         )
     }

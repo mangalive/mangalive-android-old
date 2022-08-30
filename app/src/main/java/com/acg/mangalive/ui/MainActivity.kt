@@ -1,6 +1,7 @@
 package com.acg.mangalive.ui
 
 import android.os.Bundle
+import android.view.ViewGroupOverlay
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -8,6 +9,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.acg.mangalive.R
 import com.acg.mangalive.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.elevation.ElevationOverlayProvider
 import com.google.android.material.navigation.NavigationBarView
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector

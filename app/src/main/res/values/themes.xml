@@ -1,63 +1,35 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="Theme.Mangalive" parent="Theme.MaterialComponents.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/yellow_700</item>
-        <item name="colorPrimaryVariant">@color/yellow_900</item>
-        <item name="colorOnPrimary">@color/gray_300</item>
 
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_300</item>
-        <item name="colorSecondaryVariant">@color/teal_100</item>
-        <item name="colorOnSecondary">@color/gray_300</item>
+    <style name="Base.Theme.Mangalive" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorOutline">@color/md_theme_light_outline</item>
 
-        <!-- Surface color. -->
-        <item name="colorSurface">@color/surfaceColor</item>
-        <item name="colorOnSurface">@color/gray_300</item>
+        <item name="elevationOverlayColor">@color/md_theme_light_surfaceTint</item>
 
-        <!-- Surface variant color. -->
-        <item name="colorSurfaceVariant">@color/surfaceVariantColor</item>
-        <item name="colorOnSurfaceVariant">@color/gray_500</item>
+        <item name="mangaliveSearchStyle">@style/Widget.Mangalive.Search.Light</item>
+    </style>
 
-        <!-- Background color. -->
-        <item name="android:colorBackground">@color/backgroundColor</item>
-        <item name="colorOnBackground">@color/gray_300</item>
-
-        <!-- Placeholder color. -->
-        <item name="placeholderColor">@color/gray_500</item>
-
-        <!-- Status/Navigation bar color. -->
+    <style name="Theme.Mangalive" parent="Base.Theme.Mangalive">
         <item name="android:statusBarColor">?android:attr/colorBackground</item>
-        <item name="android:navigationBarColor">?attr/colorSurfaceVariant</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
 
-
-        <!-- Shape appearance. -->
-        <item name="smallComponentCornerRadius">20dp</item>
-
-        <item name="shapeAppearanceSmallComponent">
-            @style/ShapeAppearance.Theme.Mangalive.SmallComponent
-        </item>
-        <item name="shapeAppearanceMediumComponent">
-            @style/ShapeAppearance.Theme.Mangalive.MediumComponent
-        </item>
-        <item name="shapeAppearanceLargeComponent">
-            @style/ShapeAppearance.Theme.Mangalive.LargeComponent
-        </item>
-
-
-        <!-- Widgets themes. -->
-        <item name="searchViewStyle">@style/Widget.Theme.Mangalive.SearchView</item>
-        <item name="iconButtonStyle">@style/Widget.Theme.Mangalive.IconButton</item>
-        <item name="popupMenuStyle">@style/Widget.Theme.Mangalife.PopupMenu</item>
-    </style>
-
-    <style name="Theme.Mangalive.PrimarySecondary" parent="">
-        <item name="colorPrimary">?attr/colorSecondary</item>
-        <item name="colorOnPrimary">?attr/colorOnSecondary</item>
-    </style>
-
-    <style name="Theme.Mangalive.PrimaryWhite" parent="">
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="smallComponentCornerRadius">14dp</item>
+        <item name="mediumComponentCornerRadius">18dp</item>
+        <item name="largeComponentCornerRadius">24dp</item>
     </style>
 </resources>

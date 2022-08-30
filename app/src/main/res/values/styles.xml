@@ -4,8 +4,8 @@
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
         <item name="android:textColor">?attr/placeholderColor</item>
 
-        <item name="surfaceColor">?attr/colorSurfaceVariant</item>
-        <item name="surfaceCornerRadius">?attr/smallComponentCornerRadius</item>
+        <item name="surfaceColor">?attr/colorSurface</item>
+        <item name="surfaceCornerRadius">?attr/mediumComponentCornerRadius</item>
 
         <item name="iconColor">?attr/colorPrimary</item>
         <item name="iconSize">32dp</item>
@@ -18,17 +18,65 @@
         <item name="iconColor">?attr/colorPrimary</item>
         <item name="iconSize">32dp</item>
         <item name="rippleColor">?attr/colorPrimary</item>
-        <item name="rippleAlpha">30</item>
+        <item name="rippleAlpha">100</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
     </style>
 
-    <style name="Widget.Theme.Mangalife.PopupMenu" parent="@style/Widget.MaterialComponents.PopupMenu">
-        <!-- To change the popup menu and app text color  -->
-        <item name="android:textColor">@color/gray_500</item>
-        <item name="android:popupBackground">@drawable/surface_variant_bg</item>
+    <style name="Widget.Theme.Mangalive.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:popupBackground">@drawable/surface_bg</item>
         <item name="android:dropDownVerticalOffset">@dimen/panel_horizontal_padding</item>
-        <!-- To change the background of options menu-->
-        <item name="android:itemBackground">?attr/colorSurfaceVariant</item>
+        <item name="android:itemBackground">?attr/colorSurface</item>
     </style>
+
+    <style name="Widget.Theme.Mangalive.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="materialThemeOverlay">@style/Theme.Mangalive</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Theme.Mangalive.MediumComponent</item>
+    </style>
+
+    <style name="Widget.Mangalive.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <!--        <item name="itemIconTint">?attr/colorPrimary</item>-->
+        <!--        <item name="labelVisibilityMode">selected</item>-->
+        <item name="android:elevation">8dp</item>
+        <item name="android:minHeight">64dp</item>
+        <item name="itemIconSize">26dp</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Material3.TitleSmall</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Material3.TitleSmall</item>
+        <!--        <item name="itemActiveIndicatorStyle">@null</item>-->
+        <item name="labelVisibilityMode">selected</item>
+    </style>
+
+    <style name="Widget.Mangalive.Search" parent="Widget.Material3.CardView.Filled">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardElevation">14dp</item>
+    </style>
+
+    <style name="Widget.Mangalive.Search.Light" parent="Widget.Mangalive.Search">
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="Widget.Mangalive.Search.Icon" parent="Widget.Material3.Button.IconButton">
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="icon">@drawable/ic_appbar_top_search</item>
+        <item name="iconSize">30dp</item>
+        <item name="iconTint">?attr/colorPrimary</item>
+        <item name="rippleColor">@null</item>
+    </style>
+
+
+    <style name="Widget.Mangalive.Search.Placeholder" parent="">
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
 </resources>

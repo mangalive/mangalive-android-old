@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:background="@drawable/surface_variant_bg"
+        android:background="@drawable/surface_bg"
         android:orientation="horizontal"
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
@@ -54,9 +54,9 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:theme="@style/Theme.Mangalive.PrimaryWhite"
             app:icon="@drawable/ic_panel_drop_arrow"
             app:iconGravity="end" />
+        <!--        android:theme="@style/Theme.Mangalive.PrimaryWhite"-->
 
         <Space
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settings"
-            app:icon="@drawable/ic_settings"/>
+            app:icon="@drawable/ic_settings" />
 
     </LinearLayout>
 

@@ -10,82 +10,72 @@
         android:id="@+id/TopAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.acg.mangalive.views.SearchView
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/Search"
+            style="?attr/mangaliveSearchStyle"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
             android:layout_marginEnd="@dimen/default_margin"
-            android:layout_weight="1"
-            android:text="@string/search_placeholder_text"
-            app:icon="@drawable/ic_appbar_top_search" />
+            android:layout_weight="1">
 
-        <com.acg.mangalive.views.IconButton
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/half_default_padding"
+                android:paddingStart="@dimen/quarter_default_margin"
+                android:paddingEnd="@dimen/half_default_margin">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.Mangalive.Search.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    style="@style/Widget.Mangalive.Search.Placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/search_placeholder_text" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/NotificationsBtn"
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/default_margin"
-            android:contentDescription="@string/notifications"
-            app:icon="@drawable/ic_appbar_top_notifications" />
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            app:icon="@drawable/ic_appbar_top_notifications"
+            app:iconSize="26dp"
+            app:iconTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.acg.mangalive.views.IconButton
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialIconButtonFilledStyle"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/account"
-            app:icon="@drawable/ic_appbar_top_account" />
-
+            android:layout_height="wrap_content"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="4dp"
+            app:icon="@drawable/ic_appbar_top_account"
+            app:iconSize="26dp"
+            app:iconTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:background="@drawable/surface_variant_bg"
-        android:orientation="horizontal"
-        android:paddingHorizontal="6dp"
-        android:paddingVertical="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TopAppBar">
-
-        <Button
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/filter_button_text"
-            app:icon="@drawable/ic_panel_filter" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/SortingMenuBtn"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            android:theme="@style/Theme.Mangalive.PrimaryWhite"
-            app:icon="@drawable/ic_panel_drop_arrow"
-            app:iconGravity="end" />
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/catalog"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.33" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.25" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2185" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/account_icon.xml" value="0.2185" />
         <entry key="..\:/Users/Tema/AndroidStudioProjects/mangalive-android/app/src/main/res/drawable/background_favourites_menu.xml" value="0.298" />
@@ -38,23 +38,32 @@
         <entry key="app/src/main/res/drawable/catalog_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/favourites_icon.xml" value="0.3215" />
         <entry key="app/src/main/res/drawable/ic_account.xml" value="0.323" />
+        <entry key="app/src/main/res/drawable/ic_appbar_bottom_news.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/ic_appbar_top_account.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/ic_appbar_top_notifications.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/ic_drop_arrow.xml" value="0.29" />
         <entry key="app/src/main/res/drawable/ic_favourites.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.329" />
         <entry key="app/src/main/res/drawable/ic_news.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.323" />
+        <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/icon_button.xml" value="0.205" />
+        <entry key="app/src/main/res/drawable/nav_bar_item_ripple.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/nav_bar_item_ripple_color.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/nav_bar_ripple_color_selector.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/news_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/notifications_icon.xml" value="0.217" />
+        <entry key="app/src/main/res/drawable/rounded_bg.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/search_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/surface_bg.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/surface_variant_bg.xml" value="0.1575" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/card_manga.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/card_manga.xml" value="0.5" />
         <entry key="app/src/main/res/layout/catalog_list_item.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2875905797101449" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.16770833333333332" />
@@ -66,6 +75,7 @@
         <entry key="app/src/main/res/layout/sample_my_view.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/sample_search_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/view_icon_button.xml" value="0.3423913043478261" />
+        <entry key="app/src/main/res/menu/bottom_app_bar_menu.xml" value="0.16145833333333334" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3359375" />
         <entry key="app/src/main/res/menu/catalog_sorting_menu.xml" value="0.16770833333333332" />

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="smallComponentCornerRadius" format="dimension" />
+    <attr name="mediumComponentCornerRadius" format="dimension" />
+    <attr name="largeComponentCornerRadius" format="dimension" />
     <attr name="placeholderColor" format="color" />
+
+    <attr name="mangaliveSearchStyle" format="reference"/>
+
+
     <attr name="icon" format="reference" />
     <attr name="iconColor" format="color" />
     <attr name="iconSize" format="dimension" />

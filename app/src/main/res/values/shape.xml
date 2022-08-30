@@ -8,11 +8,11 @@
 
     <style name="ShapeAppearance.Theme.Mangalive.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">24dp</item>
+        <item name="cornerSize">?attr/mediumComponentCornerRadius</item>
     </style>
 
     <style name="ShapeAppearance.Theme.Mangalive.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
-        <item name="cornerFamily">rounded</item>
+        <item name="cornerFamily">?attr/largeComponentCornerRadius</item>
         <item name="cornerSize">28dp</item>
     </style>
 </resources>

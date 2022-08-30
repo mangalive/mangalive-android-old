@@ -9,5 +9,6 @@ data class MangaCardDto (
     @SerialName("id") val id: Long = 0,
     @SerialName("title") val title: String = "",
     @SerialName("description") val description: String = "",
-    @SerialName("rating") val rating: Float = 0f
+    @SerialName("rating") val rating: Float = 0f,
+
 )
