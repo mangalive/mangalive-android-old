@@ -48,10 +48,11 @@
         <item name="labelVisibilityMode">selected</item>
     </style>
 
-    <style name="Widget.Mangalive.Search" parent="Widget.Material3.CardView.Filled">
+    <style name="Widget.Mangalive.Search" parent="Widget.Material3.CardView.Outlined">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cardBackgroundColor">?android:attr/colorBackground</item>
         <item name="cardElevation">14dp</item>
     </style>
 
@@ -67,16 +68,14 @@
         <item name="android:padding">0dp</item>
         <item name="icon">@drawable/ic_appbar_top_search</item>
         <item name="iconSize">30dp</item>
-        <item name="iconTint">?attr/colorPrimary</item>
+        <item name="iconTint">#888888</item>
         <item name="rippleColor">@null</item>
     </style>
-
 
     <style name="Widget.Mangalive.Search.Placeholder" parent="">
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
         <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">#757575</item>
     </style>
-
 </resources>

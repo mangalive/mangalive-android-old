@@ -93,7 +93,7 @@
     <!--    <color name="md_theme_dark_inversePrimary">#865300</color>-->
 
     <!-- white; shade: 50% (https://maketintsandshades.com) -->
-    <color name="md_theme_dark_outline">#666666</color>
+    <color name="md_theme_dark_outline">@color/md_theme_dark_primary</color>
 
     <color name="md_theme_dark_shadow">#000000</color>
 
