@@ -80,41 +80,48 @@
     </LinearLayout>
 
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/linearLayout"
+        style="?attr/materialCardViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/default_margin"
-        android:background="@drawable/surface_bg"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         android:orientation="horizontal"
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="?attr/mediumComponentCornerRadius"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TopAppBar">
 
-        <!--        <Button-->
-        <!--            android:id="@+id/CategoriesMenuBtn"-->
-        <!--            style="@style/Widget.MaterialComponents.Button.TextButton"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:textAlignment="center"-->
-        <!--            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"-->
-        <!--            android:theme="@style/Theme.Mangalive.PrimaryWhite"-->
-        <!--            app:icon="@drawable/ic_panel_drop_arrow"-->
-        <!--            app:iconGravity="end" />-->
-
-        <Space
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:orientation="horizontal">
 
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_weight="0"-->
-        <!--            android:paddingRight="10dp"-->
-        <!--            android:text="All: 109"-->
-        <!--            android:textColor="@color/yellow_700" />-->
-    </LinearLayout>
+            <Button
+                android:id="@+id/CategoriesMenuBtn"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:icon="@drawable/ic_panel_drop_arrow"
+                app:iconGravity="end" />
 
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!--        <TextView-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_weight="0"-->
+            <!--            android:paddingRight="10dp"-->
+            <!--            android:text="All: 109"-->
+            <!--            android:textColor="@color/yellow_700" />-->
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

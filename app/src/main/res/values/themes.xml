@@ -31,5 +31,9 @@
         <item name="smallComponentCornerRadius">14dp</item>
         <item name="mediumComponentCornerRadius">18dp</item>
         <item name="largeComponentCornerRadius">24dp</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Theme.Mangalive.SmallComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Theme.Mangalive.LargeComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Theme.Mangalive.MediumComponent</item>
     </style>
 </resources>

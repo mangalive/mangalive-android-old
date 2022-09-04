@@ -13,6 +13,6 @@
 
     <style name="ShapeAppearance.Theme.Mangalive.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">?attr/largeComponentCornerRadius</item>
-        <item name="cornerSize">28dp</item>
+        <item name="cornerSize">?attr/largeComponentCornerRadius</item>
     </style>
 </resources>
