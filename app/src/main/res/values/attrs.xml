@@ -3,47 +3,4 @@
     <attr name="smallComponentCornerRadius" format="dimension" />
     <attr name="mediumComponentCornerRadius" format="dimension" />
     <attr name="largeComponentCornerRadius" format="dimension" />
-    <attr name="placeholderColor" format="color" />
-
-    <attr name="mangaliveSearchStyle" format="reference"/>
-
-
-    <attr name="icon" format="reference" />
-    <attr name="iconColor" format="color" />
-    <attr name="iconSize" format="dimension" />
-
-    <attr name="rippleColor" format="color" />
-    <attr name="rippleAlpha" format="integer" />
-
-    <attr name="searchViewStyle" format="reference" />
-    <attr name="iconButtonStyle" format="reference" />
-
-    <declare-styleable name="SearchView">
-        <attr name="android:text" />
-        <attr name="android:textColor" />
-        <attr name="android:textSize" />
-        <attr name="android:textAllCaps" />
-        <attr name="android:fontFamily" />
-        <attr name="android:letterSpacing" />
-        <attr name="android:textAppearance" />
-
-        <attr name="surfaceColor" format="color" />
-        <attr name="surfaceCornerRadius" format="dimension" />
-
-        <attr name="icon" />
-        <attr name="iconColor" />
-        <attr name="iconSize" />
-
-        <attr name="rippleColor" />
-        <attr name="rippleAlpha" />
-    </declare-styleable>
-
-    <declare-styleable name="IconButton">
-        <attr name="icon" />
-        <attr name="iconColor" />
-        <attr name="iconSize" />
-
-        <attr name="rippleColor" />
-        <attr name="rippleAlpha" />
-    </declare-styleable>
 </resources>

@@ -5,6 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/default_margin"
+    android:layout_marginTop="@dimen/default_padding"
     tools:context=".ui.notifications.NotificationsFragment">
 
     <LinearLayout
@@ -16,17 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.acg.mangalive.views.IconButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/NavBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:icon="@drawable/ic_nav_back" />
+            style="?attr/materialIconButtonStyle"
+            android:layout_margin="0dp"
+            app:iconSize="30dp"
+            android:padding="@dimen/default_padding"
+            app:icon="@drawable/ic_nav_back"/>
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/double_default_margin"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/notificationsFragment_title"

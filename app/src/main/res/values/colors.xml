@@ -97,6 +97,6 @@
 
     <color name="md_theme_dark_shadow">#000000</color>
 
-    <color name="md_theme_dark_surfaceTint">#5E5E5E</color>
-    <color name="md_theme_dark_surfaceTintColor">#5E5E5E</color>
+    <color name="md_theme_dark_surfaceTint">#7F7F7F</color>
+    <color name="md_theme_dark_surfaceTintColor">#7F7F7B</color>
 </resources>

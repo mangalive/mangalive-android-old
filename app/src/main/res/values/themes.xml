@@ -1,5 +1,4 @@
 <resources>
-
     <style name="Base.Theme.Mangalive" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
@@ -20,8 +19,6 @@
         <item name="colorOutline">@color/md_theme_light_outline</item>
 
         <item name="elevationOverlayColor">@color/md_theme_light_surfaceTint</item>
-
-        <item name="mangaliveSearchStyle">@style/Widget.Mangalive.Search.Light</item>
     </style>
 
     <style name="Theme.Mangalive" parent="Base.Theme.Mangalive">

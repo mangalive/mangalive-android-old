@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/default_margin"
+    android:layout_marginTop="@dimen/default_padding"
     tools:context=".ui.news.NewsFragment">
 
     <LinearLayout
-        android:id="@+id/TopAppBar"
+        android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -18,11 +20,11 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/Search"
-            style="?attr/mangaliveSearchStyle"
+            style="@style/Widget.Mangalive.Header.Search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:layout_marginEnd="@dimen/default_margin"
+            android:layout_marginEnd="@dimen/half_default_margin"
             android:layout_weight="1">
 
             <LinearLayout
@@ -34,13 +36,13 @@
                 android:paddingEnd="@dimen/half_default_margin">
 
                 <com.google.android.material.button.MaterialButton
-                    style="@style/Widget.Mangalive.Search.Icon"
+                    style="@style/Widget.Mangalive.Header.Search.Icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />
 
                 <TextView
-                    style="@style/Widget.Mangalive.Search.Placeholder"
+                    style="@style/Widget.Mangalive.Header.Search.Placeholder"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -50,30 +52,20 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/NotificationsBtn"
-            style="?attr/materialIconButtonFilledStyle"
+            style="@style/Widget.Mangalive.Header.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/default_margin"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:padding="4dp"
             app:icon="@drawable/ic_appbar_top_notifications"
-            app:iconSize="26dp"
-            app:iconTint="?attr/colorOnPrimary"
+            android:layout_margin="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            style="?attr/materialIconButtonFilledStyle"
+            style="@style/Widget.Mangalive.Header.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:padding="4dp"
             app:icon="@drawable/ic_appbar_top_account"
-            app:iconSize="26dp"
-            app:iconTint="?attr/colorOnPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

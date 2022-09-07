@@ -1,39 +1,10 @@
 <resources>
 
-    <style name="Widget.Theme.Mangalive.SearchView" parent="">
-        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
-        <item name="android:textColor">?attr/placeholderColor</item>
-
-        <item name="surfaceColor">?attr/colorSurface</item>
-        <item name="surfaceCornerRadius">?attr/mediumComponentCornerRadius</item>
-
-        <item name="iconColor">?attr/colorPrimary</item>
-        <item name="iconSize">32dp</item>
-
-        <item name="rippleColor">?attr/colorOnSurface</item>
-        <item name="rippleAlpha">30</item>
-    </style>
-
-    <style name="Widget.Theme.Mangalive.IconButton" parent="">
-        <item name="iconColor">?attr/colorPrimary</item>
-        <item name="iconSize">32dp</item>
-        <item name="rippleColor">?attr/colorPrimary</item>
-        <item name="rippleAlpha">100</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-    </style>
-
     <style name="Widget.Theme.Mangalive.PopupMenu" parent="Widget.MaterialComponents.PopupMenu">
         <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:popupBackground">@drawable/surface_bg</item>
         <item name="android:dropDownVerticalOffset">@dimen/panel_horizontal_padding</item>
         <item name="android:itemBackground">?attr/colorSurface</item>
-    </style>
-
-    <style name="Widget.Theme.Mangalive.CardView" parent="Widget.MaterialComponents.CardView">
-        <item name="materialThemeOverlay">@style/Theme.Mangalive</item>
-        <item name="cardBackgroundColor">?attr/colorSurface</item>
-        <item name="shapeAppearance">@style/ShapeAppearance.Theme.Mangalive.MediumComponent</item>
     </style>
 
     <style name="Widget.Mangalive.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
@@ -48,19 +19,15 @@
         <item name="labelVisibilityMode">selected</item>
     </style>
 
-    <style name="Widget.Mangalive.Search" parent="Widget.Material3.CardView.Outlined">
+    <style name="Widget.Mangalive.Header.Search" parent="Widget.Material3.CardView.Outlined">
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="strokeWidth">2dp</item>
-        <item name="cardBackgroundColor">?android:attr/colorBackground</item>
-        <item name="cardElevation">14dp</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
     </style>
 
-    <style name="Widget.Mangalive.Search.Light" parent="Widget.Mangalive.Search">
-        <item name="cardElevation">4dp</item>
-    </style>
-
-    <style name="Widget.Mangalive.Search.Icon" parent="Widget.Material3.Button.IconButton">
+    <style name="Widget.Mangalive.Header.Search.Icon" parent="Widget.Material3.Button.IconButton">
         <item name="android:clickable">false</item>
         <item name="android:focusable">false</item>
         <item name="android:minWidth">0dp</item>
@@ -68,14 +35,22 @@
         <item name="android:padding">0dp</item>
         <item name="icon">@drawable/ic_appbar_top_search</item>
         <item name="iconSize">30dp</item>
-        <item name="iconTint">#888888</item>
+        <item name="iconTint">?attr/colorPrimary</item>
         <item name="rippleColor">@null</item>
     </style>
 
-    <style name="Widget.Mangalive.Search.Placeholder" parent="">
+    <style name="Widget.Mangalive.Header.Search.Placeholder" parent="">
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
         <item name="android:textAppearance">@style/TextAppearance.Material3.TitleMedium</item>
-        <item name="android:textColor">#757575</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+
+    <style name="Widget.Mangalive.Header.IconButton" parent="Widget.Material3.Button.IconButton">
+        <item name="iconSize">30dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
     </style>
 </resources>

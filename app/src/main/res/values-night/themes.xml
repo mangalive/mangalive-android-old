@@ -20,7 +20,5 @@
         <item name="colorOutline">@color/md_theme_dark_outline</item>
 
         <item name="elevationOverlayColor">@color/md_theme_dark_surfaceTint</item>
-
-        <item name="mangaliveSearchStyle">@style/Widget.Mangalive.Search</item>
     </style>
 </resources>

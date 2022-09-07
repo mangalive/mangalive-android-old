@@ -49,7 +49,7 @@ class CatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sortingMenu = createSortingMenu()
+//        val sortingMenu = createSortingMenu()
 
         val adapter = CatalogMangaAdapter(requireContext())
 
@@ -59,31 +59,31 @@ class CatalogFragment : Fragment() {
             findNavController().navigate(R.id.NavGraph_Notifications)
         }
 
-        sortingMenu.setOnMenuItemClickListener {
-            viewModel.setSortingCriterion(convertMenuItemIdToSortingCriterion(it.itemId))
-            true
-        }
+//        sortingMenu.setOnMenuItemClickListener {
+//            viewModel.setSortingCriterion(convertMenuItemIdToSortingCriterion(it.itemId))
+//            true
+//        }
 
-        viewModel.sortingParameters.observe(viewLifecycleOwner) {
-            binding.SortingMenuBtn.setText(convertSortingCriterionToValue(it.criterion))
-        }
+//        viewModel.sortingParameters.observe(viewLifecycleOwner) {
+//            binding.SortingMenuBtn.setText(convertSortingCriterionToValue(it.criterion))
+//        }
 
 //        viewModel.catalog.observe(viewLifecycleOwner) {
 //            adapter.submitData(lifecycle, it)
 //        }
 
-        binding.SortingMenuBtn.setOnClickListener {
-            sortingMenu.show()
-        }
+//        binding.SortingMenuBtn.setOnClickListener {
+//            sortingMenu.show()
+//        }
     }
 
-    private fun createSortingMenu() = PopupMenu(
-        requireContext(), binding.SortingMenuBtn, Gravity.END,
-        androidx.appcompat.R.attr.popupMenuStyle,
-        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
-    ).also {
-        it.menuInflater.inflate(R.menu.catalog_sorting_menu, it.menu)
-    }
+//    private fun createSortingMenu() = PopupMenu(
+//        requireContext(), binding.SortingMenuBtn, Gravity.END,
+//        androidx.appcompat.R.attr.popupMenuStyle,
+//        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
+//    ).also {
+//        it.menuInflater.inflate(R.menu.catalog_sorting_menu, it.menu)
+//    }
 
     private fun convertMenuItemIdToSortingCriterion(itemId: Int) = when (itemId) {
         R.id.CatalogSortingMenu_Novelty -> SortingCriterion.novelty

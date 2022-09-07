@@ -73,9 +73,9 @@ class NotificationsFragment : Fragment() {
             notificationsMenu.show()
         }
 
-        binding.NavBackBtn.setOnClickListener {
-
-        }
+//        binding.NavBackBtn.setOnClickListener {
+//
+//        }
     }
 
     private fun createNotificationsMenu() = PopupMenu(
