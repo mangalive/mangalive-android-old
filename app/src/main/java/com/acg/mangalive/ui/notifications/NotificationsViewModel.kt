@@ -1,30 +1,30 @@
 package com.acg.mangalive.viewModel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import androidx.paging.liveData
+import com.acg.mangalive.domain.model.*
+import com.acg.mangalive.domain.useCases.NotificationsUseCase
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-enum class NotificationsMenuState{
-    ForToday,
-    ThisWeek,
-    All,
-    Released,
-    Answers
-}
+val DEFAULT_SORTING_CRITERION_NOTIFICATIONS = SortingCriterionNotifications.ForToday
 
-val DEFAULT_NOTIFICATIONS_MENU_STATE = NotificationsMenuState.All
+class NotificationsViewModel @Inject constructor(private val notificationsUseCase: NotificationsUseCase) :
+    ViewModel() {
+    private var _sortingParameters = MutableLiveData(SortingParametersNotifications(criterion = DEFAULT_SORTING_CRITERION_NOTIFICATIONS))
+    val sortingParameters: LiveData<SortingParametersNotifications> = _sortingParameters
 
-data class NotificationsUiState(
-    val notificationsMenuState: NotificationsMenuState = DEFAULT_NOTIFICATIONS_MENU_STATE
-)
+    val notifications = sortingParameters.map(::newPager).switchMap { it.liveData }
 
-class NotificationsViewModel @Inject constructor() : ViewModel() {
+    private fun newPager(sortingParametersNotifications: SortingParametersNotifications) =
+        Pager(PagingConfig(5)) { notificationsUseCase(sortingParametersNotifications) }
 
-    private var _uiState = MutableLiveData(NotificationsUiState())
-    val uiState: LiveData<NotificationsUiState> = _uiState
-
-    fun setNotificationsMenuState(value: NotificationsMenuState) {
-        _uiState.value = _uiState.value?.copy(notificationsMenuState = value)
+    fun setSortingCriterion(value: SortingCriterionNotifications) {
+        _sortingParameters.value = _sortingParameters.value?.copy(criterion = value)
     }
 }

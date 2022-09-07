@@ -1,7 +1,9 @@
 package com.acg.mangalive.data.network.di
 
 import com.acg.mangalive.data.network.FakeMangaService
+import com.acg.mangalive.data.network.FakeNotificationsService
 import com.acg.mangalive.data.network.MangaService
+import com.acg.mangalive.data.network.NotificationsService
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -41,5 +43,26 @@ class NetworkModule {
             .build()
 
         return retrofit.create(MangaService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideNotificationsService(json: Json): NotificationsService {
+//        return buildMangaService(json)
+        return FakeNotificationsService()
+    }
+
+    @OptIn(ExperimentalSerializationApi::class)
+    fun buildNotificationsService(json: Json): NotificationsService {
+        val httpClient = OkHttpClient.Builder()
+            .build()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("")
+            .client(httpClient)
+            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+            .build()
+
+        return retrofit.create(NotificationsService::class.java)
     }
 }
