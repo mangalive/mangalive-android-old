@@ -29,8 +29,9 @@ class NotificationsAdapter(context: Context) :
     inner class ViewHolder(private val binding: CardNotificationsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(card: NotificationsCard?) : Unit = with(binding) {
-
-
+            title.text = card?.title
+            date.text = card?.date.toString()
+            chapter.text = card?.chapter.toString()
         }
     }
 

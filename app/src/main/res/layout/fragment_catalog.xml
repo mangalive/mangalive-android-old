@@ -75,6 +75,7 @@
         android:id="@+id/chips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbarSize="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Header">
@@ -92,48 +93,44 @@
                 app:chipBackgroundColor="?android:attr/colorBackground"
                 app:chipStrokeColor="?attr/colorSecondary"
                 app:chipStrokeWidth="2dp"
-                app:closeIcon="@drawable/ic_panel_drop_arrow"
-                app:closeIconEnabled="true"
+                app:closeIconEnabled="false"
                 app:closeIconSize="24dp" />
 
             <com.google.android.material.chip.Chip
-                style="@style/Widget.Material3.Chip.Assist.Elevated"
+                style="@style/Widget.Material3.Chip.Assist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Type"
-                android:textColor="?attr/colorOnSecondary"
-                app:chipBackgroundColor="?attr/colorSecondary"
+                app:chipBackgroundColor="?android:attr/colorBackground"
+                app:chipStrokeColor="?attr/colorSecondary"
                 app:chipStrokeWidth="2dp"
-                app:closeIcon="@drawable/ic_panel_drop_arrow"
-                app:closeIconEnabled="true"
+                app:closeIconEnabled="false"
                 app:closeIconSize="24dp"
-                app:closeIconTint="?attr/colorOnSecondary" />
+                />
 
             <com.google.android.material.chip.Chip
-                style="@style/Widget.Material3.Chip.Assist.Elevated"
+                style="@style/Widget.Material3.Chip.Assist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Genre"
-                android:textColor="?attr/colorOnSecondary"
-                app:chipBackgroundColor="?attr/colorSecondary"
+                app:chipBackgroundColor="?android:attr/colorBackground"
+                app:chipStrokeColor="?attr/colorSecondary"
                 app:chipStrokeWidth="2dp"
-                app:closeIcon="@drawable/ic_panel_drop_arrow"
-                app:closeIconEnabled="true"
+                app:closeIconEnabled="false"
                 app:closeIconSize="24dp"
-                app:closeIconTint="?attr/colorOnSecondary" />
+                />
 
             <com.google.android.material.chip.Chip
-                style="@style/Widget.Material3.Chip.Assist.Elevated"
+                style="@style/Widget.Material3.Chip.Assist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Category"
-                android:textColor="?attr/colorOnSecondary"
-                app:chipBackgroundColor="?attr/colorSecondary"
+                app:chipBackgroundColor="?android:attr/colorBackground"
+                app:chipStrokeColor="?attr/colorSecondary"
                 app:chipStrokeWidth="2dp"
-                app:closeIcon="@drawable/ic_panel_drop_arrow"
-                app:closeIconEnabled="true"
+                app:closeIconEnabled="false"
                 app:closeIconSize="24dp"
-                app:closeIconTint="?attr/colorOnSecondary" />
+                />
 
         </com.google.android.material.chip.ChipGroup>
     </HorizontalScrollView>

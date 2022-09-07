@@ -6,6 +6,11 @@
         <item name="cornerSize">?attr/smallComponentCornerRadius</item>
     </style>
 
+    <style name="ShapeAppearance.Theme.Mangalive.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="ShapeAppearance.Theme.Mangalive.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">?attr/mediumComponentCornerRadius</item>

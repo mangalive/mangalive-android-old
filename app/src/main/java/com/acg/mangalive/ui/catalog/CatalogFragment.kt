@@ -68,9 +68,9 @@ class CatalogFragment : Fragment() {
 //            binding.SortingMenuBtn.setText(convertSortingCriterionToValue(it.criterion))
 //        }
 
-//        viewModel.catalog.observe(viewLifecycleOwner) {
-//            adapter.submitData(lifecycle, it)
-//        }
+        viewModel.catalog.observe(viewLifecycleOwner) {
+            adapter.submitData(lifecycle, it)
+        }
 
 //        binding.SortingMenuBtn.setOnClickListener {
 //            sortingMenu.show()

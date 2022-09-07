@@ -3,9 +3,13 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="?attr/materialCardViewFilledStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true">
+    android:layout_marginVertical="@dimen/half_default_margin"
+    android:clickable="true"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,15 +18,15 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/image"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
             android:scaleType="centerCrop"
             android:src="@drawable/manga_card_label"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Theme.Mangalive.SmallComponent" />
 
         <LinearLayout
 
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
             android:orientation="vertical">
