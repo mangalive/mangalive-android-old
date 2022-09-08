@@ -38,11 +38,10 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textStyle="bold" />
 
-        <Button
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <com.google.android.material.button.MaterialButton
+            style="?attr/materialIconButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/settings"
             app:icon="@drawable/ic_settings" />
 
     </LinearLayout>
@@ -64,11 +63,12 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/colorSecondary"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            app:iconTint="?attr/colorSecondary"
             app:icon="@drawable/ic_panel_drop_arrow"
             app:iconGravity="end" />
-        <!--        android:theme="@style/Theme.Mangalive.PrimaryWhite"-->
 
         <Space
             android:layout_width="wrap_content"
@@ -77,6 +77,8 @@
 
         <Button
             android:id="@+id/button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="?attr/colorSecondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
