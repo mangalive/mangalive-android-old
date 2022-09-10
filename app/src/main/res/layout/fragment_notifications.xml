@@ -14,23 +14,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingHorizontal="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/NavBackBtn"
+            style="?attr/materialIconButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="?attr/materialIconButtonStyle"
             android:layout_margin="0dp"
-            app:iconSize="30dp"
             android:padding="@dimen/default_padding"
-            app:icon="@drawable/ic_nav_back"/>
+            app:icon="@drawable/ic_nav_back"
+            app:iconSize="30dp" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
@@ -46,45 +47,56 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        style="?attr/materialCardViewStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginVertical="@dimen/default_margin"
         android:orientation="horizontal"
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="?attr/mediumComponentCornerRadius"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TopAppBar">
 
-        <Button
-            android:id="@+id/NotificationsMenuBtn"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorSecondary"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-            app:iconTint="?attr/colorSecondary"
-            app:icon="@drawable/ic_panel_drop_arrow"
-            app:iconGravity="end" />
+            android:orientation="horizontal">
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            <Button
+                android:id="@+id/NotificationsMenuBtn"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="?attr/colorSecondary"
+                app:icon="@drawable/ic_panel_drop_arrow"
+                app:iconGravity="end"
+                app:iconTint="?attr/colorSecondary"
+                app:rippleColor="@drawable/secondary_button_icon_ripple" />
 
-        <Button
-            android:id="@+id/button"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:textColor="?attr/colorSecondary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="CHOOSE" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-    </LinearLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                app:icon="@drawable/ic_menu"
+                app:iconTint="?attr/colorSecondary"
+                app:rippleColor="@drawable/secondary_button_icon_ripple" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/notifications"

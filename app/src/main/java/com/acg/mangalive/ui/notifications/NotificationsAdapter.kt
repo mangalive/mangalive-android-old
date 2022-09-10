@@ -29,9 +29,8 @@ class NotificationsAdapter(context: Context) :
     inner class ViewHolder(private val binding: CardNotificationsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(card: NotificationsCard?) : Unit = with(binding) {
-            title.text = card?.title
+            title.text = card?.title + " добавлена новая глава " + card?.chapter.toString()  + " в платном доступе"
             date.text = card?.date.toString()
-            chapter.text = card?.chapter.toString()
         }
     }
 

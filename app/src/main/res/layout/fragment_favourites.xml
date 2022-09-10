@@ -95,12 +95,14 @@
 
             <Button
                 android:id="@+id/CategoriesMenuBtn"
+                android:textColor="?attr/colorSecondary"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 app:icon="@drawable/ic_panel_drop_arrow"
+                app:iconTint="?attr/colorSecondary"
                 app:iconGravity="end" />
 
             <Space
@@ -108,13 +110,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <!--        <TextView-->
-            <!--            android:layout_width="wrap_content"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:layout_weight="0"-->
-            <!--            android:paddingRight="10dp"-->
-            <!--            android:text="All: 109"-->
-            <!--            android:textColor="@color/yellow_700" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="?attr/colorSecondary"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:paddingRight="10dp"
+                android:text="All: 109" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

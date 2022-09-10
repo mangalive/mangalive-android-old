@@ -46,6 +46,7 @@
         <entry key="app/src/main/res/drawable/ic_favourites.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.329" />
+        <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/ic_news.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.3305" />
@@ -57,16 +58,18 @@
         <entry key="app/src/main/res/drawable/notifications_icon.xml" value="0.217" />
         <entry key="app/src/main/res/drawable/rounded_bg.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/search_icon.xml" value="0.217" />
+        <entry key="app/src/main/res/drawable/secondary_button_icon_ripple.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/surface_bg.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/surface_variant_bg.xml" value="0.1575" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/card_manga.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/card_notifications.xml" value="0.5" />
         <entry key="app/src/main/res/layout/catalog_list_item.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2875905797101449" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.5" />
         <entry key="app/src/main/res/layout/menu.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/notifications_fragment.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/sample_icon_button.xml" value="0.2572463768115942" />

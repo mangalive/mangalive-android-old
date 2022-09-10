@@ -38,14 +38,30 @@ class FakeNotificationsService : NotificationsService {
     ): Response<NotificationsResponseDto> {
         val cards = mutableListOf<NotificationsCardDto>()
 
+        //Памятка по мангам
+//        val titleOne = "Берсерк"
+//        val chapterOne = 19
+//        val idOne = 0
+//        val dateOne = 1.1
+//
+//        val titleTwo = "Всеведущий читатель"
+//        val chapterTwo = "119"
+//        val idTwo = 1
+//        val dateTwo = 2.1
+//
+//        val titleThree = "Поднятие уровня в одиночку"
+//        val chapterThree = "167"
+//        val idThree = 2
+//        val dateThree = 3.1
+
         for (i in 0..pageSize) {
             cards.add(
                 i.toInt(),
                 NotificationsCardDto(
                     id = i + 1,
-                    title = "Title $pageNumber:${i + 1}",
-                    chapter = Random().nextInt(),
-                    date = Random().nextFloat() * 5
+                    title = "Берсерк",
+                    chapter = 19,
+                    date = "2022.11.11"
                 )
             )
         }
