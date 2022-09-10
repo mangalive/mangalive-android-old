@@ -56,7 +56,7 @@
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
         app:cardBackgroundColor="?attr/colorSurface"
-        app:cardCornerRadius="?attr/mediumComponentCornerRadius"
+        app:cardCornerRadius="?attr/mediumCornerRadius"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TopAppBar">

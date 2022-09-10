@@ -25,12 +25,19 @@
         <item name="android:statusBarColor">?android:attr/colorBackground</item>
         <item name="android:navigationBarColor">?attr/colorSurface</item>
 
-        <item name="smallComponentCornerRadius">14dp</item>
-        <item name="mediumComponentCornerRadius">18dp</item>
-        <item name="largeComponentCornerRadius">24dp</item>
+        <item name="extraSmallCornerRadius">4dp</item>
+        <item name="smallCornerRadius">8dp</item>
+        <item name="mediumCornerRadius">12dp</item>
+        <item name="largeCornerRadius">14dp</item>
+        <item name="extraLargeCornerRadius">18dp</item>
 
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Theme.Mangalive.SmallComponent</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Theme.Mangalive.LargeComponent</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Theme.Mangalive.MediumComponent</item>
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.Mangalive.Corner.ExtraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.Mangalive.Corner.Small</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Mangalive.SmallComponent</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.Mangalive.Corner.Medium</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Mangalive.MediumComponent</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Mangalive.Corner.Large</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Mangalive.LargeComponent</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Mangalive.Corner.ExtraLarge</item>
     </style>
 </resources>

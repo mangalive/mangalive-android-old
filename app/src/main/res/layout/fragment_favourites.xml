@@ -72,7 +72,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/linearLayout"
         style="?attr/materialCardViewStyle"
@@ -83,7 +82,7 @@
         android:paddingHorizontal="6dp"
         android:paddingVertical="0dp"
         app:cardBackgroundColor="?attr/colorSurface"
-        app:cardCornerRadius="?attr/mediumComponentCornerRadius"
+        app:cardCornerRadius="?attr/mediumCornerRadius"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Header">

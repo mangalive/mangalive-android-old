@@ -9,63 +9,23 @@
         android:id="@+id/NavGraph_Catalog"
         android:name="com.acg.mangalive.ui.catalog.CatalogFragment"
         android:label="@string/catalog_title"
-        tools:layout="@layout/fragment_catalog" >
-        <action
-            android:id="@+id/action_NavGraph_Catalog_to_NavGraph_Favourites"
-            app:destination="@id/NavGraph_Favourites" />
-        <action
-            android:id="@+id/action_NavGraph_Catalog_to_NavGraph_News"
-            app:destination="@id/NavGraph_News" />
-        <action
-            android:id="@+id/action_NavGraph_Catalog_to_NavGraph_Notifications"
-            app:destination="@id/NavGraph_Notifications" />
-    </fragment>
+        tools:layout="@layout/fragment_catalog" />
 
     <fragment
         android:id="@+id/NavGraph_Favourites"
         android:name="com.acg.mangalive.ui.favourites.FavouritesFragment"
         android:label="@string/favourites_title"
-        tools:layout="@layout/fragment_favourites" >
-        <action
-            android:id="@+id/action_NavGraph_Favourites_to_NavGraph_Catalog"
-            app:destination="@id/NavGraph_Catalog" />
-        <action
-            android:id="@+id/action_NavGraph_Favourites_to_NavGraph_News"
-            app:destination="@id/NavGraph_News" />
-        <action
-            android:id="@+id/action_NavGraph_Favourites_to_NavGraph_Notifications"
-            app:destination="@id/NavGraph_Notifications" />
-    </fragment>
+        tools:layout="@layout/fragment_favourites" />
 
     <fragment
         android:id="@+id/NavGraph_News"
         android:name="com.acg.mangalive.ui.news.NewsFragment"
         android:label="@string/news_title"
-        tools:layout="@layout/fragment_news" >
-        <action
-            android:id="@+id/action_NavGraph_News_to_NavGraph_Catalog"
-            app:destination="@id/NavGraph_Catalog" />
-        <action
-            android:id="@+id/action_NavGraph_News_to_NavGraph_Favourites"
-            app:destination="@id/NavGraph_Favourites" />
-        <action
-            android:id="@+id/action_NavGraph_News_to_NavGraph_Notifications"
-            app:destination="@id/NavGraph_Notifications" />
-    </fragment>
+        tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/NavGraph_Notifications"
         android:name="com.acg.mangalive.ui.notifications.NotificationsFragment"
         android:label="@string/notifications"
-        tools:layout="@layout/fragment_notifications" >
-        <action
-            android:id="@+id/action_NavGraph_Notifications_to_NavGraph_Favourites"
-            app:destination="@id/NavGraph_Favourites" />
-        <action
-            android:id="@+id/action_NavGraph_Notifications_to_NavGraph_Catalog"
-            app:destination="@id/NavGraph_Catalog" />
-        <action
-            android:id="@+id/action_NavGraph_Notifications_to_NavGraph_News"
-            app:destination="@id/NavGraph_News" />
-    </fragment>
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

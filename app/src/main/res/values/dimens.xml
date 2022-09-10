@@ -10,6 +10,7 @@
 
     <dimen name="panel_horizontal_padding">6dp</dimen>
 
+    <dimen name="triple_default_padding">16dp</dimen>
     <dimen name="double_default_padding">12dp</dimen>
     <dimen name="default_padding">8dp</dimen>
     <dimen name="half_default_padding">4dp</dimen>

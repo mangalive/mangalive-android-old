@@ -14,7 +14,38 @@
     <string name="categoryMenu_completed">Completed</string>
     <string name="categoryMenu_on_hold">On Hold</string>
     <string name="categoryMenu_dropped">Dropped</string>
-    <!-- for catalog_title (sorting) -->
+    <!-- for catalog -->
+
+    <string name="bottom_sheet_reset_btn">reset</string>
+
+    <string name="sortingCriterion_title">Sorting criterion</string>
+    <string name="sortingCriterion_default_item">By popularity</string>
+
+    <string-array name="sortingCriterion_items">
+        <item>@string/sortingCriterion_default_item</item>
+        <item>By likes</item>
+        <item>By recent updates</item>
+        <item>By novelty</item>
+        <item>By views</item>
+        <item>By chapter count</item>
+        <item>Random sorting</item>
+    </string-array>
+
+    <string name="type_title">Type</string>
+    <string name="type_plural_title">Types selected</string>
+
+    <string-array name="type_items">
+        <item>Manga</item>
+        <item>Manhva</item>
+        <item>Manhua</item>
+        <item>West comic</item>
+        <item>Russian comic</item>
+        <item>Indonesian comic</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <string name="sortingMenu">Sorting criterion</string>
     <string name="sortingMenu_popularity">By popularity</string>
     <string name="sortingMenu_likes">By likes</string>
     <string name="sortingMenu_recent_updates">By recent updates</string>
@@ -22,6 +53,7 @@
     <string name="sortingMenu_views">By views</string>
     <string name="sortingMenu_chapter_count">By chapter count</string>
     <string name="sortingMenu_random">Random sorting</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_catalog_future">Catalog</string>

@@ -21,7 +21,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Theme.Mangalive.Circle" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Mangalive.Corner.Full" />
 
         <LinearLayout
 

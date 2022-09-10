@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="smallComponentCornerRadius" format="dimension" />
-    <attr name="mediumComponentCornerRadius" format="dimension" />
-    <attr name="largeComponentCornerRadius" format="dimension" />
+    <attr name="extraSmallCornerRadius" format="dimension" />
+    <attr name="smallCornerRadius" format="dimension" />
+    <attr name="mediumCornerRadius" format="dimension" />
+    <attr name="largeCornerRadius" format="dimension" />
+    <attr name="extraLargeCornerRadius" format="dimension" />
 </resources>
