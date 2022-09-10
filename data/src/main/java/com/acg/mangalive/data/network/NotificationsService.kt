@@ -38,32 +38,54 @@ class FakeNotificationsService : NotificationsService {
     ): Response<NotificationsResponseDto> {
         val cards = mutableListOf<NotificationsCardDto>()
 
-        //Памятка по мангам
-//        val titleOne = "Берсерк"
-//        val chapterOne = 19
-//        val idOne = 0
-//        val dateOne = 1.1
-//
-//        val titleTwo = "Всеведущий читатель"
-//        val chapterTwo = "119"
-//        val idTwo = 1
-//        val dateTwo = 2.1
-//
-//        val titleThree = "Поднятие уровня в одиночку"
-//        val chapterThree = "167"
-//        val idThree = 2
-//        val dateThree = 3.1
+        val titleOne = "Берсерк"
+        val chapterOne = 19
+        val dateOne = "2022.10.01"
+
+        val titleTwo = "Всеведущий читатель"
+        val chapterTwo = 119
+        val dateTwo = "2022.09.26"
+
+        val titleThree = "Поднятие уровня в одиночку"
+        val chapterThree = 167
+        val dateThree = "2022.11.17"
 
         for (i in 0..pageSize) {
-            cards.add(
-                i.toInt(),
-                NotificationsCardDto(
-                    id = i + 1,
-                    title = "Берсерк",
-                    chapter = 19,
-                    date = "2022.11.11"
+            if (i % 3 == 0.toLong()) {
+                cards.add(
+                    i.toInt(),
+                    NotificationsCardDto(
+                        id = i + 1,
+                        title = titleOne,
+                        chapter = chapterOne,
+                        date = dateOne
+                    )
                 )
-            )
+            }
+
+            if (i % 3 == 1.toLong()) {
+                cards.add(
+                    i.toInt(),
+                    NotificationsCardDto(
+                        id = i + 1,
+                        title = titleTwo,
+                        chapter = chapterTwo,
+                        date = dateTwo
+                    )
+                )
+            }
+
+            if (i % 3 == 2.toLong()) {
+                cards.add(
+                    i.toInt(),
+                    NotificationsCardDto(
+                        id = i + 1,
+                        title = titleThree,
+                        chapter = chapterThree,
+                        date = dateThree
+                    )
+                )
+            }
         }
 
 

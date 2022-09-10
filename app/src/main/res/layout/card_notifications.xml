@@ -21,7 +21,6 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/manga_card_label"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.Theme.Mangalive.Circle" />
 
         <LinearLayout

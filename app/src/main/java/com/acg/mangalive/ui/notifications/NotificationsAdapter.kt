@@ -1,6 +1,8 @@
 package com.acg.mangalive.ui.notifications
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -28,9 +30,21 @@ class NotificationsAdapter(context: Context) :
 
     inner class ViewHolder(private val binding: CardNotificationsBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("ResourceType")
         fun bind(card: NotificationsCard?) : Unit = with(binding) {
             title.text = card?.title + " добавлена новая глава " + card?.chapter.toString()  + " в платном доступе"
             date.text = card?.date.toString()
+            if ((card?.id !!- 1.toLong()) !!% 3 == 0.toLong()) {
+                image.setImageResource(R.drawable.manga_card_label)
+            }
+
+            if ((card?.id !!- 1.toLong()) !!% 3 == 1.toLong()) {
+                image.setImageResource(R.drawable.manga_card_omniscient_reader)
+            }
+
+            if ((card?.id !!- 1.toLong()) !!% 3 == 2.toLong()) {
+                image.setImageResource(R.drawable.manga_card_solo_leveling)
+            }
         }
     }
 

@@ -29,6 +29,18 @@ class CatalogMangaAdapter(context: Context) :
         fun bind(card: MangaCard?) = with(binding) {
             title.text = card?.title
             description.text = card?.description
+
+            if ((card?.id !!- 1.toLong()) !!% 3 == 0.toLong()) {
+                image.setImageResource(R.drawable.manga_card_label)
+            }
+
+            if ((card?.id !!- 1.toLong()) !!% 3 == 1.toLong()) {
+                image.setImageResource(R.drawable.manga_card_omniscient_reader)
+            }
+
+            if ((card?.id !!- 1.toLong()) !!% 3 == 2.toLong()) {
+                image.setImageResource(R.drawable.manga_card_solo_leveling)
+            }
         }
     }
 

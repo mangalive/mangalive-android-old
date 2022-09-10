@@ -47,6 +47,7 @@
         <entry key="app/src/main/res/drawable/ic_filter.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.329" />
         <entry key="app/src/main/res/drawable/ic_menu.xml" value="0.33" />
+        <entry key="app/src/main/res/drawable/ic_nav_back.xml" value="0.2775" />
         <entry key="app/src/main/res/drawable/ic_news.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.323" />
         <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.3305" />
@@ -78,7 +79,7 @@
         <entry key="app/src/main/res/layout/sample_my_view.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/sample_search_view.xml" value="0.33" />
         <entry key="app/src/main/res/layout/view_icon_button.xml" value="0.3423913043478261" />
-        <entry key="app/src/main/res/menu/bottom_app_bar_menu.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/menu/bottom_app_bar_menu.xml" value="0.5" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3359375" />
         <entry key="app/src/main/res/menu/catalog_sorting_menu.xml" value="0.16770833333333332" />
