@@ -62,6 +62,20 @@ class CatalogFragment : Fragment() {
             R.array.type_items
         )
 
+        initNonSingleSelectBottomSheet(
+            binding.genreChip,
+            R.string.genre_title,
+            R.string.genre_plural_title,
+            R.array.genre_items
+        )
+
+        initNonSingleSelectBottomSheet(
+            binding.categoryChip,
+            R.string.category_title,
+            R.string.category_plural_title,
+            R.array.category_items
+        )
+
         val adapter = CatalogMangaAdapter(requireContext())
 
         binding.catalog.adapter = adapter

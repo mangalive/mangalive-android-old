@@ -44,6 +44,161 @@
         <item>Other</item>
     </string-array>
 
+    <string name="genre_title">Genre</string>
+    <string name="genre_plural_title">Genre selected</string>
+
+    <string-array name="genre_items">
+        <item>Action</item>
+        <item>Actions arts</item>
+        <item>Harem</item>
+        <item>Gender intrigue</item>
+        <item>Heroic fantasy</item>
+        <item>Detective</item>
+        <item>Josei</item>
+        <item>Doijishi</item>
+        <item>Drama</item>
+        <item>Game</item>
+        <item>Story</item>
+        <item>Cyberpunk</item>
+        <item>Kodomo</item>
+        <item>Comedy</item>
+        <item>Macho Shojo</item>
+        <item>Mecha</item>
+        <item>Mystic</item>
+        <item>Murim</item>
+        <item>Science fantasy</item>
+        <item>Everyday</item>
+        <item>Postapocalyptic</item>
+        <item>Adventures</item>
+        <item>Psychology</item>
+        <item>Romance</item>
+        <item>Supernatural</item>
+        <item>Shoujo</item>
+        <item>Shoujo-ai</item>
+        <item>Shonen</item>
+        <item>Shonen-ai</item>
+        <item>Sports</item>
+        <item>Seinen</item>
+        <item>Tragedy</item>
+        <item>Thriller</item>
+        <item>Horror</item>
+        <item>Science Fantasy</item>
+        <item>Fantasy</item>
+        <item>School</item>
+        <item>Elements of humor</item>
+        <item>Erotica</item>
+        <item>Ethics</item>
+        <item>Yuri</item>
+        <item>Yaoi</item>
+    </string-array>
+
+    <string name="category_title">Category</string>
+    <string name="category_plural_title">Category selected</string>
+
+    <string-array name="category_items">
+        <item>Alchemy</item>
+        <item>Amnesia / Memory Loss</item>
+        <item>Angels</item>
+        <item>Antihero</item>
+        <item>Dystopia</item>
+        <item>Apocalypse</item>
+        <item>Aristocracy</item>
+        <item>Army</item>
+        <item>Artifacts</item>
+        <item>Gods</item>
+        <item>Sword fighting</item>
+        <item>Struggle for power</item>
+        <item>Future</item>
+        <item>In color</item>
+        <item>Vampires</item>
+        <item>Web</item>
+        <item>Western</item>
+        <item>Video games</item>
+        <item>Virtual Reality</item>
+        <item>Demon Lord</item>
+        <item>Military</item>
+        <item>Magical Creatures</item>
+        <item>Memories from another world</item>
+        <item>Doctors / Doctors</item>
+        <item>Survival</item>
+        <item>GG woman</item>
+        <item>GG imba</item>
+        <item>GG male</item>
+        <item>GG is not human</item>
+        <item>Gamers</item>
+        <item>Guilds</item>
+        <item>Goblins</item>
+        <item>Maids</item>
+        <item>Truck-san</item>
+        <item>Gyaru</item>
+        <item>Monster Girls</item>
+        <item>Demons</item>
+        <item>Dragons</item>
+        <item>Friendship</item>
+        <item>Yonkoma</item>
+        <item>Cruel World</item>
+        <item>Animal Companions</item>
+        <item>Conquest of the world</item>
+        <item>Beastmen</item>
+        <item>Zombies</item>
+        <item>Game elements</item>
+        <item>Isekai</item>
+        <item>Quests</item>
+        <item>Space</item>
+        <item>Cooking</item>
+        <item>Cultivation</item>
+        <item>Loli</item>
+        <item>Magic Academy</item>
+        <item>Magic</item>
+        <item>Mafia</item>
+        <item>Medicine</item>
+        <item>Revenge</item>
+        <item>Monsters</item>
+        <item>Music</item>
+        <item>Skills / Abilities</item>
+        <item>Mercenaries</item>
+        <item>Violence / Brutality</item>
+        <item>Undead</item>
+        <item>Ninja</item>
+        <item>Werewolves</item>
+        <item>Reverse Harem</item>
+        <item>Office workers</item>
+        <item>Parody</item>
+        <item>Dungeons</item>
+        <item>Policy</item>
+        <item>Police</item>
+        <item>Criminal / Crime</item>
+        <item>Ghosts / Spirits</item>
+        <item>Leveling</item>
+        <item>Trash</item>
+        <item>Time travel</item>
+        <item>Sentient races</item>
+        <item>Power Ranks</item>
+        <item>Reincarnation</item>
+
+        Darling, [11.09.2022 05:07]
+        <item>Robots</item>
+        <item>Knights</item>
+        <item>Samurai</item>
+        <item>Collection</item>
+        <item>Single</item>
+        <item>System</item>
+        <item>Identity hiding</item>
+        <item>Saving the World</item>
+        <item>Middle Ages</item>
+        <item>Steampunk</item>
+        <item>Superheroes</item>
+        <item>Traditional Games</item>
+        <item>Stupid gg</item>
+        <item>Smart gg</item>
+        <item>Territory Management</item>
+        <item>Teacher / Student</item>
+        <item>Philosophy</item>
+        <item>Hentai</item>
+        <item>Hikikomori</item>
+        <item>Blackmail</item>
+        <item>Elves</item>
+    </string-array>
 
     <string name="sortingMenu">Sorting criterion</string>
     <string name="sortingMenu_popularity">By popularity</string>
@@ -64,4 +219,5 @@
     <string name="notificationsMenu_all">All</string>
     <string name="notificationsMenu_released">Released</string>
     <string name="notificationsMenu_answers">Answers</string>
+    <string name="genre" />
 </resources>
