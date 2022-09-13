@@ -6,7 +6,7 @@
         android:title="@string/catalog_title" />
 
     <item
-        android:id="@+id/BottomAppBarMenu_Favourites"
+        android:id="@+id/BottomAppBarMenu_MyManga"
         android:icon="@drawable/ic_appbar_bottom_favourites"
         android:title="@string/favourites_title" />
 

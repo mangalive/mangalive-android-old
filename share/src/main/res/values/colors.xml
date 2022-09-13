@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- material palette - yellow 800 -->
+    <color name="md_theme_light_primary">#f9a825</color>
+    <!-- material palette - yellow 800 light -->
+    <color name="md_theme_light_primaryContainer">#ffd95a</color>
+    <!-- material palette: yellow 800; shade: 70% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_onPrimary">#4b320b</color>
+    <!-- material palette: yellow 800 light; shade: 70% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_onPrimaryContainer">#4c411b</color>
+
+    <!-- material palette: teal 800 -->
+    <color name="md_theme_light_secondary">#00796b</color>
+    <!-- material palette: teal 800 light -->
+    <color name="md_theme_light_secondaryContainer">#48a999</color>
+    <!-- material palette: teal 800; tint: 90% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_onSecondary">#e6f2f0</color>
+    <!-- material palette: teal 800 light; tint: 90% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_onSecondaryContainer">#edf6f5</color>
+
+    <!-- material palette: red 800 -->
+    <color name="md_theme_light_error">#c62828</color>
+    <!-- material palette: red 800 light -->
+    <color name="md_theme_light_errorContainer">#ff5f52</color>
+    <!-- material palette: red 800; tint: 90% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_onError">#f9eaea</color>
+    <!-- material palette: red 800 light; tint: 90% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_onErrorContainer">#ffefee</color>
+
+    <color name="md_theme_light_background">#EFEFEF</color>
+    <color name="md_theme_light_onBackground">#333333</color>
+
+    <color name="md_theme_light_surface">#ffffff</color>
+    <color name="md_theme_light_onSurface">#333333</color>
+
+    <!-- white; shade: 70% (https://maketintsandshades.com) -->
+    <color name="md_theme_light_outline">#4c4c4c</color>
+
+    <color name="md_theme_light_shadow">#000000</color>
+
+    <color name="md_theme_light_surfaceTint">#FFFFFF</color>
+    <color name="md_theme_light_surfaceTintColor">#FFFFFF</color>
+
+
+
+    <!-- material palette: yellow 700 -->
+    <color name="md_theme_dark_primary">#F5BF00</color>
+    <!-- material palette: yellow 700 dark -->
+    <color name="md_theme_dark_primaryContainer">#c49000</color>
+    <!-- material palette: yellow 700; shade: 90% (https://maketintsandshades.com) -->
+    <color name="md_theme_dark_onPrimary">#191304</color>
+    <!-- material palette: yellow 700 dark; tint: 80% (https://maketintsandshades.com) -->
+    <color name="md_theme_dark_onPrimaryContainer">#f3e9cc</color>
+
+    <!-- material palette: teal 700 -->
+    <color name="md_theme_dark_secondary">#00796b</color>
+    <!-- material palette: teal 700 dark -->
+    <color name="md_theme_dark_secondaryContainer">#004c40</color>
+    <!-- material palette: teal 700; tint: 80% (https://maketintsandshades.com) -->
+    <color name="md_theme_dark_onSecondary">#cce4e1</color>
+    <!-- material palette: teal 700; tint: 80% (https://maketintsandshades.com) -->
+    <color name="md_theme_dark_onSecondaryContainer">#ccdbd9</color>
+
+    <!-- material palette: red 700 -->
+    <color name="md_theme_dark_error">#d32f2f</color>
+    <!-- material palette: red 700; tint: 80% -->
+    <color name="md_theme_dark_onError">#f6d5d5</color>
+    <!-- material palette: red 700 dark: -->
+    <color name="md_theme_dark_errorContainer">#9a0007</color>
+    <!-- material palette: red 700 dark; tint: 80% -->
+    <color name="md_theme_dark_onErrorContainer">#ebcccd</color>
+
+    <color name="md_theme_dark_background">#131313</color>
+    <color name="md_theme_dark_onBackground">#E8E8E8</color>
+
+    <color name="md_theme_dark_surface">#181818</color>
+    <color name="md_theme_dark_onSurface">#E8E8E8</color>
+
+    <!-- white; shade: 50% (https://maketintsandshades.com) -->
+    <color name="md_theme_dark_outline">@color/md_theme_dark_primary</color>
+
+    <color name="md_theme_dark_shadow">#000000</color>
+
+    <color name="md_theme_dark_surfaceTint">#7F7F7F</color>
+    <color name="md_theme_dark_surfaceTintColor">#7F7F7B</color>
+
+</resources>

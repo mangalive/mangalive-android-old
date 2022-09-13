@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/SelectNotificationsMenu_Select"
+        android:title="@string/selectNotificationsMenu_select" />
+    <item
+        android:id="@+id/SelectNotificationsMenu_ReadAll"
+        android:title="@string/selectNotificationsMenu_read_all" />
+</menu>

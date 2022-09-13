@@ -1,0 +1,20 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="double_default_margin">32dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="half_default_margin">8dp</dimen>
+    <dimen name="quarter_default_margin">4dp</dimen>
+
+    <dimen name="panel_horizontal_padding">6dp</dimen>
+
+    <dimen name="triple_default_padding">16dp</dimen>
+    <dimen name="double_default_padding">12dp</dimen>
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="half_default_padding">4dp</dimen>
+
+    <item name="ripple_pressed_alpha" type="dimen" format="float">0.24</item>
+    <item name="ripple_hovered_alpha" type="dimen" format="float">0.16</item>
+    <item name="ripple_focused_alpha" type="dimen" format="float">0.24</item>
+</resources>

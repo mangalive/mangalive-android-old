@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="selectNotificationsMenu_select">Select</string>
+    <string name="selectNotificationsMenu_read_all">Read all</string>/>
+
+    <string name="notificationsMenu_for_today">For today</string>
+    <string name="notificationsMenu_this_week">This week</string>
+    <string name="notificationsMenu_all">All</string>
+    <string name="notificationsMenu_released">Released</string>
+    <string name="notificationsMenu_answers">Answers</string>
+</resources>
