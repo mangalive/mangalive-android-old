@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/NavGraph"
+    app:startDestination="@+id/NavGraph_Catalog">
+
+    <fragment
+        android:id="@+id/NavGraph_Catalog"
+        android:name="com.acg.mangalive.catalog.ui.CatalogFragment"
+        android:label="@string/catalog_title"
+        tools:layout="@layout/fragment_catalog" />
+
+    <fragment
+        android:id="@+id/NavGraph_MyManga"
+        android:name="com.acg.mangalive.myManga.ui.MyMangaFragment"
+        android:label="@string/favourites_title"
+        tools:layout="@layout/fragment_my_manga" />
+
+    <fragment
+        android:id="@+id/NavGraph_News"
+        android:name="com.acg.mangalive.news.ui.NewsFragment"
+        android:label="@string/news_title"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/NavGraph_Notifications"
+        android:name="com.acg.mangalive.notifications.ui.NotificationsFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearance.Mangalive.Corner.Full" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.Corner.None" parent="ShapeAppearance.Material3.Corner.None">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.Corner.ExtraSmall" parent="ShapeAppearance.Material3.Corner.ExtraSmall">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/extraSmallCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.Corner.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/smallCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/smallCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.Corner.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/mediumCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/mediumCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.Corner.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/largeCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/largeCornerRadius</item>
+    </style>
+
+    <style name="ShapeAppearance.Mangalive.Corner.ExtraLarge" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">?attr/extraLargeCornerRadius</item>
+    </style>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <style name="Base.Theme.Mangalive" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorOutline">@color/md_theme_light_outline</item>
+
+        <item name="elevationOverlayColor">@color/md_theme_light_surfaceTint</item>
+    </style>
+
+    <style name="Theme.Mangalive" parent="Base.Theme.Mangalive">
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+
+        <item name="extraSmallCornerRadius">4dp</item>
+        <item name="smallCornerRadius">8dp</item>
+        <item name="mediumCornerRadius">12dp</item>
+        <item name="largeCornerRadius">14dp</item>
+        <item name="extraLargeCornerRadius">18dp</item>
+
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.Mangalive.Corner.ExtraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.Mangalive.Corner.Small</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Mangalive.SmallComponent</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.Mangalive.Corner.Medium</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Mangalive.MediumComponent</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Mangalive.Corner.Large</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Mangalive.LargeComponent</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Mangalive.Corner.ExtraLarge</item>
+    </style>
+</resources>
