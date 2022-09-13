@@ -42,9 +42,12 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":data")))
-    implementation(project(mapOf("path" to ":domain")))
     implementation(project(mapOf("path" to ":share")))
+    implementation(project(mapOf("path" to ":catalog")))
+    implementation(project(mapOf("path" to ":notifications")))
+    implementation(project(mapOf("path" to ":myManga")))
+    implementation(project(mapOf("path" to ":news")))
+    implementation(project(mapOf("path" to ":navigation")))
 
     //noinspection GradleDependency
     implementation("androidx.core:core-ktx:1.8.0")

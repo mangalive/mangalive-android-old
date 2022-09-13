@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favourites_title">Favourites</string>
+    <string name="categoryMenu_currently_reading">Currently Reading</string>
+    <string name="categoryMenu_plan_to_read">Plan to Read</string>
+    <string name="categoryMenu_completed">Completed</string>
+    <string name="categoryMenu_on_hold">On Hold</string>
+    <string name="categoryMenu_dropped">Dropped</string>
+</resources>
