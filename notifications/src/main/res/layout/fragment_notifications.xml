@@ -44,7 +44,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="@string/notificationsFragment_title"
+            android:text="@string/notifications"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textStyle="bold" />
 
@@ -85,10 +85,10 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:textColor="?attr/colorSecondary"
-                app:icon="@drawable/ic_panel_drop_arrow"
+                app:icon="@drawable/ic_drop_arrow"
                 app:iconGravity="end"
                 app:iconTint="?attr/colorSecondary"
-                app:rippleColor="@drawable/secondary_button_icon_ripple" />
+                app:rippleColor="@drawable/default_secondary_ripple" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
                 android:layout_weight="0"
                 app:icon="@drawable/ic_menu"
                 app:iconTint="?attr/colorSecondary"
-                app:rippleColor="@drawable/secondary_button_icon_ripple" />
+                app:rippleColor="@drawable/default_secondary_ripple" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

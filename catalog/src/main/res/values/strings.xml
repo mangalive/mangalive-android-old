@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="search_placeholder_text">Search manga, senpai!</string>
-    <string name="account">account</string>
-    <string name="filter_button_text">filter</string>
 
     <string name="bottom_sheet_reset_btn">reset</string>
 
@@ -196,7 +194,4 @@
     <string name="sortingMenu_views">By views</string>
     <string name="sortingMenu_chapter_count">By chapter count</string>
     <string name="sortingMenu_random">Random sorting</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="title_catalog_future">Catalog</string>
 </resources>

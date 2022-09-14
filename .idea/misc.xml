@@ -113,15 +113,23 @@
         <entry key="catalog/src/main/res/layout/single_select_bottom_sheet_item.xml" value="0.1953125" />
         <entry key="myManga/src/main/res/layout/card_catalog.xml" value="0.33229166666666665" />
         <entry key="myManga/src/main/res/layout/fragment_favourites.xml" value="0.3333333333333333" />
+        <entry key="myManga/src/main/res/layout/fragment_my_manga.xml" value="0.20416666666666666" />
         <entry key="myManga/src/main/res/menu/my_manga_categories_menu.xml" value="0.16614583333333333" />
         <entry key="news/src/main/res/layout/fragment_news.xml" value="0.17083333333333334" />
         <entry key="notifications/src/main/res/layout/card_notifications.xml" value="0.3333333333333333" />
+        <entry key="notifications/src/main/res/layout/fragment_notifications.xml" value="0.20416666666666666" />
         <entry key="notifications/src/main/res/menu/notifications_menu.xml" value="0.3333333333333333" />
         <entry key="notifications/src/main/res/menu/select_notifications_menu.xml" value="0.4674185463659148" />
         <entry key="share/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.142" />
         <entry key="share/src/main/res/drawable/ic_appbar_top_account.xml" value="0.142" />
         <entry key="share/src/main/res/drawable/ic_appbar_top_search.xml" value="0.142" />
         <entry key="share/src/main/res/drawable/ic_drop_arrow.xml" value="0.142" />
+        <entry key="share/src/main/res/drawable/ic_menu.xml" value="0.166" />
+        <entry key="share/src/main/res/drawable/ic_panel_drop_arrow.xml" value="0.166" />
+        <entry key="share/src/main/res/drawable/ic_panel_filter.xml" value="0.166" />
+        <entry key="share/src/main/res/drawable/nav_bar_ripple_color_selector.xml" value="0.166" />
+        <entry key="share/src/main/res/drawable/rounded_bg.xml" value="0.166" />
+        <entry key="share/src/main/res/drawable/secondary_button_icon_ripple.xml" value="0.166" />
         <entry key="share/src/main/res/drawable/surface_bg.xml" value="0.142" />
       </map>
     </option>

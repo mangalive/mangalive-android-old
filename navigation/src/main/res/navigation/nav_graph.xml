@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/NavGraph_MyManga"
         android:name="com.acg.mangalive.myManga.ui.MyMangaFragment"
-        android:label="@string/favourites_title"
+        android:label="@string/my_manga_title"
         tools:layout="@layout/fragment_my_manga" />
 
     <fragment
