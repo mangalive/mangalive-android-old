@@ -71,24 +71,32 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/filter"
-        android:name="com.acg.mangalive.catalog.ui.CatalogFilterFragment"
-        android:layout_width="match_parent"
+
+    <com.acg.mangalive.views.filter.SingleSelectFilter
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:defaultEntryIndex="0"
+        app:entries="@array/sortingCriterion_items"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header" />
+        app:layout_constraintTop_toBottomOf="@+id/Header"
+        app:title="@string/sortingCriterion_title" />
+    <!--    <androidx.fragment.app.FragmentContainerView-->
+    <!--        android:id="@+id/filter"-->
+    <!--        android:name="com.acg.mangalive.catalog.ui.filter.FilterFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--    app:layout_constraintStart_toStartOf="parent"-->
+    <!--    app:layout_constraintTop_toBottomOf="@+id/Header" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/catalog"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="300dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filter" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

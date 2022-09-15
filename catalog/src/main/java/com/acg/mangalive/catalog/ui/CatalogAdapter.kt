@@ -10,8 +10,8 @@ import com.acg.mangalive.catalog.databinding.CardMangaBinding
 import com.acg.mangalive.catalog.domain.model.MangaCard
 import com.acg.mangalive.share.R as shareR
 
-class CatalogMangaAdapter(context: Context) :
-    PagingDataAdapter<MangaCard, CatalogMangaAdapter.ViewHolder>(DiffItemCallback) {
+class CatalogAdapter(context: Context) :
+    PagingDataAdapter<MangaCard, CatalogAdapter.ViewHolder>(DiffItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(

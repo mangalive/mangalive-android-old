@@ -1,4 +1,4 @@
-package com.acg.mangalive.catalog.ui
+package com.acg.mangalive.catalog.ui.filter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,17 +8,27 @@ import androidx.fragment.app.Fragment
 import com.acg.mangalive.catalog.databinding.FragmentCatalogSingleSelectFilterBinding
 import com.acg.mangalive.catalog.ui.bottomSheets.SelectBottomSheetItem
 import com.acg.mangalive.catalog.ui.bottomSheets.SingleSelectBottomSheet
+import com.acg.mangalive.share.di.lazyViewModel
+import javax.inject.Inject
 import kotlin.properties.Delegates
 
 
-class CatalogSingleSelectFilter : Fragment() {
+class SingleSelectFilter : Fragment() {
     private lateinit var binding: FragmentCatalogSingleSelectFilterBinding
 
     private lateinit var title: String
     private lateinit var itemsValues: List<String>
+    private lateinit var name: String
     private var defaultItemIndex by Delegates.notNull<Int>()
 
     private lateinit var bottomSheet: SingleSelectBottomSheet
+
+    @Inject
+    lateinit var viewModelFactory: FilterViewModel.Factory
+
+    val viewModel: FilterViewModel by lazyViewModel({ requireParentFragment() }, {
+        viewModelFactory.create(it)
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,16 +37,20 @@ class CatalogSingleSelectFilter : Fragment() {
     ): View {
         binding = FragmentCatalogSingleSelectFilterBinding.inflate(inflater, container, false)
 
-        val titleId = arguments?.getInt(TITLE_ID_ARG)
-        val itemsId = arguments?.getInt(ITEMS_ID_ARG)
-        defaultItemIndex = arguments?.getInt(DEFAULT_ITEM_INDEX_ARG) ?: 0
-
-        title = titleId?.let { resources.getString(it) } ?: ""
-        itemsValues = itemsId?.let { resources.getStringArray(it).toList() } ?: listOf()
-
+        uploadArgs()
         bottomSheet = SingleSelectBottomSheet(title, itemsValues)
 
         return binding.root
+    }
+
+    private fun uploadArgs() {
+        val titleId = arguments?.getInt(TITLE_ID_ARG)
+        val itemsId = arguments?.getInt(ITEMS_ID_ARG)
+        defaultItemIndex = arguments?.getInt(DEFAULT_ITEM_INDEX_ARG) ?: 0
+        name = arguments?.getString(NAME_ARG) ?: ""
+
+        title = titleId?.let { resources.getString(it) } ?: ""
+        itemsValues = itemsId?.let { resources.getStringArray(it).toList() } ?: listOf()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -77,21 +91,24 @@ class CatalogSingleSelectFilter : Fragment() {
     companion object {
         const val TAG = "CATALOG_SINGLE_SELECT_FILTER"
 
+        private const val NAME_ARG = "NAME_ARG"
         private const val TITLE_ID_ARG = "TITLE_ID_ARG"
         private const val ITEMS_ID_ARG = "ITEMS_ID_ARG"
         private const val DEFAULT_ITEM_INDEX_ARG = "DEFAULT_ITEM_INDEX_ARG"
 
         fun newInstance(
+            name: String,
             titleId: Int,
             itemsId: Int,
             defaultItemIndex: Int
-        ): CatalogSingleSelectFilter {
+        ): SingleSelectFilter {
             val args = Bundle()
+            args.putString(NAME_ARG, name)
             args.putInt(TITLE_ID_ARG, titleId)
             args.putInt(ITEMS_ID_ARG, itemsId)
             args.putInt(DEFAULT_ITEM_INDEX_ARG, defaultItemIndex)
 
-            val instance = CatalogSingleSelectFilter()
+            val instance = SingleSelectFilter()
             instance.arguments = args
 
             return instance

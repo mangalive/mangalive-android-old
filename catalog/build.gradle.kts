@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation(project(":share"))
+    implementation(project(":views"))
     implementation(project(mapOf("path" to ":navigation")))
 
     implementation("androidx.core:core-ktx:1.7.0")

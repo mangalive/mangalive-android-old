@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Mangalive.Filter.SingleSelect" parent="Widget.Material3.Chip.Filter.Elevated">
+        <item name='android:elevation'>8dp</item>
+        <item name='chipIcon'>@drawable/ic_drop_arrow</item>
+        <item name="chipIconEnabled">true</item>
+        <item name="chipIconTint">?attr/colorOnSecondaryContainer</item>
+        <item name="chipIconVisible">true</item>
+    </style>
+</resources>

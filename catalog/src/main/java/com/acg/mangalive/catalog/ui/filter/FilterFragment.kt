@@ -1,31 +1,28 @@
-package com.acg.mangalive.catalog.ui
+package com.acg.mangalive.catalog.ui.filter
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.acg.mangalive.catalog.R
 import com.acg.mangalive.catalog.databinding.FragmentCatalogFilterBinding
+import com.acg.mangalive.share.di.lazyViewModel
 import javax.inject.Inject
 
 
-class CatalogFilterFragment : Fragment() {
+class FilterFragment : Fragment() {
     private var _binding: FragmentCatalogFilterBinding? = null
     private val binding get() = _binding!!
 
+    lateinit var sortingCriterionFilter: SingleSelectFilter
+
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var viewModelFactory: FilterViewModel.Factory
 
-    lateinit var sortingCriterionFilter: CatalogSingleSelectFilter
-
-    private val viewModel: CatalogViewModel by viewModels(
-        { requireParentFragment() },
-        null,
-        { viewModelFactory },
-    )
+    val viewModel: FilterViewModel by lazyViewModel {
+        viewModelFactory.create(it)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +31,8 @@ class CatalogFilterFragment : Fragment() {
     ): View {
         _binding = FragmentCatalogFilterBinding.inflate(inflater, container, false)
 
-        sortingCriterionFilter = CatalogSingleSelectFilter.newInstance(
+        sortingCriterionFilter = SingleSelectFilter.newInstance(
+            "chip",
             R.string.sortingCriterion_title,
             R.array.sortingCriterion_items,
             0
@@ -45,20 +43,20 @@ class CatalogFilterFragment : Fragment() {
             .add(
                 binding.sortingCriterion.id,
                 sortingCriterionFilter,
-                CatalogSingleSelectFilter.TAG
+                SingleSelectFilter.TAG
             )
             .add(
                 binding.type.id,
-                CatalogNonSingleSelectFilter.newInstance(
+                NonSingleSelectFilter.newInstance(
                     R.string.type_title,
                     R.array.type_items,
                     R.string.type_plural_title
                 ),
-                CatalogNonSingleSelectFilter.TAG
+                NonSingleSelectFilter.TAG
             )
             .add(
                 binding.genre.id,
-                CatalogNonSingleSelectFilter.newInstance(
+                NonSingleSelectFilter.newInstance(
                     R.string.genre_title,
                     R.array.genre_items,
                     R.string.genre_plural_title
@@ -66,7 +64,7 @@ class CatalogFilterFragment : Fragment() {
             )
             .add(
                 binding.category.id,
-                CatalogNonSingleSelectFilter.newInstance(
+                NonSingleSelectFilter.newInstance(
                     R.string.category_title,
                     R.array.category_items,
                     R.string.category_plural_title,

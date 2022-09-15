@@ -1,4 +1,4 @@
-package com.acg.mangalive.catalog.ui
+package com.acg.mangalive.catalog.ui.filter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import com.acg.mangalive.catalog.databinding.FragmentCatalogNonSingleSelectFilterBinding
 import com.acg.mangalive.catalog.ui.bottomSheets.NonSingleSelectBottomSheet
 import com.acg.mangalive.catalog.ui.bottomSheets.SelectBottomSheetItem
+import com.acg.mangalive.share.di.lazyViewModel
+import javax.inject.Inject
 
-class CatalogNonSingleSelectFilter : Fragment() {
+class NonSingleSelectFilter : Fragment() {
     private lateinit var binding: FragmentCatalogNonSingleSelectFilterBinding
 
     private lateinit var title: String
@@ -17,6 +19,13 @@ class CatalogNonSingleSelectFilter : Fragment() {
     private lateinit var itemsValues: List<String>
 
     private lateinit var bottomSheet: NonSingleSelectBottomSheet
+
+    @Inject
+    lateinit var viewModelFactory: FilterViewModel.Factory
+
+    val viewModel: FilterViewModel by lazyViewModel({ requireParentFragment() }, {
+        viewModelFactory.create(it)
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -100,8 +109,6 @@ class CatalogNonSingleSelectFilter : Fragment() {
     }
 
     private fun updateSelectedItemsIndexes(indexes: List<Int>) {
-//        val args = Bundle()
-//        args.putIntegerArrayList(SELECTED_ITEMS_RESULT_ARG, convertListToArrayList(indexes))
     }
 
     companion object {
@@ -115,13 +122,13 @@ class CatalogNonSingleSelectFilter : Fragment() {
             titleId: Int,
             itemsId: Int,
             pluralTitleId: Int,
-        ): CatalogNonSingleSelectFilter {
+        ): NonSingleSelectFilter {
             val args = Bundle()
             args.putInt(TITLE_ID_ARG, titleId)
             args.putInt(ITEMS_ID_ARG, itemsId)
             args.putInt(PLURAL_TITLE_ID_ARG, pluralTitleId)
 
-            val instance = CatalogNonSingleSelectFilter()
+            val instance = NonSingleSelectFilter()
             instance.arguments = args
 
             return instance

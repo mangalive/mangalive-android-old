@@ -43,7 +43,7 @@ class CatalogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val adapter = CatalogMangaAdapter(requireContext())
+        val adapter = CatalogAdapter(requireContext())
 
         binding.catalog.adapter = adapter
 
