@@ -8,4 +8,24 @@
         <item name="chipIconTint">?attr/colorOnSecondaryContainer</item>
         <item name="chipIconVisible">true</item>
     </style>
+
+    <style name="Widget.Mangalive.Filter.MultipleSelect" parent="Widget.Mangalive.Filter.SingleSelect">
+        <item name="closeIcon">@drawable/ic_close</item>
+        <item name="closeIconEnabled">true</item>
+        <item name="closeIconVisible">false</item>
+    </style>
+
+    <style name="Widget.Mangalive.Filter.Reset" parent="@style/Widget.Material3.Chip.Filter.Elevated">
+        <item name="android:layout_marginStart">@dimen/half_default_margin</item>
+        <item name="android:checkable">false</item>
+        <item name="android:text">@string/filter_reset_btn</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="chipBackgroundColor">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="Widget.Mangalive.Filter.Group" parent="">
+        <item name="android:scrollbarSize">0dp</item>
+    </style>
 </resources>

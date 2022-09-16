@@ -5,8 +5,8 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.core.content.res.getIntOrThrow
+import androidx.core.content.res.getStringOrThrow
 import androidx.core.content.res.getTextArrayOrThrow
-import androidx.core.content.res.getTextOrThrow
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.acg.mangalive.views.R
@@ -24,7 +24,9 @@ class SingleSelectFilter : FrameLayout {
     var title: String?
         set(value) {
             _title = value
-            value?.let { bottomSheet?.title = it }
+            binding?.chip?.text =
+                entries.getOrNull(if (entries.isEmpty()) defaultEntryIndex else selectedEntryIndex)
+            bottomSheet?.title = value ?: ""
         }
         get() = _title
 
@@ -42,7 +44,7 @@ class SingleSelectFilter : FrameLayout {
             _defaultEntryIndex = value
 
             if (selectedEntryIndex == value) {
-                binding?.chip?.text = entries[value]
+                binding?.chip?.text = entries.getOrNull(value)
             }
         }
         get() = _defaultEntryIndex
@@ -87,7 +89,7 @@ class SingleSelectFilter : FrameLayout {
             R.style.Widget_Mangalive_Filter_SingleSelect
         )
 
-        title = attributes.getTextOrThrow(R.styleable.SingleSelectFilter_title).toString()
+        title = attributes.getStringOrThrow(R.styleable.SingleSelectFilter_title)
 
         entries = attributes.getTextArrayOrThrow(R.styleable.SingleSelectFilter_entries)
             .map { it.toString() }
@@ -99,7 +101,6 @@ class SingleSelectFilter : FrameLayout {
     }
 
     private fun initChip() = binding?.chip?.apply {
-        text = entries[defaultEntryIndex]
         isChecked = true
         isCheckable = false
     }
@@ -113,10 +114,12 @@ class SingleSelectFilter : FrameLayout {
         binding?.chip?.setOnCloseIconClickListener { reset() }
     }
 
-    private fun updateSelectedEntry(item: Entry) {
-        binding?.chip?.text = item.value
-        selectedEntryIndex = item.index
-        onSelectUpdateCallback?.invoke(selectedEntryIndex)
+    private fun updateSelectedEntry(entry: Entry?) {
+        binding?.chip?.text = entry?.value
+        entry?.let {
+            selectedEntryIndex = it.index
+            onSelectUpdateCallback?.invoke(selectedEntryIndex)
+        }
     }
 
     private fun openBottomSheet() = bottomSheet?.apply {
@@ -126,7 +129,8 @@ class SingleSelectFilter : FrameLayout {
     }
 
     fun reset() =
-        updateSelectedEntry(Entry(defaultEntryIndex, entries[defaultEntryIndex]))
+        updateSelectedEntry(
+            entries.getOrNull(defaultEntryIndex)?.let { Entry(defaultEntryIndex, it) })
 
 
     fun setOnSelectUpdateListener(listener: OnSelectUpdateListener) {

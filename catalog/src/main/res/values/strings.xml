@@ -2,8 +2,6 @@
 <resources>
     <string name="search_placeholder_text">Search manga, senpai!</string>
 
-    <string name="bottom_sheet_reset_btn">reset</string>
-
     <string name="sortingCriterion_title">Sorting criterion</string>
     <string name="sortingCriterion_default_item">By popularity</string>
 
@@ -31,7 +29,7 @@
     </string-array>
 
     <string name="genre_title">Genre</string>
-    <string name="genre_plural_title">Genre selected</string>
+    <string name="genre_plural_title">Genres selected</string>
 
     <string-array name="genre_items">
         <item>Action</item>
@@ -79,7 +77,7 @@
     </string-array>
 
     <string name="category_title">Category</string>
-    <string name="category_plural_title">Category selected</string>
+    <string name="category_plural_title">Categories selected</string>
 
     <string-array name="category_items">
         <item>Alchemy</item>
@@ -161,8 +159,6 @@
         <item>Sentient races</item>
         <item>Power Ranks</item>
         <item>Reincarnation</item>
-
-        Darling, [11.09.2022 05:07]
         <item>Robots</item>
         <item>Knights</item>
         <item>Samurai</item>

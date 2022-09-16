@@ -1,4 +1,4 @@
-package com.acg.mangalive.catalog.ui.bottomSheets
+package com.acg.mangalive.views.filter
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -8,31 +8,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.acg.mangalive.catalog.databinding.FragmentNonSingleSelectBottomSheetBinding
-import com.acg.mangalive.catalog.databinding.NonSingleSelectBottomSheetItemBinding
+import com.acg.mangalive.views.databinding.MultipleSelectBottomSheetBinding
+import com.acg.mangalive.views.databinding.MultipleSelectBottomSheetItemBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class NonSingleSelectBottomSheet(
-    private val title: String,
-    private val items: List<String>,
+class MultipleSelectBottomSheet(
+    var title: String,
+    var entriesValues: List<String>,
 ) : BottomSheetDialogFragment() {
+
     interface OnResetListener {
         fun onReset()
     }
 
     interface OnCloseListener {
-        fun onCloseSelect(items: List<SelectBottomSheetItem>): Unit
+        fun onClose(entries: List<Entry>)
     }
 
-    private var _binding: FragmentNonSingleSelectBottomSheetBinding? = null
-    private val binding get() = _binding!!
+    private var binding: MultipleSelectBottomSheetBinding? = null
 
-    private var isItemSelectedArray: Array<Boolean> = Array(items.size) { false }
+    private var isEntrySelectArray: Array<Boolean> = Array(entriesValues.size) { false }
 
     private var onResetCallback: (() -> Unit)? = null
 
-    private var onCloseCallback: ((List<SelectBottomSheetItem>) -> Unit)? = null
+    private var onCloseCallback: ((List<Entry>) -> Unit)? = null
 
     fun setOnResetListener(listener: () -> Unit) {
         onResetCallback = listener
@@ -43,10 +43,10 @@ class NonSingleSelectBottomSheet(
     }
 
     fun setOnCloseListener(listener: OnCloseListener) {
-        onCloseCallback = listener::onCloseSelect
+        onCloseCallback = listener::onClose
     }
 
-    fun setOnCloseListener(listener: (List<SelectBottomSheetItem>) -> Unit) {
+    fun setOnCloseListener(listener: (List<Entry>) -> Unit) {
         onCloseCallback = listener
     }
 
@@ -54,21 +54,20 @@ class NonSingleSelectBottomSheet(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = FragmentNonSingleSelectBottomSheetBinding
+    ) = MultipleSelectBottomSheetBinding
         .inflate(inflater, container, false).let {
-            _binding = it
+            binding = it
             it.root
         }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.headline.text = title
+        binding?.headline?.text = title
 
-        val adapter = Adapter()
-        binding.recyclerView.adapter = adapter
+        binding?.recyclerView?.adapter = Adapter()
 
-        binding.resetBtn.setOnClickListener {
+        binding?.resetBtn?.setOnClickListener {
             onResetCallback?.invoke()
             reset()
             dismiss()
@@ -76,22 +75,20 @@ class NonSingleSelectBottomSheet(
     }
 
     override fun onDismiss(dialog: DialogInterface) {
-        val selectedItems = mutableListOf<SelectBottomSheetItem>()
-
-        for (i in isItemSelectedArray.indices) {
-            if (!isItemSelectedArray[i]) continue
-            selectedItems.add(SelectBottomSheetItem(i, items[i]))
-        }
-
-        onCloseCallback?.invoke(selectedItems)
-
         super.onDismiss(dialog)
+
+        val selectedEntries = isEntrySelectArray
+            .asList()
+            .mapIndexed { index, isSelected ->
+                if (isSelected) Entry(index, entriesValues[index]) else null
+            }
+            .filterNotNull()
+
+        onCloseCallback?.invoke(selectedEntries)
     }
 
     fun reset() {
-        for (i in isItemSelectedArray.indices) {
-            isItemSelectedArray[i] = false
-        }
+        isEntrySelectArray = Array(entriesValues.size) { false }
     }
 
     @SuppressLint("VisibleForTests")
@@ -106,34 +103,33 @@ class NonSingleSelectBottomSheet(
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             ViewHolder(
-                NonSingleSelectBottomSheetItemBinding.inflate(
+                MultipleSelectBottomSheetItemBinding.inflate(
                     LayoutInflater.from(parent.context), parent, false
                 ),
             )
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-            holder.bind(items[position], position)
+            holder.bind(entriesValues[position], position)
 
-
-        override fun getItemCount(): Int = items.size
+        override fun getItemCount(): Int = entriesValues.size
     }
 
     inner class ViewHolder(
-        private val binding: NonSingleSelectBottomSheetItemBinding,
+        private val binding: MultipleSelectBottomSheetItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(value: String, position: Int) = with(binding) {
             text.text = value
 
-            checkbox.isChecked = isItemSelectedArray[position]
+            checkbox.isChecked = isEntrySelectArray[position]
             card.setOnClickListener {
                 checkbox.isChecked = !checkbox.isChecked
-                isItemSelectedArray[position] = checkbox.isChecked
+                isEntrySelectArray[position] = checkbox.isChecked
             }
         }
     }
 
     companion object {
-        const val TAG = "NonSingleSelectBottomSheet"
+        const val TAG = "MultipleSelectBottomSheet"
     }
 }

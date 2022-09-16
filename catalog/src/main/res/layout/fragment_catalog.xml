@@ -9,7 +9,7 @@
     tools:context=".ui.CatalogFragment">
 
     <LinearLayout
-        android:id="@+id/Header"
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Search"
+            android:id="@+id/search"
             style="@style/Widget.Mangalive.Header.Search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/NotificationsBtn"
+            android:id="@+id/notificationsBtn"
             style="@style/Widget.Mangalive.Header.IconButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,30 +71,50 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-
-    <com.acg.mangalive.views.filter.SingleSelectFilter
-        android:layout_width="wrap_content"
+    <com.acg.mangalive.views.filter.FilterGroup
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:defaultEntryIndex="0"
-        app:entries="@array/sortingCriterion_items"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Header"
-        app:title="@string/sortingCriterion_title" />
-    <!--    <androidx.fragment.app.FragmentContainerView-->
-    <!--        android:id="@+id/filter"-->
-    <!--        android:name="com.acg.mangalive.catalog.ui.filter.FilterFragment"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--    app:layout_constraintEnd_toEndOf="parent"-->
-    <!--    app:layout_constraintStart_toStartOf="parent"-->
-    <!--    app:layout_constraintTop_toBottomOf="@+id/Header" />-->
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <com.acg.mangalive.views.filter.SingleSelectFilter
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:defaultEntryIndex="0"
+            app:entries="@array/sortingCriterion_items"
+            app:title="@string/sortingCriterion_title" />
+
+        <com.acg.mangalive.views.filter.MultipleSelectFilter
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:entries="@array/type_items"
+            app:pluralTitle="@string/type_plural_title"
+            app:title="@string/type_title" />
+
+        <com.acg.mangalive.views.filter.MultipleSelectFilter
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:entries="@array/genre_items"
+            app:pluralTitle="@string/genre_plural_title"
+            app:title="@string/genre_title" />
+
+        <com.acg.mangalive.views.filter.MultipleSelectFilter
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:entries="@array/category_items"
+            app:pluralTitle="@string/category_plural_title"
+            app:title="@string/category_title" />
+    </com.acg.mangalive.views.filter.FilterGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/catalog"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/filter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

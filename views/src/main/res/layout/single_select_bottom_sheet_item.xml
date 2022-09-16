@@ -26,9 +26,9 @@
 
             <TextView
                 android:id="@+id/text"
-                android:paddingLeft="@dimen/half_default_padding"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/half_default_padding"
                 android:textAppearance="?attr/textAppearanceTitleMedium" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

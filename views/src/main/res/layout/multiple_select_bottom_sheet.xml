@@ -19,7 +19,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/half_default_padding"
-            android:text="@string/sortingCriterion_title"
             android:textAppearance="?attr/textAppearanceTitleLarge"
             android:textColor="?attr/colorOnSurface"
             android:textStyle="bold" />
@@ -34,7 +33,7 @@
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bottom_sheet_reset_btn"
+            android:text="@string/filter_reset_btn"
             android:textAllCaps="true" />
 
     </LinearLayout>
@@ -43,8 +42,8 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:fadeScrollbars="false"
         android:orientation="vertical"
         android:scrollbars="vertical"
-        android:fadeScrollbars="false"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </LinearLayout>

@@ -103,7 +103,7 @@
         <entry key="app/src/main/res/menu/notifications_menu.xml" value="0.35260416666666666" />
         <entry key="catalog/src/main/res/drawable/ic_appbar_top_account.xml" value="0.142" />
         <entry key="catalog/src/main/res/layout/card_manga.xml" value="0.1953125" />
-        <entry key="catalog/src/main/res/layout/fragment_catalog.xml" value="0.25" />
+        <entry key="catalog/src/main/res/layout/fragment_catalog.xml" value="0.22" />
         <entry key="catalog/src/main/res/layout/fragment_catalog_filter.xml" value="0.17083333333333334" />
         <entry key="catalog/src/main/res/layout/fragment_catalog_non_single_select_filter.xml" value="0.1953125" />
         <entry key="catalog/src/main/res/layout/fragment_catalog_single_select_filter.xml" value="0.1953125" />
@@ -132,8 +132,16 @@
         <entry key="share/src/main/res/drawable/rounded_bg.xml" value="0.166" />
         <entry key="share/src/main/res/drawable/secondary_button_icon_ripple.xml" value="0.166" />
         <entry key="share/src/main/res/drawable/surface_bg.xml" value="0.142" />
+        <entry key="views/src/main/res/layout/filter_group.xml" value="0.22" />
         <entry key="views/src/main/res/layout/filter_single_select.xml" value="0.33229166666666665" />
         <entry key="views/src/main/res/layout/fragment_single_select_bottom_sheet.xml" value="0.165625" />
+        <entry key="views/src/main/res/layout/multiple_select_bottom_sheet.xml" value="0.19166666666666668" />
+        <entry key="views/src/main/res/layout/multiple_select_bottom_sheet_item.xml" value="0.19166666666666668" />
+        <entry key="views/src/main/res/layout/multiple_select_filter.xml" value="0.19166666666666668" />
+        <entry key="views/src/main/res/layout/non_single_select_bottom_sheet.xml" value="0.33229166666666665" />
+        <entry key="views/src/main/res/layout/non_single_select_bottom_sheet_item.xml" value="0.33229166666666665" />
+        <entry key="views/src/main/res/layout/non_single_select_filter.xml" value="0.33229166666666665" />
+        <entry key="views/src/main/res/layout/single_select_bottom_sheet.xml" value="0.3333333333333333" />
         <entry key="views/src/main/res/layout/single_select_bottom_sheet_item.xml" value="0.165625" />
         <entry key="views/src/main/res/layout/single_select_filter.xml" value="0.3333333333333333" />
       </map>

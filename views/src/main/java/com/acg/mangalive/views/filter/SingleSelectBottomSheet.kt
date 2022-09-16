@@ -16,6 +16,7 @@ class SingleSelectBottomSheet(
     var title: String,
     var entries: List<String>,
 ) : BottomSheetDialogFragment() {
+
     interface OnEntrySelectListener {
         fun onEntrySelect(item: Entry)
     }

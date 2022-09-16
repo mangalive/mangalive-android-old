@@ -42,31 +42,17 @@ class CatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         val adapter = CatalogAdapter(requireContext())
 
         binding.catalog.adapter = adapter
 
-        binding.NotificationsBtn.setOnClickListener {
+        binding.notificationsBtn.setOnClickListener {
             findNavController().navigate(navR.id.NavGraph_Notifications)
         }
-
-//        sortingMenu.setOnMenuItemClickListener {
-//            viewModel.setSortingCriterion(convertMenuItemIdToSortingCriterion(it.itemId))
-//            true
-//        }
-
-//        viewModel.sortingParameters.observe(viewLifecycleOwner) {
-//            binding.SortingMenuBtn.setText(convertSortingCriterionToValue(it.criterion))
-//        }
 
         viewModel.catalog.observe(viewLifecycleOwner) {
             adapter.submitData(lifecycle, it)
         }
-
-//        binding.SortingMenuBtn.setOnClickListener {
-//            sortingMenu.show()
-//        }
     }
 
     override fun onDestroy() {

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="title" format="string" />
+    <attr name="entries" format="reference" />
+
     <declare-styleable name="SingleSelectFilter">
         <attr name="title" />
-        <attr name="entries" format="reference" />
+        <attr name="entries" />
         <attr name="defaultEntryIndex" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="MultipleSelectFilter">
+        <attr name="title" />
+        <attr name="entries" />
+        <attr name="pluralTitle" format="string" />
     </declare-styleable>
 </resources>
