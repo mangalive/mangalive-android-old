@@ -51,21 +51,21 @@ class NotificationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val notificationsMenu = createNotificationsMenu()
+//        val notificationsMenu = createNotificationsMenu()
         val selectNotificationsMenu = createSelectNotificationsMenu()
 
         val adapter = NotificationsAdapter(requireContext(), checkBoxVisibilityChange)
 
         binding.notifications.adapter = adapter
 
-        notificationsMenu.setOnMenuItemClickListener {
-            viewModel.setSortingCriterion(convertNotificationsMenuItemIdToState(it.itemId))
-            true
-        }
+//        notificationsMenu.setOnMenuItemClickListener {
+//            viewModel.setSortingCriterion(convertNotificationsMenuItemIdToState(it.itemId))
+//            true
+//        }
 
-        viewModel.sortingParameters.observe(viewLifecycleOwner) {
-            binding.NotificationsMenuBtn.setText(convertNotificationsMenuStateToValue(it.criterion))
-        }
+//        viewModel.sortingParameters.observe(viewLifecycleOwner) {
+//            binding.NotificationsMenuBtn.setText(convertNotificationsMenuStateToValue(it.criterion))
+//        }
 
         viewModel.notifications.observe(viewLifecycleOwner) {
             adapter.submitData(lifecycle, it)
@@ -77,10 +77,7 @@ class NotificationsFragment : Fragment() {
 
         selectNotificationsMenu.setOnMenuItemClickListener {
             if (it.itemId == R.id.SelectNotificationsMenu_Select) {
-                checkBoxVisibilityChange.value = true
-                binding.NavBackBtn.isVisible = false
-                binding.SelectionCloseBtn.isVisible = true
-                binding.floatingActionButton2.isVisible = true
+                onSelectMod()
             }
             true
         }
@@ -88,10 +85,7 @@ class NotificationsFragment : Fragment() {
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (checkBoxVisibilityChange.value == true) {
-                    checkBoxVisibilityChange.value = false
-                    binding.NavBackBtn.isVisible = true
-                    binding.SelectionCloseBtn.isVisible = false
-                    binding.floatingActionButton2.isVisible = false
+                    offSelectMode()
                 } else {
                     findNavController().navigate(navR.id.NavGraph_Catalog)
                 }
@@ -102,30 +96,51 @@ class NotificationsFragment : Fragment() {
             onBackPressedCallback
         )
 
+         val notificationsBottomSheet = NotificationsBottomSheet()
+
+        binding.chip.setOnClickListener {
+            notificationsBottomSheet.show(parentFragmentManager, "cock")
+        }
+
         binding.NavBackBtn.setOnClickListener {
             findNavController().navigate(navR.id.NavGraph_Catalog)
         }
 
         binding.SelectionCloseBtn.setOnClickListener {
-            checkBoxVisibilityChange.value = false
-            binding.NavBackBtn.isVisible = true
-            binding.SelectionCloseBtn.isVisible = false
-            binding.floatingActionButton2.isVisible = false
+            offSelectMode()
         }
 
-        binding.NotificationsMenuBtn.setOnClickListener {
-            notificationsMenu.show()
+//        binding.NotificationsMenuBtn.setOnClickListener {
+//            notificationsMenu.show()
+//        }
+
+        binding.floatingActionButton2.setOnClickListener {
+            offSelectMode()
         }
     }
 
 
-    private fun createNotificationsMenu() = PopupMenu(
-        requireContext(), binding.NotificationsMenuBtn, Gravity.LEFT,
-        androidx.appcompat.R.attr.popupMenuStyle,
-        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
-    ).also {
-        it.menuInflater.inflate(R.menu.notifications_menu, it.menu)
+    private fun onSelectMod() {
+        checkBoxVisibilityChange.value = true
+        binding.NavBackBtn.isVisible = false
+        binding.SelectionCloseBtn.isVisible = true
+        binding.floatingActionButton2.isVisible = true
     }
+
+    private fun offSelectMode() {
+        checkBoxVisibilityChange.value = false
+        binding.NavBackBtn.isVisible = true
+        binding.SelectionCloseBtn.isVisible = false
+        binding.floatingActionButton2.isVisible = false
+    }
+
+//    private fun createNotificationsMenu() = PopupMenu(
+//        requireContext(), binding.NotificationsMenuBtn, Gravity.LEFT,
+//        androidx.appcompat.R.attr.popupMenuStyle,
+//        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
+//    ).also {
+//        it.menuInflater.inflate(R.menu.notifications_menu, it.menu)
+//    }
 
     private fun createSelectNotificationsMenu() = PopupMenu(
         requireContext(), binding.SelectMenuNotificationsBtn, Gravity.RIGHT,
@@ -135,24 +150,24 @@ class NotificationsFragment : Fragment() {
         it.menuInflater.inflate(R.menu.select_notifications_menu, it.menu)
     }
 
-    private fun convertNotificationsMenuItemIdToState(itemId: Int): SortingCriterionNotifications =
-        when (itemId) {
-            R.id.NotificationsMenu_All -> SortingCriterionNotifications.All
-            R.id.NotificationsMenu_ForToday -> SortingCriterionNotifications.ForToday
-            R.id.NotificationsMenu_ThisWeek -> SortingCriterionNotifications.ThisWeek
-            R.id.NotificationsMenu_Released -> SortingCriterionNotifications.Released
-            R.id.NotificationsMenu_Answers -> SortingCriterionNotifications.Answers
-            else -> DEFAULT_SORTING_CRITERION_NOTIFICATIONS
-        }
+//    private fun convertNotificationsMenuItemIdToState(itemId: Int): SortingCriterionNotifications =
+//        when (itemId) {
+//            R.id.NotificationsMenu_All -> SortingCriterionNotifications.All
+//            R.id.NotificationsMenu_ForToday -> SortingCriterionNotifications.ForToday
+//            R.id.NotificationsMenu_ThisWeek -> SortingCriterionNotifications.ThisWeek
+//            R.id.NotificationsMenu_Released -> SortingCriterionNotifications.Released
+//            R.id.NotificationsMenu_Answers -> SortingCriterionNotifications.Answers
+//            else -> DEFAULT_SORTING_CRITERION_NOTIFICATIONS
+//        }
 
-    private fun convertNotificationsMenuStateToValue(state: SortingCriterionNotifications): Int =
-        when (state) {
-            SortingCriterionNotifications.All -> R.string.notificationsMenu_all
-            SortingCriterionNotifications.ForToday -> R.string.notificationsMenu_for_today
-            SortingCriterionNotifications.ThisWeek -> R.string.notificationsMenu_this_week
-            SortingCriterionNotifications.Released -> R.string.notificationsMenu_released
-            SortingCriterionNotifications.Answers -> R.string.notificationsMenu_answers
-        }
+//    private fun convertNotificationsMenuStateToValue(state: SortingCriterionNotifications): Int =
+//        when (state) {
+//            SortingCriterionNotifications.All -> R.string.notificationsMenu_all
+//            SortingCriterionNotifications.ForToday -> R.string.notificationsMenu_for_today
+//            SortingCriterionNotifications.ThisWeek -> R.string.notificationsMenu_this_week
+//            SortingCriterionNotifications.Released -> R.string.notificationsMenu_released
+//            SortingCriterionNotifications.Answers -> R.string.notificationsMenu_answers
+//        }
 
     override fun onDestroy() {
         super.onDestroy()

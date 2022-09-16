@@ -103,20 +103,31 @@
         <entry key="app/src/main/res/menu/notifications_menu.xml" value="0.35260416666666666" />
         <entry key="catalog/src/main/res/drawable/ic_appbar_top_account.xml" value="0.142" />
         <entry key="catalog/src/main/res/layout/card_manga.xml" value="0.1953125" />
-        <entry key="catalog/src/main/res/layout/fragment_catalog.xml" value="0.17083333333333334" />
-        <entry key="catalog/src/main/res/layout/fragment_catalog_filter.xml" value="0.17083333333333334" />
+        <entry key="catalog/src/main/res/layout/fragment_catalog.xml" value="0.33" />
+        <entry key="catalog/src/main/res/layout/fragment_catalog_filter.xml" value="0.33" />
         <entry key="catalog/src/main/res/layout/fragment_catalog_non_single_select_filter.xml" value="0.1953125" />
         <entry key="catalog/src/main/res/layout/fragment_catalog_single_select_filter.xml" value="0.1953125" />
-        <entry key="catalog/src/main/res/layout/fragment_non_single_select_bottom_sheet.xml" value="0.1953125" />
+        <entry key="catalog/src/main/res/layout/fragment_non_single_select_bottom_sheet.xml" value="0.33" />
         <entry key="catalog/src/main/res/layout/fragment_single_select_bottom_sheet.xml" value="0.1953125" />
-        <entry key="catalog/src/main/res/layout/non_single_select_bottom_sheet_item.xml" value="0.1953125" />
-        <entry key="catalog/src/main/res/layout/single_select_bottom_sheet_item.xml" value="0.1953125" />
+        <entry key="catalog/src/main/res/layout/non_single_select_bottom_sheet_item.xml" value="0.5" />
+        <entry key="catalog/src/main/res/layout/single_select_bottom_sheet_item.xml" value="0.67" />
         <entry key="myManga/src/main/res/layout/card_catalog.xml" value="0.33229166666666665" />
         <entry key="myManga/src/main/res/layout/fragment_favourites.xml" value="0.3333333333333333" />
+        <entry key="myManga/src/main/res/layout/fragment_my_manga.xml" value="0.33" />
         <entry key="myManga/src/main/res/menu/my_manga_categories_menu.xml" value="0.16614583333333333" />
         <entry key="news/src/main/res/layout/fragment_news.xml" value="0.17083333333333334" />
+        <entry key="notifications/src/main/res/layout/bottom_sheet.xml" value="0.35733695652173914" />
+        <entry key="notifications/src/main/res/layout/card.xml" value="0.1884498480243161" />
         <entry key="notifications/src/main/res/layout/card_notifications.xml" value="0.3333333333333333" />
-        <entry key="notifications/src/main/res/layout/fragment_notifications.xml" value="0.20989583333333334" />
+        <entry key="notifications/src/main/res/layout/fragment_catalog_filter.xml" value="0.346875" />
+        <entry key="notifications/src/main/res/layout/fragment_catalog_non_single_select_filter.xml" value="0.346875" />
+        <entry key="notifications/src/main/res/layout/fragment_catalog_single_select_filter.xml" value="0.346875" />
+        <entry key="notifications/src/main/res/layout/fragment_non_single_select_bottom_sheet.xml" value="0.346875" />
+        <entry key="notifications/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="notifications/src/main/res/layout/fragment_notifications_sheet.xml" value="0.346875" />
+        <entry key="notifications/src/main/res/layout/fragment_single_select_bottom_sheet.xml" value="0.346875" />
+        <entry key="notifications/src/main/res/layout/non_single_select_bottom_sheet_item.xml" value="0.35733695652173914" />
+        <entry key="notifications/src/main/res/layout/single_select_bottom_sheet_item.xml" value="0.346875" />
         <entry key="notifications/src/main/res/menu/notifications_menu.xml" value="0.3333333333333333" />
         <entry key="notifications/src/main/res/menu/select_notifications_menu.xml" value="0.4674185463659148" />
         <entry key="share/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.142" />
