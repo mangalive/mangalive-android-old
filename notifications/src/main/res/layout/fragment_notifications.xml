@@ -9,6 +9,18 @@
     android:layout_marginTop="@dimen/default_padding"
     tools:context=".ui.NotificationsFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:clickable="true"
+        android:visibility="gone"
+        android:src="@android:drawable/ic_menu_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <LinearLayout
         android:id="@+id/TopAppBar"
         android:layout_width="match_parent"

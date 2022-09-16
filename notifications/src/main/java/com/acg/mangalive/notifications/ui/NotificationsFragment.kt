@@ -80,6 +80,7 @@ class NotificationsFragment : Fragment() {
                 checkBoxVisibilityChange.value = true
                 binding.NavBackBtn.isVisible = false
                 binding.SelectionCloseBtn.isVisible = true
+                binding.floatingActionButton2.isVisible = true
             }
             true
         }
@@ -90,6 +91,7 @@ class NotificationsFragment : Fragment() {
                     checkBoxVisibilityChange.value = false
                     binding.NavBackBtn.isVisible = true
                     binding.SelectionCloseBtn.isVisible = false
+                    binding.floatingActionButton2.isVisible = false
                 } else {
                     findNavController().navigate(navR.id.NavGraph_Catalog)
                 }
@@ -108,6 +110,7 @@ class NotificationsFragment : Fragment() {
             checkBoxVisibilityChange.value = false
             binding.NavBackBtn.isVisible = true
             binding.SelectionCloseBtn.isVisible = false
+            binding.floatingActionButton2.isVisible = false
         }
 
         binding.NotificationsMenuBtn.setOnClickListener {
