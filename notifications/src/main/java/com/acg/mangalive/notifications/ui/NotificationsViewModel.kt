@@ -7,6 +7,7 @@ import androidx.paging.liveData
 import com.acg.mangalive.notifications.domain.model.SortingCriterionNotifications
 import com.acg.mangalive.notifications.domain.model.SortingParametersNotifications
 import com.acg.mangalive.notifications.domain.useCases.NotificationsUseCase
+import com.google.android.material.chip.Chip
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject

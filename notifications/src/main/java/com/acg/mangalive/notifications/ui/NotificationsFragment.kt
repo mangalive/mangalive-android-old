@@ -26,6 +26,8 @@ class NotificationsFragment : Fragment() {
 
     private var checkBoxVisibilityChange = MutableLiveData(false)
 
+    private lateinit var bottomSheet: NotificationsBottomSheet
+
     @Inject
     lateinit var viewModelFactory: NotificationsViewModel.Factory
 
@@ -51,21 +53,10 @@ class NotificationsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val notificationsMenu = createNotificationsMenu()
         val selectNotificationsMenu = createSelectNotificationsMenu()
-
         val adapter = NotificationsAdapter(requireContext(), checkBoxVisibilityChange)
 
         binding.notifications.adapter = adapter
-
-//        notificationsMenu.setOnMenuItemClickListener {
-//            viewModel.setSortingCriterion(convertNotificationsMenuItemIdToState(it.itemId))
-//            true
-//        }
-
-//        viewModel.sortingParameters.observe(viewLifecycleOwner) {
-//            binding.NotificationsMenuBtn.setText(convertNotificationsMenuStateToValue(it.criterion))
-//        }
 
         viewModel.notifications.observe(viewLifecycleOwner) {
             adapter.submitData(lifecycle, it)
@@ -110,9 +101,7 @@ class NotificationsFragment : Fragment() {
             offSelectMode()
         }
 
-//        binding.NotificationsMenuBtn.setOnClickListener {
-//            notificationsMenu.show()
-//        }
+
 
         binding.floatingActionButton2.setOnClickListener {
             offSelectMode()
@@ -134,14 +123,6 @@ class NotificationsFragment : Fragment() {
         binding.floatingActionButton2.isVisible = false
     }
 
-//    private fun createNotificationsMenu() = PopupMenu(
-//        requireContext(), binding.NotificationsMenuBtn, Gravity.LEFT,
-//        androidx.appcompat.R.attr.popupMenuStyle,
-//        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
-//    ).also {
-//        it.menuInflater.inflate(R.menu.notifications_menu, it.menu)
-//    }
-
     private fun createSelectNotificationsMenu() = PopupMenu(
         requireContext(), binding.SelectMenuNotificationsBtn, Gravity.RIGHT,
         androidx.appcompat.R.attr.popupMenuStyle,
@@ -149,25 +130,6 @@ class NotificationsFragment : Fragment() {
     ).also {
         it.menuInflater.inflate(R.menu.select_notifications_menu, it.menu)
     }
-
-//    private fun convertNotificationsMenuItemIdToState(itemId: Int): SortingCriterionNotifications =
-//        when (itemId) {
-//            R.id.NotificationsMenu_All -> SortingCriterionNotifications.All
-//            R.id.NotificationsMenu_ForToday -> SortingCriterionNotifications.ForToday
-//            R.id.NotificationsMenu_ThisWeek -> SortingCriterionNotifications.ThisWeek
-//            R.id.NotificationsMenu_Released -> SortingCriterionNotifications.Released
-//            R.id.NotificationsMenu_Answers -> SortingCriterionNotifications.Answers
-//            else -> DEFAULT_SORTING_CRITERION_NOTIFICATIONS
-//        }
-
-//    private fun convertNotificationsMenuStateToValue(state: SortingCriterionNotifications): Int =
-//        when (state) {
-//            SortingCriterionNotifications.All -> R.string.notificationsMenu_all
-//            SortingCriterionNotifications.ForToday -> R.string.notificationsMenu_for_today
-//            SortingCriterionNotifications.ThisWeek -> R.string.notificationsMenu_this_week
-//            SortingCriterionNotifications.Released -> R.string.notificationsMenu_released
-//            SortingCriterionNotifications.Answers -> R.string.notificationsMenu_answers
-//        }
 
     override fun onDestroy() {
         super.onDestroy()
