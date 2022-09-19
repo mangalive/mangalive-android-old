@@ -10,15 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelStoreOwner
-import com.acg.mangalive.catalog.ui.bottomSheets.SelectBottomSheetItem
 import com.acg.mangalive.notifications.databinding.BottomSheetBinding
 import com.acg.mangalive.notifications.domain.model.SortingCriterionNotifications
 import com.acg.mangalive.share.di.Factory
-import com.acg.mangalive.share.di.lazyViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import dagger.android.AndroidInjection.inject
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -36,9 +31,15 @@ class NotificationsBottomSheet : BottomSheetDialogFragment() {
     @Inject
     lateinit var viewModelFactory: NotificationsViewModel.Factory
 
-    private val viewModel: NotificationsViewModel by lazyViewModel ({requireParentFragment()} ,{
+    private val viewModel: NotificationsViewModel by lazyViewModel({ requireParentFragment() }, {
         viewModelFactory.create(it)
     })
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+
+        super.onAttach(context)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
