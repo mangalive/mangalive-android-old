@@ -11,11 +11,16 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.acg.mangalive.notifications.R
 import com.acg.mangalive.notifications.databinding.FragmentNotificationsBinding
 import com.acg.mangalive.notifications.domain.model.SortingCriterionNotifications
+import com.acg.mangalive.notifications.domain.model.SortingParametersNotifications
 import com.acg.mangalive.share.di.lazyViewModel
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 import com.acg.mangalive.navigation.R as navR
@@ -26,7 +31,7 @@ class NotificationsFragment : Fragment() {
 
     private var checkBoxVisibilityChange = MutableLiveData(false)
 
-    private lateinit var bottomSheet: NotificationsBottomSheet
+    private var bottomSheet = NotificationsBottomSheet()
 
     @Inject
     lateinit var viewModelFactory: NotificationsViewModel.Factory
@@ -87,10 +92,20 @@ class NotificationsFragment : Fragment() {
             onBackPressedCallback
         )
 
-         val notificationsBottomSheet = NotificationsBottomSheet()
+        val notificationsBottomSheet = NotificationsBottomSheet()
 
         binding.chip.setOnClickListener {
-            notificationsBottomSheet.show(parentFragmentManager, "cock")
+            notificationsBottomSheet.show(parentFragmentManager, NotificationsBottomSheet.TAG)
+        }
+
+        viewModel.sortingParameters.observe(viewLifecycleOwner) {
+            binding.chip.setText(when (it) {
+                SortingCriterionNotifications.All -> R.string.notificationsMenu_all
+                SortingCriterionNotifications.ThisWeek -> R.string.notificationsMenu_this_week
+                SortingCriterionNotifications.ForToday -> R.string.notificationsMenu_for_today
+                SortingCriterionNotifications.Released -> R.string.notificationsMenu_released
+                SortingCriterionNotifications.Answers -> R.string.notificationsMenu_answers
+            })
         }
 
         binding.NavBackBtn.setOnClickListener {
@@ -100,8 +115,6 @@ class NotificationsFragment : Fragment() {
         binding.SelectionCloseBtn.setOnClickListener {
             offSelectMode()
         }
-
-
 
         binding.floatingActionButton2.setOnClickListener {
             offSelectMode()

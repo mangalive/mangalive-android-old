@@ -20,16 +20,16 @@ class NotificationsViewModel @AssistedInject constructor(
 ) :
     ViewModel() {
     private var _sortingParameters =
-        MutableLiveData(SortingParametersNotifications(criterion = DEFAULT_SORTING_CRITERION_NOTIFICATIONS))
-    val sortingParameters: LiveData<SortingParametersNotifications> = _sortingParameters
+        MutableLiveData(DEFAULT_SORTING_CRITERION_NOTIFICATIONS)
+    val sortingParameters: LiveData<SortingCriterionNotifications> = _sortingParameters
 
     val notifications = sortingParameters.map(::newPager).switchMap { it.liveData }
 
-    private fun newPager(sortingParametersNotifications: SortingParametersNotifications) =
-        Pager(PagingConfig(5)) { notificationsUseCase(sortingParametersNotifications) }
+    private fun newPager(sortingCriterionNotifications: SortingCriterionNotifications) =
+        Pager(PagingConfig(5)) { notificationsUseCase(SortingParametersNotifications(sortingCriterionNotifications)) }
 
-    fun setSortingCriterion(value: SortingCriterionNotifications) {
-        _sortingParameters.value = _sortingParameters.value?.copy(criterion = value)
+    fun updateSortingParameters(value: SortingCriterionNotifications) {
+        _sortingParameters.value = value
     }
 
     @AssistedFactory

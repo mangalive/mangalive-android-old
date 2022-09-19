@@ -12,9 +12,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelStoreOwner
 import com.acg.mangalive.catalog.ui.bottomSheets.SelectBottomSheetItem
 import com.acg.mangalive.notifications.databinding.BottomSheetBinding
+import com.acg.mangalive.notifications.domain.model.SortingCriterionNotifications
 import com.acg.mangalive.share.di.Factory
 import com.acg.mangalive.share.di.lazyViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import dagger.android.AndroidInjection.inject
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -26,9 +30,6 @@ inline fun <reified T : ViewModel> Fragment.lazyViewModel(
 }
 
 class NotificationsBottomSheet : BottomSheetDialogFragment() {
-    interface OnItemSelectListener {
-        fun onItemSelect(item: SelectBottomSheetItem)
-    }
 
     private var binding: BottomSheetBinding? = null
 
@@ -52,7 +53,28 @@ class NotificationsBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        
+        binding?.all?.setOnClickListener {
+            viewModel.updateSortingParameters(SortingCriterionNotifications.All)
+        }
 
+        binding?.answers?.setOnClickListener {
+            viewModel.updateSortingParameters(SortingCriterionNotifications.Answers)
+        }
+
+        binding?.forToday?.setOnClickListener {
+            viewModel.updateSortingParameters(SortingCriterionNotifications.ForToday)
+        }
+
+        binding?.released?.setOnClickListener {
+            viewModel.updateSortingParameters(SortingCriterionNotifications.Released)
+        }
+
+        binding?.thisWeek?.setOnClickListener {
+            viewModel.updateSortingParameters(SortingCriterionNotifications.ThisWeek)
+        }
+    }
+
+    companion object {
+        const val TAG = "NotificationsBottomSheet"
     }
 }
