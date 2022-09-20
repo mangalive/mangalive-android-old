@@ -1,4 +1,4 @@
-package com.acg.mangalive.views.filter
+package filter
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.acg.mangalive.views.databinding.SingleSelectBottomSheetBinding
-import com.acg.mangalive.views.databinding.SingleSelectBottomSheetItemBinding
+import com.acg.mangalive.catalog.databinding.SingleSelectBottomSheetBinding
+import com.acg.mangalive.catalog.databinding.SingleSelectBottomSheetItemBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

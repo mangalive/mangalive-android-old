@@ -6,6 +6,11 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
 }
 
+val sourceDirs = setOf(
+    "main",
+    "filter",
+)
+
 android {
     compileSdk = 32
 
@@ -26,6 +31,51 @@ android {
             )
         }
     }
+
+
+    sourceSets["main"].apply {
+        res {
+
+            sourceDirs.forEach { source ->
+//                srcDir("java/com.acg.mangalive.catalog.$source/res")
+            }
+
+//                srcDir("java/com.acg.mangalive.catalog.filter/res")
+//                srcDir("java/com.acg.mangalive.catalog.main/res")
+
+//            java.includes {} = sourceDirs.map {
+//                "com/acg/mangalive/catalog/"
+//            }.toSet()
+        }
+
+        res.apply {
+            manifest.srcFile("java/com.acg.mangalive.catalog/AndroidManifest.xml")
+
+            setSrcDirs(
+                listOf(
+                    "java/com.acg.mangalive.catalog/filter/res",
+                    "java/com.acg.mangalive.catalog/main/res"
+                )
+            )
+        }
+
+        java.apply {
+            srcDir("java")
+
+            setIncludes(
+                listOf(
+                    "com.acg.mangalive/filter/**/*.kt",
+                    "com.acg.mangalive/main/**/*.kt"
+                )
+            )
+
+            setExcludes(listOf("**/build/**"))
+        }
+
+
+    }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,9 +89,9 @@ android {
     }
 }
 
+
 dependencies {
     implementation(project(":share"))
-    implementation(project(":views"))
     implementation(project(mapOf("path" to ":navigation")))
 
     implementation("androidx.core:core-ktx:1.7.0")

@@ -1,4 +1,4 @@
-package com.acg.mangalive.views.filter
+package filter
 
 data class Entry(
     val index: Int,

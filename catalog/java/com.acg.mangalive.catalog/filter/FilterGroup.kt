@@ -1,4 +1,4 @@
-package com.acg.mangalive.views.filter
+package filter
 
 import android.content.Context
 import android.util.AttributeSet
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import androidx.core.view.children
-import com.acg.mangalive.views.databinding.FilterGroupBinding
+import com.acg.mangalive.catalog.databinding.FilterGroupBinding
 
 class FilterGroup : HorizontalScrollView {
 

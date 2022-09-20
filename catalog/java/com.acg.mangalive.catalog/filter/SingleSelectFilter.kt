@@ -1,4 +1,4 @@
-package com.acg.mangalive.views.filter
+package filter
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,8 +9,8 @@ import androidx.core.content.res.getStringOrThrow
 import androidx.core.content.res.getTextArrayOrThrow
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.acg.mangalive.views.R
-import com.acg.mangalive.views.databinding.SingleSelectFilterBinding
+import com.acg.mangalive.catalog.R
+import com.acg.mangalive.catalog.databinding.SingleSelectFilterBinding
 
 class SingleSelectFilter : FrameLayout {
 
