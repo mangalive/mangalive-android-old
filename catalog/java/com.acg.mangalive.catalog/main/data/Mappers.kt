@@ -8,5 +8,7 @@ internal fun MangaCardDto.toMangaCard(): MangaCard =
         id = id,
         title = title,
         description = description,
-        rating = rating
+        rating = rating,
+        chapters = chapters,
+        views = views,
     )

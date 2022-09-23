@@ -2,17 +2,20 @@
 <resources>
     <string name="search_placeholder_text">Search manga, senpai!</string>
 
+
+    <string name="views_up_to_thousand">%1$d</string>
+    <string name="views_up_to_million">%1$dK</string>
+    <string name="views_up_to_billion">%1$dKK</string>
+
     <string name="sortingCriterion_title">Sorting criterion</string>
-    <string name="sortingCriterion_default_item">By popularity</string>
 
     <string-array name="sortingCriterion_items">
-        <item>@string/sortingCriterion_default_item</item>
-        <item>By likes</item>
-        <item>By recent updates</item>
-        <item>By novelty</item>
+        <item>By popularity</item>
+        <item>By rating</item>
         <item>By views</item>
-        <item>By chapter count</item>
-        <item>Random sorting</item>
+        <item>By updates</item>
+        <item>By novelty</item>
+        <item>By chapters number</item>
     </string-array>
 
     <string name="type_title">Type</string>
@@ -66,7 +69,6 @@
         <item>Tragedy</item>
         <item>Thriller</item>
         <item>Horror</item>
-        <item>Science Fantasy</item>
         <item>Fantasy</item>
         <item>School</item>
         <item>Elements of humor</item>
@@ -181,13 +183,4 @@
         <item>Blackmail</item>
         <item>Elves</item>
     </string-array>
-
-    <string name="sortingMenu">Sorting criterion</string>
-    <string name="sortingMenu_popularity">By popularity</string>
-    <string name="sortingMenu_likes">By likes</string>
-    <string name="sortingMenu_recent_updates">By recent updates</string>
-    <string name="sortingMenu_novelty">By novelty</string>
-    <string name="sortingMenu_views">By views</string>
-    <string name="sortingMenu_chapter_count">By chapter count</string>
-    <string name="sortingMenu_random">Random sorting</string>
 </resources>

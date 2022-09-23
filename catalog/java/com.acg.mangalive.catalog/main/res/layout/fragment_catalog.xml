@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/default_margin"
     android:layout_marginTop="@dimen/default_padding"
     tools:context=".ui.CatalogFragment">
 
@@ -13,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginHorizontal="@dimen/default_margin"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,11 +75,13 @@
         android:id="@+id/filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/default_margin"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header">
 
         <filter.SingleSelectFilter
+            android:id="@+id/sortingCriterionFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:defaultEntryIndex="0"
@@ -87,6 +89,7 @@
             app:title="@string/sortingCriterion_title" />
 
         <filter.MultipleSelectFilter
+            android:id="@+id/typeFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:entries="@array/type_items"
@@ -94,6 +97,7 @@
             app:title="@string/type_title" />
 
         <filter.MultipleSelectFilter
+            android:id="@+id/genreFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:entries="@array/genre_items"
@@ -101,6 +105,7 @@
             app:title="@string/genre_title" />
 
         <filter.MultipleSelectFilter
+            android:id="@+id/categoryFilter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:entries="@array/category_items"

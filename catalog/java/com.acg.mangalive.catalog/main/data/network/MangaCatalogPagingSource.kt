@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.acg.mangalive.catalog.data.model.MangaPageResponseDto
 import com.acg.mangalive.catalog.data.toMangaCard
 import com.acg.mangalive.catalog.domain.model.MangaCard
-import com.acg.mangalive.catalog.domain.model.SortingParameters
+import com.acg.mangalive.catalog.domain.model.SelectedFilters
 import com.acg.mangalive.share.IoDispatcher
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
@@ -16,7 +16,7 @@ import retrofit2.HttpException
 import retrofit2.Response
 
 class MangaCatalogPagingSource @AssistedInject constructor(
-    @Assisted("sortingParameters") private val sortingParameters: SortingParameters,
+    @Assisted private val selectedFilters: SelectedFilters,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
     private val mangaService: MangaService,
 ) : PagingSource<Long, MangaCard>() {
@@ -38,7 +38,10 @@ class MangaCatalogPagingSource @AssistedInject constructor(
             mangaService.getPage(
                 pageNumber,
                 pageSize,
-                sortingParameters.criterion
+                selectedFilters.sortingCriterion,
+                selectedFilters.types,
+                selectedFilters.genres,
+                selectedFilters.categories,
             )
         }
 
@@ -68,6 +71,6 @@ class MangaCatalogPagingSource @AssistedInject constructor(
 
     @AssistedFactory
     interface Factory {
-        fun create(@Assisted("sortingParameters") sortingParameters: SortingParameters): MangaCatalogPagingSource
+        fun create(@Assisted selectedFilters: SelectedFilters): MangaCatalogPagingSource
     }
 }

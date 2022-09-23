@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_appearance_body_medium_line_height">16sp</dimen>
+    <dimen name="text_appearance_title_medium_line_height">18sp</dimen>
+</resources>
