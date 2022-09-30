@@ -2,6 +2,7 @@ package com.acg.mangalive.notifications.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -61,6 +62,8 @@ class NotificationsFragment : Fragment() {
         val selectNotificationsMenu = createSelectNotificationsMenu()
         val adapter = NotificationsAdapter(requireContext(), checkBoxVisibilityChange)
 
+        Log.i("lgkuhdsfkulg", viewModel.hashCode().toString())
+
         binding.notifications.adapter = adapter
 
         viewModel.notifications.observe(viewLifecycleOwner) {
@@ -95,7 +98,7 @@ class NotificationsFragment : Fragment() {
         val notificationsBottomSheet = NotificationsBottomSheet()
 
         binding.chip.setOnClickListener {
-            notificationsBottomSheet.show(parentFragmentManager, NotificationsBottomSheet.TAG)
+            bottomSheet.show(parentFragmentManager, NotificationsBottomSheet.TAG)
         }
 
         viewModel.sortingParameters.observe(viewLifecycleOwner) {
@@ -106,6 +109,7 @@ class NotificationsFragment : Fragment() {
                 SortingCriterionNotifications.Released -> R.string.notificationsMenu_released
                 SortingCriterionNotifications.Answers -> R.string.notificationsMenu_answers
             })
+            Log.i("gfskgjhklfg", "loool")
         }
 
         binding.NavBackBtn.setOnClickListener {

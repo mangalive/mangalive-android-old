@@ -98,7 +98,7 @@
                 app:chipIcon="@drawable/ic_drop_arrow"
                 app:chipIconEnabled="true"
                 app:chipIconTint="?attr/colorOnSecondaryContainer"
-                app:chipIconVisible="true" />
+                app:chipIconVisible="true"  />
 
             <Space
                 android:layout_width="wrap_content"

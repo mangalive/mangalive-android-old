@@ -31,9 +31,6 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,6 +92,5 @@
                 android:text="@string/notificationsMenu_answers"
                 app:rippleColor="?attr/colorOnBackground"/>
         </LinearLayout>
-    </ScrollView>
 
 </LinearLayout>
