@@ -46,64 +46,24 @@ class MyMangaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val categoriesMenu = createCategoriesMenu()
+        // set the references of the declared objects above
+        val pager = binding.pager
+        val tab = binding.tabLayout
 
-        val adapter = MyMangaAdapter(requireContext())
-        binding.favourites.adapter = adapter
-        binding.favourites.layoutManager = GridLayoutManager(requireContext(), 2)
-        categoriesMenu.setOnMenuItemClickListener {
-            viewModel.setCategoryMenuState(convertCategoriesMenuItemIdToState(it.itemId))
-            true
-        }
-        viewModel.uiState.observe(viewLifecycleOwner) {
-            binding.CategoriesMenuBtn.setText(convertCategoriesMenuStateToValue(it.favouritesMenuState.criterion))
-        }
+        val adapter = MyMangaPagerAdapter(childFragmentManager)
 
-        viewModel.favourites.observe(viewLifecycleOwner) {
-            adapter.submitData(lifecycle, it)
-        }
+        // add fragment to the list
+        adapter.addFragment(CompletedFragment())
+        adapter.addFragment(DroppedFragment())
+        adapter.addFragment(OnHoldFragment())
+        adapter.addFragment(PlanToReadFragment())
+        adapter.addFragment(ReadingFragment())
 
-        binding.CategoriesMenuBtn.setOnClickListener {
-            categoriesMenu.show()
-        }
+        pager.adapter = adapter
+
+        // bind the viewPager with the TabLayout.
+        tab.setupWithViewPager(pager)
     }
-
-    private fun createCategoriesMenu() = PopupMenu(
-        requireContext(), binding.CategoriesMenuBtn, Gravity.LEFT,
-        androidx.appcompat.R.attr.popupMenuStyle,
-        androidx.appcompat.R.style.Base_Widget_AppCompat_PopupMenu
-    ).also {
-        it.menuInflater.inflate(R.menu.my_manga_categories_menu, it.menu)
-    }
-
-    private fun convertCategoriesMenuItemIdToState(itemId: Int): SortingParameters =
-        when (itemId) {
-            R.id.FavouritesCategoriesMenu_Completed -> SortingParameters(
-                SortingCriterion.Completed
-            )
-            R.id.FavouritesCategoriesMenu_Dropped -> SortingParameters(
-                SortingCriterion.Dropped
-            )
-            R.id.FavouritesCategoriesMenu_CurrentlyReading -> SortingParameters(
-                SortingCriterion.CurrentlyReading
-            )
-            R.id.FavouritesCategoriesMenu_OnHold -> SortingParameters(
-                SortingCriterion.OnHold
-            )
-            R.id.FavouritesCategoriesMenu_PlanToRead -> SortingParameters(
-                SortingCriterion.PlanToRead
-            )
-            else -> DEFAULT_SORTING_PARAMETERS_STATE
-        }
-
-    private fun convertCategoriesMenuStateToValue(state: SortingCriterion): Int =
-        when (state) {
-            SortingCriterion.CurrentlyReading -> R.string.categoryMenu_currently_reading
-            SortingCriterion.Completed -> R.string.categoryMenu_completed
-            SortingCriterion.Dropped -> R.string.categoryMenu_dropped
-            SortingCriterion.OnHold -> R.string.categoryMenu_on_hold
-            SortingCriterion.PlanToRead -> R.string.categoryMenu_plan_to_read
-        }
 
     override fun onDestroy() {
         super.onDestroy()
