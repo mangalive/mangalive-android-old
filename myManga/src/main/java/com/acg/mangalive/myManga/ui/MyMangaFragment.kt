@@ -50,6 +50,7 @@ class MyMangaFragment : Fragment() {
         val pager = binding.pager
         val tab = binding.tabLayout
 
+        //supportFragmentManager should be used
         val adapter = MyMangaPagerAdapter(childFragmentManager)
 
         // add fragment to the list
